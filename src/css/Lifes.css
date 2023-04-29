@@ -1,4 +1,4 @@
-@media (width < 321px) {
+@media (width < 426px) {
   .lifesContainer {
     display: flex;
     justify-content: space-around;
@@ -11,7 +11,7 @@
   }
 
   .life {
-    font-size: 20pt;
+    font-size: 30px;
   }
 }
 
