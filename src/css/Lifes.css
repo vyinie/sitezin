@@ -15,7 +15,7 @@
   }
 }
 
-@media (width > 1023px) and (width < 1201px) {
+@media (width > 1023px){
   .lifesContainer {
     /* display: flex; */
     /* justify-content: space-around; */

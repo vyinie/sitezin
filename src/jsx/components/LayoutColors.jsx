@@ -35,13 +35,13 @@ export default function LayoutColors({
       setLifes(3);
 
       document.querySelector(".LayoutColors").style.width = "min-content";
-
+      
       e.target.style.backgroundColor = "#ddd";
       e.target.style.boxShadow = "#0005 inset -3px 3px 4px";
-
+      
       document.getElementById("LvlJunior").style.backgroundColor = "";
       document.getElementById("LvlJunior").style.boxShadow = "";
-
+      
       document.getElementById("LvlPleno").style.backgroundColor = "";
       document.getElementById("LvlPleno").style.boxShadow = "";
     } else if (e.target.id == "LvlJunior") {
@@ -58,7 +58,7 @@ export default function LayoutColors({
       document.getElementById("LvlPleno").style.backgroundColor = "";
       document.getElementById("LvlPleno").style.boxShadow = "";
 
-      document.querySelector(".LayoutColors").style.width = "";
+      document.querySelector(".LayoutColors").style.width = "max-content";
     } else if (e.target.id == "LvlPleno") {
       setBlocks([0, 1, 2, 3, 4, 5]);
       setTrueId(idRandom(blocks.length));
@@ -141,7 +141,7 @@ export default function LayoutColors({
             <div id={`hover${i}`} className="blockHover"></div>
           </span>
         ) : (
-          // load the right block
+          // load the wrong block
           <span
             id={i}
             style={{ backgroundColor: falseColors[i] }}

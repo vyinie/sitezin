@@ -87,7 +87,7 @@
 }
 
 /* For desktops */
-@media (width > 1023px) and (width < 1201px) {
+@media (width > 1023px){
   .LayoutGame {
     position: relative;
     width: 100vw;
