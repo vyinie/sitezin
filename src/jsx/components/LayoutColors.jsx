@@ -41,12 +41,10 @@ export default function LayoutColors({
     e.target.style.boxShadow = "#0005 inset -3px 3px 4px";
 
     document.querySelector(".LayoutColors").style.width = "max-content";
-    // blocks.map((i) => (document.getElementById(i).style.width = "32%"));
 
     if (e.target.id == "LvlEz") {
       setBlocks([0, 1, 2, 3]);
       setLifes(3);
-      // blocks.map((i) => (document.getElementById(i).style.width = "47%"));
       document.querySelector(".LayoutColors").style.width = "min-content";
     } else if (e.target.id == "LvlJunior") {
       setLifes(3);
@@ -94,6 +92,7 @@ export default function LayoutColors({
       [lifes]
     );
   });
+  
   // selects the normal lvl when load the page
   useEffect(() => {
     document.getElementById("LvlJunior").click();
