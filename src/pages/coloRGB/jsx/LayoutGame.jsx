@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { colorRandom } from "../Randomizers";
+import { colorRandom } from "./Randomizers";
 import LayoutColors from "./LayoutColors";
 import Lifes from "./lifes";
-import "/src/css/LayoutGame.css";
+import "../css/LayoutGame.css";
 
 export default function LayoutGame() {
   const [trueColor, setTrueColor] = useState(colorRandom());

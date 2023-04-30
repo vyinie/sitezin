@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import "/src/css/LayoutColors.css";
-import "/src/css/App.css";
+import "../css/LayoutColors.css";
 
-import { idRandom, colorRandom } from "../Randomizers";
+import { idRandom, colorRandom } from "./Randomizers";
 
 export default function LayoutColors({
   lifes,
@@ -29,37 +28,44 @@ export default function LayoutColors({
 
   // set difficultylvl
   function setDiff(e) {
-    const btns = ["LvlEz", "LvlJunior", "LvlPleno"];
+    const difConfig = [
+      { id: "LvlEz", blocks: [0, 1, 2, 3], lifes: 3, width: "min-content" },
+      {
+        id: "LvlJunior",
+        blocks: [0, 1, 2, 3, 4, 5],
+        lifes: 3,
+        width: "",
+      },
+      {
+        id: "LvlPleno",
+        blocks: [0, 1, 2, 3, 4, 5],
+        lifes: 1,
+        width: "",
+      },
+    ];
 
-    const offBtns = btns.filter((i) => i != e.target.id);
+    // sets style to off btns
+    const offBtns = difConfig.filter((i) => i.id != e.target.id);
     offBtns.map((i) => {
-      document.getElementById(i).style.boxShadow = "";
-      document.getElementById(i).style.backgroundColor = "";
+      document.getElementById(i.id).style.boxShadow = "";
+      document.getElementById(i.id).style.backgroundColor = "";
     });
-
+    // sets style to on btn
     e.target.style.backgroundColor = "#ddd";
     e.target.style.boxShadow = "#0005 inset -3px 3px 4px";
 
-    document.querySelector(".LayoutColors").style.width = "max-content";
+    // modfies ColorLayout style
+    const onBtn = difConfig.filter((i) => i.id === e.target.id);
+    setBlocks(onBtn[0].blocks);
+    setLifes(onBtn[0].lifes);
+    document.querySelector(".LayoutColors").style.width = onBtn[0].width;
 
-    if (e.target.id == "LvlEz") {
-      setBlocks([0, 1, 2, 3]);
-      setLifes(3);
-      document.querySelector(".LayoutColors").style.width = "min-content";
-    } else if (e.target.id == "LvlJunior") {
-      setLifes(3);
-      setBlocks([0, 1, 2, 3, 4, 5]);
-    } else if (e.target.id == "LvlPleno") {
-      setLifes(1);
-      setBlocks([0, 1, 2, 3, 4, 5]);
-    }
-    setTrueId(idRandom(blocks.length));
+    setTrueId(idRandom(onBtn[0].blocks.length));
     reset();
   }
 
   // ... resets... the game... ... ... bruh
   function reset() {
-    setTrueColor(colorRandom());
     setTrueId(idRandom(blocks.length));
     setFalseColors([
       colorRandom(),
@@ -69,6 +75,7 @@ export default function LayoutColors({
       colorRandom(),
       colorRandom(),
     ]);
+    setTrueColor(colorRandom());
   }
 
   // fig out if u lost and shows the right color
@@ -76,7 +83,7 @@ export default function LayoutColors({
     if (lifes === 0) {
       const wrongBlocks = blocks.filter((i) => i != trueId);
       wrongBlocks.map((i) => {
-        document.getElementById(i).style.backgroundColor = "#0005";
+        document.getElementById(i).style.backgroundColor = "#333";
       });
     }
     document.querySelector(".popupBtn").addEventListener(
@@ -92,7 +99,7 @@ export default function LayoutColors({
       [lifes]
     );
   });
-  
+
   // selects the normal lvl when load the page
   useEffect(() => {
     document.getElementById("LvlJunior").click();
@@ -127,8 +134,8 @@ export default function LayoutColors({
             key={blocks.indexOf(i)}
             className="colorBlock"
             onClick={(e) => {
-              e.target.style.backgroundColor = "#444";
               setLifes(lifes - 1);
+              e.target.style.backgroundColor = "#333";
             }}
           >
             <div id={`hover${i}`} className="blockHover"></div>

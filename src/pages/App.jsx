@@ -1,5 +1,5 @@
-import "../css/App.css";
-import LayoutGame from "./components/LayoutGame";
+import "./App.css";
+import LayoutGame from "./coloRGB/jsx/LayoutGame";
 
 function App() {
   return (
