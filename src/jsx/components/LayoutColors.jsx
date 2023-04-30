@@ -29,52 +29,33 @@ export default function LayoutColors({
 
   // set difficultylvl
   function setDiff(e) {
+    const btns = ["LvlEz", "LvlJunior", "LvlPleno"];
+
+    const offBtns = btns.filter((i) => i != e.target.id);
+    offBtns.map((i) => {
+      document.getElementById(i).style.boxShadow = "";
+      document.getElementById(i).style.backgroundColor = "";
+    });
+
+    e.target.style.backgroundColor = "#ddd";
+    e.target.style.boxShadow = "#0005 inset -3px 3px 4px";
+
+    document.querySelector(".LayoutColors").style.width = "max-content";
+    // blocks.map((i) => (document.getElementById(i).style.width = "32%"));
+
     if (e.target.id == "LvlEz") {
       setBlocks([0, 1, 2, 3]);
-      setTrueId(idRandom(blocks.length));
       setLifes(3);
-
+      // blocks.map((i) => (document.getElementById(i).style.width = "47%"));
       document.querySelector(".LayoutColors").style.width = "min-content";
-      
-      e.target.style.backgroundColor = "#ddd";
-      e.target.style.boxShadow = "#0005 inset -3px 3px 4px";
-      
-      document.getElementById("LvlJunior").style.backgroundColor = "";
-      document.getElementById("LvlJunior").style.boxShadow = "";
-      
-      document.getElementById("LvlPleno").style.backgroundColor = "";
-      document.getElementById("LvlPleno").style.boxShadow = "";
     } else if (e.target.id == "LvlJunior") {
-      setBlocks([0, 1, 2, 3, 4, 5]);
-      setTrueId(idRandom(blocks.length));
       setLifes(3);
-
-      e.target.style.backgroundColor = "#ddd";
-      e.target.style.boxShadow = "#0005 inset -3px 3px 4px";
-
-      document.getElementById("LvlEz").style.backgroundColor = "";
-      document.getElementById("LvlEz").style.boxShadow = "";
-
-      document.getElementById("LvlPleno").style.backgroundColor = "";
-      document.getElementById("LvlPleno").style.boxShadow = "";
-
-      document.querySelector(".LayoutColors").style.width = "max-content";
-    } else if (e.target.id == "LvlPleno") {
       setBlocks([0, 1, 2, 3, 4, 5]);
-      setTrueId(idRandom(blocks.length));
+    } else if (e.target.id == "LvlPleno") {
       setLifes(1);
-
-      document.querySelector(".LayoutColors").style.width = "";
-
-      e.target.style.backgroundColor = "#ddd";
-      e.target.style.boxShadow = "#0005 inset -3px 3px 4px";
-
-      document.getElementById("LvlJunior").style.backgroundColor = "";
-      document.getElementById("LvlJunior").style.boxShadow = "";
-
-      document.getElementById("LvlEz").style.backgroundColor = "";
-      document.getElementById("LvlEz").style.boxShadow = "";
+      setBlocks([0, 1, 2, 3, 4, 5]);
     }
+    setTrueId(idRandom(blocks.length));
     reset();
   }
 
@@ -107,9 +88,8 @@ export default function LayoutColors({
         document.getElementById("LvlPleno").style.backgroundColor !== ""
           ? setLifes(1)
           : setLifes(3);
-        setScore(0);
         reset();
-        setScore(0)
+        setScore(0);
       },
       [lifes]
     );
@@ -148,7 +128,7 @@ export default function LayoutColors({
             key={blocks.indexOf(i)}
             className="colorBlock"
             onClick={(e) => {
-              e.target.style.backgroundColor ="#444"
+              e.target.style.backgroundColor = "#444";
               setLifes(lifes - 1);
             }}
           >

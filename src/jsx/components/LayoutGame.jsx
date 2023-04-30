@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import { colorRandom } from "../Randomizers";
 import LayoutColors from "./LayoutColors";
 import Lifes from "./lifes";
-import "/src/css/LayoutGame.css"
+import "/src/css/LayoutGame.css";
+
 export default function LayoutGame() {
   const [trueColor, setTrueColor] = useState(colorRandom());
   const [lifes, setLifes] = useState(3);
   const [score, setScore] = useState(0);
+
   useEffect(() => {
     localStorage.getItem("hightScore") == null &&
       localStorage.setItem("hightScore", 0);
