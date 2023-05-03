@@ -1,4 +1,3 @@
-import { NavBar } from "./navBar";
 import "../css/Home.css";
 
 export default function Home() {
