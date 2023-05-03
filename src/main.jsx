@@ -7,7 +7,7 @@ import LayoutGame from "./pages/projetos/Apps/coloRGB/jsx/index.jsx";
 import Home from "./pages/Home/jsx/Home.jsx";
 import Error from "./pages/Home/jsx/Error.jsx";
 import App from "./pages/App";
-import { NavBar } from "./pages/Home/jsx/navBar.jsx";
+import NavBar from "./pages/Home/jsx/navBar.jsx";
 import Projects from "./pages/projetos/Projects.jsx";
 import LayoutToDo from "./pages/projetos/Apps/ToDo/jsx";
 
