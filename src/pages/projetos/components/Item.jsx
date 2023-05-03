@@ -1,7 +1,7 @@
 import "../projects.css";
 import { Link } from "react-router-dom";
 
-export const Item = ({ title, des, id, link }) => {
+export default function Item({ title, des, id, link }){
   return (
     <Link to={link} id={`itemBox${id}`} className="itemBox">
       <div className="itemImg"></div>
