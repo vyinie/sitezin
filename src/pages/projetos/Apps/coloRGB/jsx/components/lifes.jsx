@@ -1,4 +1,4 @@
-import "../css/Lifes.css"
+import "../../css/Lifes.css"
 export default function Lifes({ lifes }) {
   
   const lifePoints = []

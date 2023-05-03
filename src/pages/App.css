@@ -1,4 +1,142 @@
 .App {
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 91vh;
+}
+@media screen and (width > 700px) {
+  .navArea {
+    width: 100%;
+    height: 8%;
+
+    background-color: #416;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    font-size: 16pt;
   }
+  .pageLink {
+    text-decoration: none;
+    color: #fff;
+  }
+  .PagesCotainer {
+    width: 100vw;
+    height: 92%;
+    background-color: #000;
+  }
+}
+@media (width < 430px) {
+  header {
+    padding: 5px;
+    
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    background-color: #199;
+  }
+  .headerTitle {
+    color: #fff;
+    font-size: 30pt;
+    text-align: center;
+  }
+  .backBtn {
+    background-color: #aaa;
+    z-index: 9;
+
+    position: absolute;
+    left: 20px;
+    top: 10px;
+
+    display: flex;
+    align-items: start;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+
+    font-size: 22pt;
+    color: #fff;
+    cursor: pointer;
+  }
+  .oppenNavBar {
+    width: 40px;
+    height: 30px;
+
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .lOne,
+  .lTwo,
+  .lThree {
+    width: 30px;
+    height: 3px;
+    border-radius: 10px;
+    background-color: #fff;
+
+    transition: 0.2s;
+  }
+  .lOne.on {
+    transform: rotate(45deg) translate(8px, 6px);
+  }
+  .lTwo.on {
+    transform: rotate(-45deg) translate(0, 2px);
+  }
+  .lThree.on {
+    opacity: 0;
+  }
+  .navAreaWrapper {
+    width: 100%;
+    height: 100vh;
+    background-color: #0007;
+    z-index: 9;
+
+    display: none;
+    justify-content: end;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navArea {
+    width: 60%;
+    height: 100%;
+
+    background-color: #416;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-size: 16pt;
+  }
+  #HomeLink {
+    margin-top: 70px;
+  }
+  .pageLink {
+    width: 70%;
+    margin-top: 15px;
+    padding-bottom: 4px;
+
+    text-align: center;
+    text-decoration: none;
+    font-size: 20pt;
+
+    background-color: #946;
+    color: #fff;
+  }
+  .PagesCotainer {
+    margin-top: 9vh;
+    width: 100vw;
+    height: 100%;
+    background-color: #444;
+  }
+}

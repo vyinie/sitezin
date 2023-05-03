@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import "../css/LayoutColors.css";
+import "../../css/LayoutColors.css";
 
-import { idRandom, colorRandom } from "./Randomizers";
+import { idRandom, colorRandom } from "../Randomizers";
 
 export default function LayoutColors({
   lifes,
@@ -10,7 +10,6 @@ export default function LayoutColors({
   setTrueColor,
   score,
   setScore,
-  openDifChecker,
 }) {
   // set blocks wit false colors
   const [blocks, setBlocks] = useState([0, 1, 2, 3, 4, 5]);
@@ -76,6 +75,7 @@ export default function LayoutColors({
       colorRandom(),
     ]);
     setTrueColor(colorRandom());
+    blocks.map(i => document.getElementById(`hover${i}`).style.backgroundColor = "")
   }
 
   // fig out if u lost and shows the right color
@@ -144,12 +144,6 @@ export default function LayoutColors({
       )}
 
       {/* ========================= difficulty lvl control ========================= */}
-      <div
-        className="difFControlWrapper"
-        onClick={(e) => {
-          openDifChecker(e);
-        }}
-      >
         <div className="difficultyControl">
           {/* NOOB LVL LOL */}
           <button id="LvlEz" className="btnDifficulty" onClick={setDiff}>
@@ -167,6 +161,5 @@ export default function LayoutColors({
           </button>
         </div>
       </div>
-    </div>
   );
 }

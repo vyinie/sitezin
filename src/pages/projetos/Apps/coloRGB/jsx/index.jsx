@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { colorRandom } from "./Randomizers";
-import LayoutColors from "./LayoutColors";
-import Lifes from "./lifes";
+import LayoutColors from "./components/LayoutColors";
+import Lifes from "./components/lifes.jsx";
 import "../css/LayoutGame.css";
+import { useNavigate } from "react-router-dom";
 
 export default function LayoutGame() {
   const [trueColor, setTrueColor] = useState(colorRandom());
@@ -34,24 +35,12 @@ export default function LayoutGame() {
     }
   }, [score]);
 
-  const [openDifOn, setOpenDifOn] = useState(false);
-
-  function openDifChecker(e) {
-    if (e.target.className != "difficultyControl") {
-      setOpenDifOn(!openDifOn);
-      openDifOn
-        ? (document.querySelector(".difFControlWrapper").style.display = "flex")
-        : (document.querySelector(".difFControlWrapper").style.display = "");
-    }
-  }
-
+  const navigate = useNavigate();
   return (
     <div className="LayoutGame">
-      <div onClick={(e) => openDifChecker(e)} className="oppenDifOpts">
-        <div className="lineOpenDif" id="line1"></div>
-        <div className="lineOpenDif" id="line2"></div>
-        <div className="lineOpenDif" id="line3"></div>
-      </div>
+      <button className="backBtn" onClick={() => {navigate(-1)}}>
+        &#8592;
+      </button>
 
       {/* ========================= main layout ======================================= */}
       <Lifes lifes={lifes} />
@@ -67,7 +56,6 @@ export default function LayoutGame() {
         setTrueColor={setTrueColor}
         score={score}
         setScore={setScore}
-        openDifChecker={openDifChecker}
       />
 
       {/* ========================= score area ======================================= */}
