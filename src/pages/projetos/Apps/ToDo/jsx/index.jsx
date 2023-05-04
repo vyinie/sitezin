@@ -17,11 +17,24 @@ export default function LayoutToDo() {
   };
   const navigate = useNavigate();
   return (
+<<<<<<< HEAD
     <div className="conteinner">
       <button className="ToDoBkBtn" onClick={() => {navigate(-1)}}>
         &#8592;
       </button>
 
+=======
+    <div className="container">
+      <button
+        className="backBtn"
+        onClick={() => {
+          navigate(-1);
+        }}
+      >
+        &#8592;
+      </button>
+      <h1 className="headerTitle">To Do List</h1>
+>>>>>>> 60404eb (site la)
       <div className="form">
         <TextField
           fullWidth
@@ -38,7 +51,11 @@ export default function LayoutToDo() {
           variant="outlined"
         />
         <Button
+<<<<<<< HEAD
         className="addBtn"
+=======
+          className="addBtn"
+>>>>>>> 60404eb (site la)
           onClick={() => {
             if (text !== null) {
               add();

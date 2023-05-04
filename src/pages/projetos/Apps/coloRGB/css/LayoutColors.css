@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 @media (width > 1000px) {
+=======
+@media (width > 430px) {
+>>>>>>> 60404eb (site la)
   .LayoutColors {
     min-width: 22vw;
     max-width: 32vw;
@@ -26,6 +30,7 @@
     background-color: #0004;
   }
 
+<<<<<<< HEAD
   .difFControlWrapper {
     position: absolute;
     width: 28%;
@@ -36,15 +41,32 @@
   }
   .difficultyControl {
     padding: 5px;
+=======
+  .difControl {
+    position: absolute;
+    left: 2vw;
+    top: 200px;
+    z-index: 2;
+
+    width: 26vw;
+    padding: 6px 0 ;
+>>>>>>> 60404eb (site la)
     background-color: #aaa;
 
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+<<<<<<< HEAD
     justify-content: space-evenly;
     align-items: center;
   }
   .btnDifficulty {
+=======
+    justify-content: space-around;
+    align-items: center;
+  }
+  .btnDif {
+>>>>>>> 60404eb (site la)
     border: none;
     width: 25vw;
     padding: 10px 0;
@@ -52,10 +74,20 @@
     text-transform: uppercase;
     background-color: #fff;
   }
+<<<<<<< HEAD
   .btnDifficulty:hover {
     background-color: #888;
     color: #fff;
   }
+=======
+  .btnDif:hover {
+    background-color: #888;
+    color: #fff;
+  }
+  .difOptToggle{
+    display: none;
+  }
+>>>>>>> 60404eb (site la)
 }
 @media (width < 426px) {
   .LayoutColors {
@@ -80,6 +112,7 @@
     display: none;
   }
 
+<<<<<<< HEAD
   .difficultyControl {
     position: absolute;
     bottom: 30px;
@@ -96,6 +129,40 @@
     border: none;
     width: 30%;
     height: 40px;
+=======
+  .difOptToggle{
+    position: absolute;
+    top: 13%;
+    right: 6.5vw;
+
+    border: none;
+    width: 8vw;
+    height: 8vw;
+    border-radius: 50%;
+  }
+  .difControl {
+    position: absolute;
+    top: 20vh;
+
+    right: 50%;
+    transform: translate(50%);
+    
+    width: 80vw;
+    padding: 10px;
+  
+    background-color: #444;
+    
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .btnDif {
+    border: none;
+    width: 60%;
+    height: 10vw;
+>>>>>>> 60404eb (site la)
 
     font-size: 14pt;
     text-transform: uppercase;

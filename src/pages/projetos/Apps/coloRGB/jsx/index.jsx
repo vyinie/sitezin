@@ -38,10 +38,22 @@ export default function LayoutGame() {
   const navigate = useNavigate();
   return (
     <div className="LayoutGame">
+<<<<<<< HEAD
       <button className="backBtn" onClick={() => {navigate(-1)}}>
         &#8592;
       </button>
 
+=======
+      <button
+        className="backBtn"
+        onClick={() => {
+          navigate(-1);
+        }}
+      >
+        &#8592;
+      </button>
+      <h1 className="headerTitle">ColoRGB</h1>
+>>>>>>> 60404eb (site la)
       {/* ========================= main layout ======================================= */}
       <Lifes lifes={lifes} />
 

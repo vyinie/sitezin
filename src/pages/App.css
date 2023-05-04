@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .App {
   width: 100vw;
   height: 91vh;
@@ -14,11 +15,77 @@
     justify-content: center;
     gap: 10px;
 
+=======
+@media (width > 430px) {
+  .lOne,
+  .lTwo,
+  .lThree {
+    display: none;
+  }
+  .backBtn {
+    background-color: #258;
+    z-index: 5;
+
+    position: absolute;
+    left: 1vw;
+    top: 1.5vh;
+
+    display: flex;
+    align-items: start;
+    justify-content: center;
+
+    width: 8vh;
+    height: 8vh;
+    border: none;
+    border-radius: 50%;
+
+    font-size: 6vh;
+    color: #fff;
+  }
+  header {
+    width: 100%;
+    height: 9vh;
+    background-color: #199;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo{
+    color: #fff;
+    margin-left: 2vw;
+    cursor: default;
+  }
+  .headerTitle {
+    color: #fff;
+    font-size: 25pt;
+    
+    position: absolute;
+    z-index: 2;
+    top: -8vh;
+    right: 50%;
+    
+    cursor: default;
+  }
+  .navAreaWrapper {
+    width: 34vw;
+    height: 100%; 
+    margin-right: 2vw; 
+  }
+  .navArea {
+    width: 100%;
+    height: 100%;  
+
+    display: flex;
+    align-items: center;
+    
+>>>>>>> 60404eb (site la)
     font-size: 16pt;
   }
   .pageLink {
     text-decoration: none;
     color: #fff;
+<<<<<<< HEAD
   }
   .PagesCotainer {
     width: 100vw;
@@ -35,12 +102,49 @@
     z-index: 5;
     width: 100%;
     background-color: #199;
+=======
+    height: 100%;
+    padding: 0 1.5vw;
+
+    display: flex;
+    align-items: center;
+    transition: .2s;
+  }
+  .pageLink:hover{
+    background-color: #179;
+  }
+  .PagesCotainer {
+    width: 100vw;
+    height: 91vh;
+  }
+}
+
+@media (width < 430px) {
+  .App {
+    width: 100vw;
+    height: 89vh;
+  }
+  header {
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    padding: 1vh;
+
+    width: 100%;
+    height: 9vh;
+    background-color: #199;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+>>>>>>> 60404eb (site la)
   }
   .headerTitle {
     color: #fff;
     font-size: 30pt;
     text-align: center;
   }
+<<<<<<< HEAD
   .backBtn {
     background-color: #aaa;
     z-index: 9;
@@ -48,11 +152,22 @@
     position: absolute;
     left: 20px;
     top: 10px;
+=======
+
+  .backBtn {
+    background-color: #258;
+    z-index: 5;
+
+    position: absolute;
+    left: 3vw;
+    top: 1.5vh;
+>>>>>>> 60404eb (site la)
 
     display: flex;
     align-items: start;
     justify-content: center;
 
+<<<<<<< HEAD
     width: 40px;
     height: 40px;
     border: none;
@@ -69,17 +184,52 @@
     position: absolute;
     right: 20px;
     top: 15px;
+=======
+    width: 8vh;
+    height: 8vh;
+    border: none;
+    border-radius: 50%;
+
+    font-size: 6vh;
+    color: #fff;
+  }
+  .oppenNavBar {
+    width: 10vw;
+    height: 100%;
+
+    position: absolute;
+    right: 20px;
+>>>>>>> 60404eb (site la)
     z-index: 10;
 
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
     justify-content: space-evenly;
+=======
+    justify-content: center;
+    gap: 5px;
+  }
+
+  @keyframes introNav {
+    0% {
+      right: -50%;
+    }
+    100% {
+      right: 0;
+    }
+>>>>>>> 60404eb (site la)
   }
   .lOne,
   .lTwo,
   .lThree {
+<<<<<<< HEAD
     width: 30px;
     height: 3px;
+=======
+    width: 9vw;
+    height: 8%;
+>>>>>>> 60404eb (site la)
     border-radius: 10px;
     background-color: #fff;
 
@@ -94,6 +244,10 @@
   .lThree.on {
     opacity: 0;
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 60404eb (site la)
   .navAreaWrapper {
     width: 100%;
     height: 100vh;
@@ -102,6 +256,10 @@
 
     display: none;
     justify-content: end;
+<<<<<<< HEAD
+=======
+    position: relative;
+>>>>>>> 60404eb (site la)
     position: absolute;
     right: 0;
     top: 0;
@@ -116,7 +274,17 @@
     flex-direction: column;
     align-items: center;
 
+<<<<<<< HEAD
     font-size: 16pt;
+=======
+    position: absolute;
+
+    font-size: 16pt;
+
+    animation-name: introNav;
+    animation-duration: 0.1s;
+    animation-timing-function: linear;
+>>>>>>> 60404eb (site la)
   }
   #HomeLink {
     margin-top: 70px;
@@ -133,10 +301,19 @@
     background-color: #946;
     color: #fff;
   }
+<<<<<<< HEAD
   .PagesCotainer {
     margin-top: 9vh;
     width: 100vw;
     height: 100%;
     background-color: #444;
+=======
+
+  .PagesCotainer {
+    margin-top: 11vh;
+    width: 100vw;
+    height: 89vh;
+    background-color: #999;
+>>>>>>> 60404eb (site la)
   }
 }
