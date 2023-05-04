@@ -28,11 +28,7 @@ export default function ToDoItem({ id, text, arr, setList }) {
       <span
         onClick={() => {
           setTimeout(() => {
-<<<<<<< HEAD
-            document.getElementById(`boxModel${id}`).style.display = "flex";
-=======
             document.getElementById(`editPopup${id}`).style.display = "flex";
->>>>>>> 60404eb (site la)
             document.getElementById(`inpEdit${id}`).focus();
           }, 100);
         }}
@@ -45,23 +41,8 @@ export default function ToDoItem({ id, text, arr, setList }) {
         />
       </span>
       <div>
-<<<<<<< HEAD
-        <div>
-          <div
-            id={`boxModel${id}`}
-            className="boxModel"
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                document.querySelector(`#label${saveId}`).textContent =
-                  editedText;
-                document.getElementById(`boxModel${id}`).style.display = "flex";
-              }
-            }}
-          >
-=======
         <div className="editPopupWrapper">
           <div id={`editPopup${id}`} className="editPopup">
->>>>>>> 60404eb (site la)
             <input
               type="text"
               className="inpEdit"
@@ -70,8 +51,6 @@ export default function ToDoItem({ id, text, arr, setList }) {
               onChange={(e) => {
                 setEditedText(e.target.value);
               }}
-<<<<<<< HEAD
-=======
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
                   document.querySelector(`#label${saveId}`).textContent =
@@ -80,7 +59,6 @@ export default function ToDoItem({ id, text, arr, setList }) {
                     "flex";
                 }
               }}
->>>>>>> 60404eb (site la)
             />
             <button
               className="btnEdit"
@@ -89,11 +67,7 @@ export default function ToDoItem({ id, text, arr, setList }) {
                   editedText;
                 setEditedText(null);
                 document.getElementById(`inpEdit${id}`).value = null;
-<<<<<<< HEAD
-                document.getElementById(`boxModel${id}`).style.display = "";
-=======
                 document.getElementById(`editPopup${id}`).style.display = "";
->>>>>>> 60404eb (site la)
               }}
             >
               editar
@@ -101,11 +75,7 @@ export default function ToDoItem({ id, text, arr, setList }) {
             <button
               className="btnCancelEdit"
               onClick={() => {
-<<<<<<< HEAD
-                document.getElementById(`boxModel${id}`).style.display = "";
-=======
                 document.getElementById(`editPopup${id}`).style.display = "";
->>>>>>> 60404eb (site la)
                 document.getElementById(`inpEdit${id}`).value = null;
               }}
             >

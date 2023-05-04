@@ -84,8 +84,6 @@
     height: 5vh;
   }
 }
-<<<<<<< HEAD
-=======
 @media (width > 430px) {
   .item {
     position: relative;
@@ -184,4 +182,3 @@
     cursor: pointer;
   }
 }
->>>>>>> 60404eb (site la)

@@ -25,11 +25,7 @@ export default function LayoutColors({
   // chooses a random block to true color
   const [trueId, setTrueId] = useState(idRandom(blocks.length));
 
-<<<<<<< HEAD
-  // set difficultylvl
-=======
   // set diflvl
->>>>>>> 60404eb (site la)
   function setDiff(e) {
     const difConfig = [
       { id: "LvlEz", blocks: [0, 1, 2, 3], lifes: 3, width: "min-content" },
@@ -57,12 +53,9 @@ export default function LayoutColors({
     e.target.style.backgroundColor = "#ddd";
     e.target.style.boxShadow = "#0005 inset -3px 3px 4px";
 
-<<<<<<< HEAD
-=======
     // for mobile
     setToggleDifOpt(!ToggleDifOpt);
 
->>>>>>> 60404eb (site la)
     // modfies ColorLayout style
     const onBtn = difConfig.filter((i) => i.id === e.target.id);
     setBlocks(onBtn[0].blocks);
@@ -85,13 +78,9 @@ export default function LayoutColors({
       colorRandom(),
     ]);
     setTrueColor(colorRandom());
-<<<<<<< HEAD
-    blocks.map(i => document.getElementById(`hover${i}`).style.backgroundColor = "")
-=======
     blocks.map(
       (i) => (document.getElementById(`hover${i}`).style.backgroundColor = "")
     );
->>>>>>> 60404eb (site la)
   }
 
   // fig out if u lost and shows the right color
@@ -121,15 +110,12 @@ export default function LayoutColors({
     document.getElementById("LvlJunior").click();
   }, []);
 
-<<<<<<< HEAD
-=======
   const [ToggleDifOpt, setToggleDifOpt] = useState(true);
   useEffect(() => {
     ToggleDifOpt
       ? (document.querySelector(".difControl").style.display = "flex")
       : (document.querySelector(".difControl").style.display = "");
   }, [ToggleDifOpt]);
->>>>>>> 60404eb (site la)
   // ===============================HTML===============================
   return (
     <div className="LayoutColors">
@@ -168,26 +154,6 @@ export default function LayoutColors({
         )
       )}
 
-<<<<<<< HEAD
-      {/* ========================= difficulty lvl control ========================= */}
-        <div className="difficultyControl">
-          {/* NOOB LVL LOL */}
-          <button id="LvlEz" className="btnDifficulty" onClick={setDiff}>
-            noob
-          </button>
-
-          {/* normal LVL */}
-          <button onClick={setDiff} id="LvlJunior" className="btnDifficulty">
-            Junior
-          </button>
-
-          {/* pleno Lvl */}
-          <button onClick={setDiff} id="LvlPleno" className="btnDifficulty">
-            Pleno
-          </button>
-        </div>
-      </div>
-=======
       {/* ========================= dif lvl control ========================= */}
       <button
         className="difOptToggle"
@@ -212,6 +178,5 @@ export default function LayoutColors({
         </button>
       </div>
     </div>
->>>>>>> 60404eb (site la)
   );
 }

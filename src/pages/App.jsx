@@ -1,13 +1,7 @@
-<<<<<<< HEAD
-import { useState } from "react";
-import "./App.css";
-import { Link, Outlet } from "react-router-dom";
-=======
 import { useEffect, useState } from "react";
 import "./App.css";
 import { Link, Outlet } from "react-router-dom";
 
->>>>>>> 60404eb (site la)
 function App() {
   const [openDifOn, setOpenDifOn] = useState(true);
 
@@ -25,13 +19,6 @@ function App() {
           document.querySelector(".lThree").classList.remove("on"));
     }
   }
-<<<<<<< HEAD
-  const [PageTitle, setPageTitle] = useState("Home");
-
-  return (
-    <div className="App">
-      <header>
-=======
 
   const pageLinks = [
     {
@@ -71,30 +58,11 @@ function App() {
     <div className="App">
       <header>
         <h1 className="logo">VyInIe</h1>
->>>>>>> 60404eb (site la)
         <div onClick={(e) => openNavBar(e)} className="oppenNavBar">
           <div className="lOne"></div>
           <div className="lTwo"></div>
           <div className="lThree"></div>
         </div>
-<<<<<<< HEAD
-        <h1 className="headerTitle">{PageTitle}</h1>
-
-        <div onClick={(e) => openNavBar(e)} className="navAreaWrapper">
-          <div className="navArea">
-            <Link id="HomeLink" className="pageLink" to="/">
-              Home
-            </Link>
-            <Link className="pageLink" to="/Projects">
-              Projetos
-            </Link>
-            <Link className="pageLink" to="/Contato">
-              Contato
-            </Link>
-            <Link className="pageLink" to="/kkk">
-              n clique
-            </Link>
-=======
 
         <h1 className="headerTitle"></h1>
 
@@ -113,7 +81,6 @@ function App() {
                 {i.name}
               </Link>
             ))}
->>>>>>> 60404eb (site la)
           </div>
         </div>
       </header>

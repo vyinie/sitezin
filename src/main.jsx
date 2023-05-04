@@ -10,10 +10,6 @@ import App from "./pages/App";
 import Projects from "./pages/projetos/Projects.jsx";
 import LayoutToDo from "./pages/projetos/Apps/ToDo/jsx";
 import NavBar from "./pages/Home/jsx/NavBar";
-<<<<<<< HEAD
-
-=======
->>>>>>> 60404eb (site la)
 const router = createBrowserRouter([
   {
     path: "/",

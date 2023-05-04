@@ -15,13 +15,8 @@
     height: 50px;
     background-color: #ccc;
     border-radius: 5px;
-<<<<<<< HEAD
-    margin-top: 10px;
-    margin-bottom: 30px;
-=======
     margin-top: 5vw;
     margin-bottom: 4vw;
->>>>>>> 60404eb (site la)
   }
 
   .popupWrapper {
@@ -51,14 +46,6 @@
     border-radius: 3px;
   }
   .scoreContainer {
-<<<<<<< HEAD
-    width: 290px;
-    height: 100px;
-
-    background-color: #ccc;
-    margin-top: 25px;
-
-=======
     width: 80%;
     height: auto;
 
@@ -66,7 +53,6 @@
     margin-top: 20px;
     padding: 5px;
     
->>>>>>> 60404eb (site la)
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -76,12 +62,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-<<<<<<< HEAD
-
-    width: 40%;
-    height: 80px;
-    background-color: #999;
-=======
     
     width: 40%;
     height: 15vw;
@@ -89,16 +69,11 @@
     background-color: #999;
 
     font-size: 4.5vw;
->>>>>>> 60404eb (site la)
   }
 }
 
 /* For desktops */
-<<<<<<< HEAD
-@media (width > 1000px) {
-=======
 @media (width > 430px) {
->>>>>>> 60404eb (site la)
   .LayoutGame {
     position: relative;
     width: 100vw;
@@ -181,11 +156,7 @@
     left: 0;
     top: 0;
 
-<<<<<<< HEAD
-    width: 30%;
-=======
     width: 30vw;
->>>>>>> 60404eb (site la)
     height: 100%;
 
     background-color: #ccc;
