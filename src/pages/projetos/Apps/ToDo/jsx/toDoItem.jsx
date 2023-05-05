@@ -1,9 +1,12 @@
 import { useState } from "react";
 import "../css/Item.css";
+import { Box, Button, TextField, Modal } from "@mui/material";
 
 export default function ToDoItem({ id, text, arr, setList }) {
   const [editedText, setEditedText] = useState(null);
   const saveId = id;
+  const [openEditBox, setOpen] = useState(false);
+  const handleToggle = () => setOpen(!openEditBox);
 
   return (
     <div key={saveId} id={saveId} className="item">
@@ -27,8 +30,8 @@ export default function ToDoItem({ id, text, arr, setList }) {
       </span>
       <span
         onClick={() => {
+          handleToggle();
           setTimeout(() => {
-            document.getElementById(`editPopup${id}`).style.display = "flex";
             document.getElementById(`inpEdit${id}`).focus();
           }, 100);
         }}
@@ -41,13 +44,26 @@ export default function ToDoItem({ id, text, arr, setList }) {
         />
       </span>
       <div>
-        <div className="editPopupWrapper">
-          <div id={`editPopup${id}`} className="editPopup">
-            <input
-              type="text"
+        <Modal
+          open={openEditBox}
+          onClose={handleToggle}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+          className="editPopupWrapper"
+        >
+          <Box id={`editPopup${id}`} className="editPopup">
+            <TextField
+            sx={{
+              "& .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root": {color: "#fff"},
+              "& .css-1d3z3hw-MuiOutlinedInput-notchedOutline": {borderColor: "#fff", },
+              "& .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input":{color:"#fff"},
+              "& .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root":{color:"#fff"}
+            }}
+              fullWidth
+              variant="outlined"
+              label="Edit To Do  "
               className="inpEdit"
               id={`inpEdit${id}`}
-              placeholder="Edit Text"
               onChange={(e) => {
                 setEditedText(e.target.value);
               }}
@@ -55,34 +71,37 @@ export default function ToDoItem({ id, text, arr, setList }) {
                 if (e.key === "Enter") {
                   document.querySelector(`#label${saveId}`).textContent =
                     editedText;
-                  document.getElementById(`editPopup${id}`).style.display =
-                    "flex";
+                  handleToggle()
                 }
               }}
             />
-            <button
+            <Button
+              variant="outlined"
+              color="error"
+              className="btnCancelEdit"
+              onClick={() => {
+                handleToggle();
+                document.getElementById(`inpEdit${id}`).value = null;
+              }}
+            >
+              Cancelar
+            </Button>
+            <Button
+            // sx={{"& .css-1rwt2y5-MuiButtonBase-root-MuiButton-root":{color: "#000"}}}
+              variant="outlined"
               className="btnEdit"
               onClick={() => {
                 document.querySelector(`#label${saveId}`).textContent =
                   editedText;
                 setEditedText(null);
                 document.getElementById(`inpEdit${id}`).value = null;
-                document.getElementById(`editPopup${id}`).style.display = "";
+                handleToggle();
               }}
             >
               editar
-            </button>
-            <button
-              className="btnCancelEdit"
-              onClick={() => {
-                document.getElementById(`editPopup${id}`).style.display = "";
-                document.getElementById(`inpEdit${id}`).value = null;
-              }}
-            >
-              Cancelar
-            </button>
-          </div>
-        </div>
+            </Button>
+          </Box>
+        </Modal>
       </div>
     </div>
   );

@@ -12,8 +12,8 @@ export default function LayoutToDo() {
     setList([...list, { text: text, id: id }]);
     setId(id + 1);
     setText(null);
-    document.getElementById("inp").focus();
-    document.getElementById("inp").value = null;
+    document.getElementById("addTodo").focus();
+    document.getElementById("addTodo").value = null;
   };
   const navigate = useNavigate();
   return (
@@ -30,7 +30,10 @@ export default function LayoutToDo() {
       <div className="form">
         <TextField
           fullWidth
-          id="inp"
+          id="addTodo"
+          sx={{
+            "& .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root": {transform: "translate(20px, -8px) scale(0.7)"},//styles the label
+          }}
           onKeyDown={(e) => {
             if ((e.key === "Enter") & (text !== null)) {
               add();
