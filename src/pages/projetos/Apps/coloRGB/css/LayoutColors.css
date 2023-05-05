@@ -1,11 +1,11 @@
-@media (width > 430px) {
+/* @media (width > 1000px) {
   .LayoutColors {
-    min-width: 22vw;
-    max-width: 32vw;
-    height: 21.5vw;
+    min-width: 32vw;
+    max-width: 47vw;
+    height: 31.5vw;
 
     background-color: #555;
-    margin-left: 30%;
+    margin-left: 38%;
 
     display: flex;
     flex-wrap: wrap;
@@ -14,8 +14,8 @@
     box-shadow: #0004 -10px 10px 6px;
   }
   .colorBlock {
-    width: 10vw;
-    height: 10vw;
+    width: 15vw;
+    height: 15vw;
   }
 
   .blockHover {
@@ -29,11 +29,11 @@
   .difControl {
     position: absolute;
     left: 2vw;
-    top: 200px;
+    top: 30vh;
     z-index: 2;
 
-    width: 26vw;
-    padding: 6px 0 ;
+    width: 30vw;
+    padding: 6px 0;
     background-color: #aaa;
 
     display: flex;
@@ -54,11 +54,129 @@
     background-color: #888;
     color: #fff;
   }
-  .difOptToggle{
+  .difOptToggle {
+    display: none;
+  }
+} */
+
+@media (width > 800px){
+  .LayoutColors {
+    min-width: 32vw;
+    max-width: 47vw;
+    height: 31.5vw;
+
+    background-color: #555;
+    margin-left: 37%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    box-shadow: #0004 -10px 10px 6px;
+  }
+  .colorBlock {
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .blockHover {
+    width: 100%;
+    height: 100%;
+  }
+  .blockHover:hover {
+    background-color: #0004;
+  }
+
+  .difControl {
+    position: absolute;
+    left: 2vw;
+    top: 30vh;
+    z-index: 2;
+
+    width: 30vw;
+    padding: 6px 0;
+    background-color: #aaa;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .btnDif {
+    border: none;
+    width: 25vw;
+    padding: 10px 0;
+    font-size: 22pt;
+    text-transform: uppercase;
+    background-color: #fff;
+  }
+  .btnDif:hover {
+    background-color: #888;
+    color: #fff;
+  }
+  .difOptToggle {
     display: none;
   }
 }
-@media (width < 426px) {
+@media (width > 450px) and (width < 800px){
+  .LayoutColors {
+    min-width: 32vw;
+    max-width: 47vw;
+    height: 32vw;
+
+    background-color: #555;
+    margin-left: 37%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    box-shadow: #0004 -10px 10px 6px;
+  }
+  .colorBlock {
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .blockHover {
+    width: 100%;
+    height: 100%;
+  }
+  .blockHover:hover {
+    background-color: #0004;
+  }
+
+  .difControl {
+    position: absolute;
+    left: 2vw;
+    bottom: 200px;
+    z-index: 2;
+
+    width: 30vw;
+    padding: 6px 0;
+    background-color: #aaa;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .btnDif {
+    border: none;
+    width: 25vw;
+    padding: 10px 0;
+    font-size: 22pt;
+    text-transform: uppercase;
+    background-color: #fff;
+  }
+
+  .difOptToggle {
+    display: none;
+  }
+}
+@media (width < 450px) {
   .LayoutColors {
     max-width: 79vw;
     min-width: 55vw;
@@ -81,28 +199,28 @@
     display: none;
   }
 
-  .difOptToggle{
+  .difOptToggle {
     position: absolute;
-    top: 13%;
+    top: 20px;
     right: 6.5vw;
 
     border: none;
-    width: 8vw;
-    height: 8vw;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
   }
   .difControl {
     position: absolute;
-    top: 20vh;
+    top: 65px;
 
     right: 50%;
     transform: translate(50%);
-    
-    width: 80vw;
+
+    width: 75vw;
     padding: 10px;
-  
+
     background-color: #444;
-    
+
     display: none;
     flex-direction: column;
     gap: 10px;
@@ -111,10 +229,10 @@
   }
   .btnDif {
     border: none;
-    width: 60%;
+    width: 90%;
     height: 10vw;
 
-    font-size: 14pt;
+    font-size: 18pt;
     text-transform: uppercase;
     font-weight: bold;
 

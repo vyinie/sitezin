@@ -28,12 +28,12 @@
     width: 100vw;
     height: 9vh;
     background-color: #199;
-    
+
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  .logo{
+  .logo {
     color: #fff;
     margin-left: 2vw;
     cursor: default;
@@ -45,21 +45,21 @@
     z-index: 2;
     top: -7.5vh;
     right: 45vw;
-    
+
     cursor: default;
   }
   .navAreaWrapper {
     min-width: 30vw;
-    height: 100%; 
-    margin-right: 20px; 
+    height: 100%;
+    margin-right: 20px;
   }
   .navArea {
     width: 100%;
-    height: 100%;  
+    height: 100%;
 
     display: flex;
     align-items: center;
-    
+
     font-size: 16pt;
   }
   .pageLink {
@@ -70,9 +70,9 @@
 
     display: flex;
     align-items: center;
-    transition: .2s;
+    transition: 0.2s;
   }
-  .pageLink:hover{
+  .pageLink:hover {
     background-color: #179;
   }
   .PagesCotainer {
@@ -82,32 +82,31 @@
 }
 @media (width > 430px) and (width < 1050px) {
   .headerTitle {
-    right: calc(400px + 10vw)
-    
+    right: calc(400px + 10vw);
   }
 }
 @media (width > 640px) and (width < 750px) {
   .headerTitle {
     left: 2vw;
   }
-  .logo{
+  .logo {
     display: none;
   }
 }
-@media (width > 430px) and (width < 640px) {
+@media (width > 450px) and (width < 801px) {
   .headerTitle {
     left: 2vw;
     top: -6.5vh;
-    font-size: 17pt;
+    font-size: 25pt;
     width: 28vw;
   }
-  .logo{
+  .logo {
     display: none;
   }
-  .navArea{
+  .navArea {
     font-size: 14pt;
   }
-  .navAreaWrapper{
+  .navAreaWrapper {
     margin-right: 10px;
   }
 }
@@ -131,7 +130,7 @@
     justify-content: center;
     align-items: center;
   }
-  .logo{
+  .logo {
     display: none;
   }
   .headerTitle {
@@ -140,7 +139,7 @@
     text-align: center;
     position: absolute;
     z-index: 3;
-    top: -7.5vh;
+    top: -8.5vh;
     right: 50%;
     transform: translate(50%);
   }
@@ -151,7 +150,7 @@
 
     position: absolute;
     left: 3vw;
-    top: -9vh;
+    top: -9.5vh;
 
     display: flex;
     align-items: start;
@@ -184,13 +183,14 @@
       right: -50%;
     }
     100% {
-      right: 0;
+      left: 0;
     }
   }
+
   .lOne,
   .lTwo,
   .lThree {
-    width: 9vw;
+    width: 10vw;
     height: 8%;
     border-radius: 10px;
     background-color: #fff;
@@ -206,33 +206,23 @@
   .lThree.on {
     opacity: 0;
   }
-  .navAreaWrapper {
+
+  .navArea {
     width: 100%;
     height: 100vh;
-    background-color: #0007;
-    z-index: 9;
-    
+    background-color: #416;
+
     display: none;
-    justify-content: end;
-    position: relative;
+    flex-direction: column;
+    align-items: center;
+
     position: absolute;
     right: 0;
     top: 0;
-  }
-  .navArea {
-    width: 60%;
-    height: 100%;
-    background-color: #416;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    position: absolute;
-    z-index: 10;
-    
+    z-index: 5;
+
     font-size: 16pt;
-    
+
     animation-name: introNav;
     animation-duration: 0.1s;
     animation-timing-function: linear;
@@ -260,5 +250,4 @@
     height: 89vh;
     background-color: #999;
   }
-
 }

@@ -1,5 +1,158 @@
+/* For desktops */
+@media (width > 800px) {
+.LayoutGame {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #333;
+}
+.backBtn {
+  background-color: #aaa;
+
+  position: absolute;
+  left: 2vw;
+  top: 1vw;
+  z-index: 10;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+
+  width: 3vw;
+  height: 3vw;
+  border: none;
+  border-radius: 50%;
+
+  font-size: 2.5vw;
+  color: #fff;
+  cursor: pointer;
+}
+
+.displayText {
+  font-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 240px;
+  height: 50px;
+
+  background-color: #ccc;
+  border-radius: 5px;
+
+  margin-top: 40px;
+  margin-bottom: 30px;
+  margin-left: 31%;
+}
+.popupWrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 3;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #0006;
+}
+  .popup {
+    width: 50vw;
+    height: 25vh;
+
+    background-color: #bbb;
+    box-shadow: #0008 -5px 5px 5px;
+
+    font-size: 4vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .popupBtn {
+    border: none;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 3px;
+    font-size: 2.5vh;
+  }
+  .scoreContainer {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 35vw;
+    height: 100%;
+
+    background-color: #ccc;
+
+    display: flex;
+    justify-content: space-around;
+  }
+  .score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    margin-top: 12vh;
+    width: 45%;
+
+    height: 80px;
+    background-color: #999;
+  }
+  .oppenDifOpts {
+    display: none;
+  }
+}
+
+/* For tablets, wtf uses tablets??? */
+@media (width > 451px) and (width < 801px) {
+
+  .popupBtn {
+    border: none;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 3px;
+    font-size: 2.5vh;
+  }
+  .scoreContainer {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 35vw;
+    height: 87%;
+
+    background-color: #ccc;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 12%;
+  }
+  .score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 12px;
+    margin-right: 10px;
+    width: 90%;
+
+    height: 80px;
+    background-color: #999;
+  }
+  .oppenDifOpts {
+    display: none;
+  }
+}
+
 /* For smartphones */
-@media (width < 426px) {
+@media (width < 450px) {
   .LayoutGame {
     width: 100%;
     height: 100%;
@@ -15,8 +168,8 @@
     height: 50px;
     background-color: #ccc;
     border-radius: 5px;
-    margin-top: 5vw;
-    margin-bottom: 4vw;
+    margin-top: 6vw;
+    margin-bottom: 6vw;
   }
 
   .popupWrapper {
@@ -52,7 +205,7 @@
     background-color: #ccc;
     margin-top: 20px;
     padding: 5px;
-    
+
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -62,121 +215,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    
+
     width: 40%;
     height: 15vw;
     padding: 5px;
     background-color: #999;
 
     font-size: 4.5vw;
-  }
-}
-
-/* For desktops */
-@media (width > 430px) {
-  .LayoutGame {
-    position: relative;
-    width: 100vw;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #333;
-  }
-  .backBtn {
-    background-color: #aaa;
-
-    position: absolute;
-    left: 2vw;
-    top: 1vw;
-    z-index: 10;
-    display: flex;
-    align-items: start;
-    justify-content: center;
-
-    width: 3vw;
-    height: 3vw;
-    border: none;
-    border-radius: 50%;
-
-    font-size: 2.5vw;
-    color: #fff;
-    cursor: pointer;
-  }
-
-  .displayText {
-    text-align: center;
-    font-size: 100%;
-    padding-top: 10px;
-
-    width: 20%;
-    height: 50px;
-
-    background-color: #ccc;
-    border-radius: 5px;
-
-    margin-top: 20px;
-    margin-bottom: 30px;
-    margin-left: 31%;
-  }
-
-  .popupWrapper {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 3;
-
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: #0006;
-  }
-  .popup {
-    width: 300px;
-    height: 150px;
-    font-size: 20pt;
-
-    background-color: #bbb;
-    box-shadow: #0008 -5px 5px 5px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-  .popupBtn {
-    border: none;
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 3px;
-    font-size: 15pt;
-  }
-  .scoreContainer {
-    position: absolute;
-    left: 0;
-    top: 0;
-
-    width: 30vw;
-    height: 100%;
-
-    background-color: #ccc;
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  .score {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-
-    margin-top: 6vw;
-    width: 46%;
-    height: 80px;
-    background-color: #999;
-  }
-  .oppenDifOpts {
-    display: none;
   }
 }

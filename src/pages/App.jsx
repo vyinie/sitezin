@@ -3,17 +3,17 @@ import "./App.css";
 import { Link, Outlet } from "react-router-dom";
 
 function App() {
-  const [openDifOn, setOpenDifOn] = useState(true);
+  const [ToggleNavBar, setToggleNavBar] = useState(true);
 
   function openNavBar(e) {
     if (e.target.className != "navArea") {
-      setOpenDifOn(!openDifOn);
-      openDifOn
-        ? ((document.querySelector(".navAreaWrapper").style.display = "flex"),
+      setToggleNavBar(!ToggleNavBar);
+      ToggleNavBar
+        ? ((document.querySelector(".navArea").style.display = "flex"),
           document.querySelector(".lOne").classList.add("on"),
           document.querySelector(".lTwo").classList.add("on"),
           document.querySelector(".lThree").classList.add("on"))
-        : ((document.querySelector(".navAreaWrapper").style.display = ""),
+        : ((document.querySelector(".navArea").style.display = ""),
           document.querySelector(".lOne").classList.remove("on"),
           document.querySelector(".lTwo").classList.remove("on"),
           document.querySelector(".lThree").classList.remove("on"));
@@ -53,7 +53,9 @@ function App() {
     );
     e.target.style.backgroundColor = "#179";
   }
-  useEffect(() => {document.getElementById("HomeLink").click()},[])
+  useEffect(() => {
+    document.getElementById("HomeLink").click();
+  }, []);
   return (
     <div className="App">
       <header>
@@ -65,23 +67,21 @@ function App() {
         </div>
 
         <h1 className="headerTitle"></h1>
-
-        <div onClick={(e) => openNavBar(e)} className="navAreaWrapper">
-          <div className="navArea">
-            {pageLinks.map((i) => (
-              <Link
-                key={i.id}
-                onClick={(e) => {
-                  setColor(e);
-                }}
-                className="pageLink"
-                to={i.link}
-                id={i.id}
-              >
-                {i.name}
-              </Link>
-            ))}
-          </div>
+        <div className="navArea">
+          {pageLinks.map((i) => (
+            <Link
+              key={i.id}
+              onClick={(e) => {
+                setColor(e);
+                openNavBar(e);
+              }}
+              className="pageLink"
+              to={i.link}
+              id={i.id}
+            >
+              {i.name}
+            </Link>
+          ))}
         </div>
       </header>
 
