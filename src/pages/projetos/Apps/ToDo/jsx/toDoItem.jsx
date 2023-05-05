@@ -87,7 +87,6 @@ export default function ToDoItem({ id, text, arr, setList }) {
               Cancelar
             </Button>
             <Button
-            // sx={{"& .css-1rwt2y5-MuiButtonBase-root-MuiButton-root":{color: "#000"}}}
               variant="outlined"
               className="btnEdit"
               onClick={() => {
