@@ -140,16 +140,19 @@
     z-index: 3;
 
     display: flex;
-    align-items: start;
+    align-items: center;
     justify-content: center;
 
-    width: 8vh;
-    height: 8vh;
+    width: 7vh;
+    height: 7vh;
     border: none;
     border-radius: 50%;
 
-    font-size: 6vh;
     color: #fff;
+
+    position: absolute;
+    top: 5px;
+    left: 10px;
   }
   .oppenNavBar {
     width: 10vw;

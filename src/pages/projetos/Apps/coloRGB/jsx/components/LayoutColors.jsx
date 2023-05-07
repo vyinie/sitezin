@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "../../css/LayoutColors.css";
-
+import SettingsApplicationsIcon from "@mui/icons-material/SettingsApplications";
 import { idRandom, colorRandom } from "../Randomizers";
 
 export default function LayoutColors({
@@ -155,12 +155,14 @@ export default function LayoutColors({
       )}
 
       {/* ========================= dif lvl control ========================= */}
-      <button
+      <span
         className="difOptToggle"
         onClick={() => {
           setToggleDifOpt(!ToggleDifOpt);
         }}
-      ></button>
+      >
+        <SettingsApplicationsIcon sx={{fontSize: "40px", color:"#fff"}} />
+      </span>
       <div className="difControl">
         {/* NOOB LVL LOL */}
         <button id="LvlEz" className="btnDif" onClick={setDiff}>

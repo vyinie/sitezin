@@ -3,7 +3,7 @@ import { colorRandom } from "./Randomizers";
 import LayoutColors from "./components/LayoutColors";
 import Lifes from "./components/lifes.jsx";
 import "../css/LayoutGame.css";
-import { useNavigate } from "react-router-dom";
+import BackIcon from "../../../components/BackIcon";
 
 export default function LayoutGame() {
   const [trueColor, setTrueColor] = useState(colorRandom());
@@ -35,18 +35,9 @@ export default function LayoutGame() {
     }
   }, [score]);
 
-  const navigate = useNavigate();
   return (
     <div className="LayoutGame">
-      <button
-        className="backBtn"
-        onClick={() => {
-          navigate(-1);
-        }}
-      >
-        &#8592;
-      </button>
-      <h1 className="headerTitle">ColoRGB</h1>
+      <BackIcon />
       {/* ========================= main layout ======================================= */}
       <Lifes lifes={lifes} />
 

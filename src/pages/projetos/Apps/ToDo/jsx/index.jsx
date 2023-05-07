@@ -1,8 +1,8 @@
-import { Button, TextField } from "@mui/material";
 import "../css/Layout.css";
+import { Button, TextField } from "@mui/material";
 import ToDoItem from "./toDoItem";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import BackIcon from "../../../components/BackIcon";
 
 export default function LayoutToDo() {
   const [text, setText] = useState(null);
@@ -15,24 +15,17 @@ export default function LayoutToDo() {
     document.getElementById("addTodo").focus();
     document.getElementById("addTodo").value = null;
   };
-  const navigate = useNavigate();
   return (
     <div className="container">
-      <button
-        className="backBtn"
-        onClick={() => {
-          navigate(-1);
-        }}
-      >
-        &#8592;
-      </button>
-      <h1 className="headerTitle">To Do List</h1>
+      <BackIcon />
       <div className="form">
         <TextField
           fullWidth
           id="addTodo"
           sx={{
-            "& .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root": {transform: "translate(20px, -8px) scale(0.7)"},//styles the label
+            "& .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root": {
+              transform: "translate(20px, -8px) scale(0.7)",
+            }, //styles the label
           }}
           onKeyDown={(e) => {
             if ((e.key === "Enter") & (text !== null)) {
@@ -46,7 +39,7 @@ export default function LayoutToDo() {
           variant="outlined"
         />
         <Button
-        className="addBtn"
+          className="addBtn"
           onClick={() => {
             if (text !== null) {
               add();

@@ -50,16 +50,16 @@ function App() {
     );
     e.target.style.backgroundColor = "#179";
   }
-  // useEffect(() => {
-  //   document.getElementById("HomeLink").click();
-  // }, []);
+
+  const [headerTitle, setHeaderTitle] = useState("VyInIe");
+  useEffect(() => {
+    document.querySelector(".headerTitle").textContent = headerTitle;
+  }, []);
   return (
     <div className="App">
       <header>
         <h1 className="logo">VyInIe</h1>
-        <h1 className="headerTitle" id="homeTitle">
-          Projetos
-        </h1>
+        <h1 className="headerTitle">{headerTitle}</h1>
 
         <div onClick={(e) => openNavBar(e)} className="oppenNavBar">
           <div className="lineToggle" id="lOne"></div>
@@ -75,6 +75,7 @@ function App() {
               onClick={(e) => {
                 setColor(e);
                 openNavBar(e);
+                setHeaderTitle(i.name);
               }}
               className="pageLink"
               to={i.link}

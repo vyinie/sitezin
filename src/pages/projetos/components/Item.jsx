@@ -1,12 +1,20 @@
+import { useEffect, useState } from "react";
 import "../Projects.css";
 import { Link } from "react-router-dom";
 
-export default function Item({ title, des, id, link }){
+export default function Item({ title, des, id, link }) {
+  const [projectTitle, setProjectTitle] = useState("");
+  useEffect(() => {
+    setProjectTitle(title);
+  }, []);
   return (
     <Link
       to={link}
       id={`itemBox${id}`}
       className="itemBox"
+      onClick={() => {
+        document.querySelector(".headerTitle").textContent = projectTitle;
+      }}
     >
       <div className="itemImg"></div>
       <p className="title">{title}</p>
@@ -26,4 +34,4 @@ export default function Item({ title, des, id, link }){
       </span>
     </Link>
   );
-};
+}
