@@ -6,17 +6,14 @@ function App() {
   const [ToggleNavBar, setToggleNavBar] = useState(true);
 
   function openNavBar(e) {
+    setToggleNavBar(!ToggleNavBar);
+    const navArea = document.querySelector(".navArea");
+    navArea.style.display = ToggleNavBar ? "flex" : "";
+    document.body.style.overflow = ToggleNavBar ? "hidden" : "";
     if (e.target.className != "navArea") {
-      setToggleNavBar(!ToggleNavBar);
-      ToggleNavBar
-        ? ((document.querySelector(".navArea").style.display = "flex"),
-          document.querySelector(".lOne").classList.add("on"),
-          document.querySelector(".lTwo").classList.add("on"),
-          document.querySelector(".lThree").classList.add("on"))
-        : ((document.querySelector(".navArea").style.display = ""),
-          document.querySelector(".lOne").classList.remove("on"),
-          document.querySelector(".lTwo").classList.remove("on"),
-          document.querySelector(".lThree").classList.remove("on"));
+      document.querySelector("#lOne").classList.toggle("on", ToggleNavBar);
+      document.querySelector("#lTwo").classList.toggle("on", ToggleNavBar);
+      document.querySelector("#lThree").classList.toggle("on", ToggleNavBar);
     }
   }
 
@@ -53,17 +50,21 @@ function App() {
     );
     e.target.style.backgroundColor = "#179";
   }
-  useEffect(() => {
-    document.getElementById("HomeLink").click();
-  }, []);
+  // useEffect(() => {
+  //   document.getElementById("HomeLink").click();
+  // }, []);
   return (
     <div className="App">
       <header>
         <h1 className="logo">VyInIe</h1>
+        <h1 className="headerTitle" id="homeTitle">
+          Projetos
+        </h1>
+
         <div onClick={(e) => openNavBar(e)} className="oppenNavBar">
-          <div className="lOne"></div>
-          <div className="lTwo"></div>
-          <div className="lThree"></div>
+          <div className="lineToggle" id="lOne"></div>
+          <div className="lineToggle" id="lTwo"></div>
+          <div className="lineToggle" id="lThree"></div>
         </div>
 
         <h1 className="headerTitle"></h1>

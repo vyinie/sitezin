@@ -24,7 +24,6 @@ const Projects = () => {
   ]);
   return (
     <div className="ProjectsBody">
-      <h1 className="headerTitle" id="homeTitle">Projetos</h1>
       <section className="itemsContainer">
         {projectsList.map((i) => (
           <Item
