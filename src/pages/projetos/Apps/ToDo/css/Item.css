@@ -19,14 +19,17 @@
   label {
     display: flex;
     align-items: center;
-
-    font-size: 20pt;
-
+    
     height: 90%;
     width: 70%;
 
     margin-left: 5px;
+  }
+  .textLabel {
+    font-size: 20pt;
     overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   .imgConteinner {
@@ -78,14 +81,12 @@
     outline: none;
   }
 
-  .btnEdit {
+  .confirmEdit {
     color: #0ecfcf !important;
     border-color: #0ecfcf !important;
   }
-  .btnCancelEdit 
-  ,
-  .btnEdit
-  {
+  .btnCancelEdit,
+  .btnEdit {
     border: none;
     border-radius: 5px;
 

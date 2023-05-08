@@ -7,7 +7,7 @@
   height: 100%;
 }
 @media (width > 430px) {
-  .container{
+  .container {
     position: relative;
   }
   .form {
@@ -16,14 +16,13 @@
     gap: 20px;
 
     background-color: #ddd;
-    
+
     padding: 4px;
     margin-top: 2vh;
     min-width: 350px;
     width: 50%;
 
     position: relative;
-
   }
 
   .listItem {
@@ -56,9 +55,12 @@
     padding: 10px;
     margin-top: 10px;
     background-color: #ddd;
-    
+
     width: 90%;
     position: relative;
+  }
+  #addTodo {
+    font-size: 20px;
   }
   .addBtn {
     height: 100%;

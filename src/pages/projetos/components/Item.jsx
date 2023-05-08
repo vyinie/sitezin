@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function Item({ title, des, id, link }) {
   const [projectTitle, setProjectTitle] = useState("");
+  const titulo = document.querySelector(".headerTitle");
   useEffect(() => {
     setProjectTitle(title);
   }, []);
@@ -13,7 +14,7 @@ export default function Item({ title, des, id, link }) {
       id={`itemBox${id}`}
       className="itemBox"
       onClick={() => {
-        document.querySelector(".headerTitle").textContent = projectTitle;
+        titulo.textContent = projectTitle;
       }}
     >
       <div className="itemImg"></div>

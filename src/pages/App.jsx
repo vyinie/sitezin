@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import { Link, Outlet } from "react-router-dom";
 
@@ -51,15 +51,29 @@ function App() {
     e.target.style.backgroundColor = "#179";
   }
 
+  // muda o titulo dependendo do outlet
+  const titleRef = useRef();
   const [headerTitle, setHeaderTitle] = useState("VyInIe");
   useEffect(() => {
-    document.querySelector(".headerTitle").textContent = headerTitle;
+    titleRef.current.textContent = headerTitle;
+  });
+
+  // prepara o localStorage pra projetos que o usam
+  useEffect(() => {
+    // itens do to do list
+    localStorage.getItem("idItemTodo") == null &&
+      localStorage.setItem("idItemTodo", 0);
+
+    localStorage.getItem("listTodo") == null &&
+      localStorage.setItem("listTodo", "[]");
   }, []);
   return (
     <div className="App">
       <header>
         <h1 className="logo">VyInIe</h1>
-        <h1 className="headerTitle">{headerTitle}</h1>
+        <h1 ref={titleRef} className="headerTitle">
+          {headerTitle}
+        </h1>
 
         <div onClick={(e) => openNavBar(e)} className="oppenNavBar">
           <div className="lineToggle" id="lOne"></div>

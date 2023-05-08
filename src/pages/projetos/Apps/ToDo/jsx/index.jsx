@@ -1,20 +1,40 @@
 import "../css/Layout.css";
 import { Button, TextField } from "@mui/material";
 import ToDoItem from "./toDoItem";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BackIcon from "../../../components/BackIcon";
 
 export default function LayoutToDo() {
   const [text, setText] = useState(null);
-  const [id, setId] = useState(0);
-  const [list, setList] = useState([]);
-  const add = () => {
-    setList([...list, { text: text, id: id }]);
-    setId(id + 1);
+
+  // pega e salva os itens no localStorage
+  const [id, setId] = useState(localStorage.getItem("idItemTodo"));
+
+  const [list, setList] = useState(
+    JSON.parse(localStorage.getItem("listTodo"))
+  );
+
+  const addItem = () => {
+    localStorage.setItem(
+      "listTodo",
+      JSON.stringify([...list, { text: text, id: id, done: false }])
+    );
+    setList(JSON.parse(localStorage.getItem("listTodo")));
+
+    localStorage.setItem("idItemTodo", Number(id) + 1);
+    setId(localStorage.getItem("idItemTodo"));
+
     setText(null);
     document.getElementById("addTodo").focus();
     document.getElementById("addTodo").value = null;
   };
+  useEffect(() => {
+    list.map(
+      (i) =>
+        i.done === true &&
+        (document.getElementById(`box${i.id}`).checked = true)
+    );
+  }, [list]);
   return (
     <div className="container">
       <BackIcon />
@@ -23,13 +43,14 @@ export default function LayoutToDo() {
           fullWidth
           id="addTodo"
           sx={{
+            fontSize:"49pt" ,
             "& .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root": {
-              transform: "translate(20px, -8px) scale(0.7)",
-            }, //styles the label
+              transform: "translate(10px, -8px) scale(0.8)",
+            },
           }}
           onKeyDown={(e) => {
             if ((e.key === "Enter") & (text !== null)) {
-              add();
+              addItem();
             }
           }}
           onChange={(e) => {
@@ -42,7 +63,7 @@ export default function LayoutToDo() {
           className="addBtn"
           onClick={() => {
             if (text !== null) {
-              add();
+              addItem();
             }
           }}
           variant="outlined"
@@ -62,8 +83,10 @@ export default function LayoutToDo() {
         color="error"
         className="delBtn"
         onClick={() => {
-          setList([]);
-          setId(0);
+          localStorage.setItem("listTodo", "[]");
+          setList(JSON.parse(localStorage.getItem("listTodo")));
+          localStorage.setItem("idItemTodo", 0);
+          setId(localStorage.getItem("idItemTodo"));
         }}
       >
         Apagar tudo

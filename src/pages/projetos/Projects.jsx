@@ -1,9 +1,7 @@
-import { useState } from "react";
 import Item from "./components/Item";
 import "./Projects.css";
-import { LocalGasStation } from "@mui/icons-material";
 const Projects = () => {
-  const [projectsList, setProjectsList] = useState([
+  const projectsList = [
     {
       title: "ColoRGB",
       des: "Tente acertar a cor que representa o codigo RGB",
@@ -22,7 +20,7 @@ const Projects = () => {
       id: 2,
       link: "/Projects/2",
     },
-  ]);
+  ];
   return (
     <div className="ProjectsBody">
       <section className="itemsContainer">

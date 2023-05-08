@@ -4,26 +4,36 @@ import { Box, Button, TextField, Modal } from "@mui/material";
 
 export default function ToDoItem({ id, text, arr, setList }) {
   const [editedText, setEditedText] = useState(null);
-  const saveId = id;
   const [openEditBox, setOpen] = useState(false);
   const handleToggle = () => setOpen(!openEditBox);
 
   return (
-    <div key={saveId} id={saveId} className="item">
-      <input type="checkbox" id={`box${saveId}`} className="box" />
-      <label id={`label${saveId}`} htmlFor={`box${saveId}`}>
-        {text}
+    <div key={id} id={id} className="item">
+      <input
+        type="checkbox"
+        id={`box${id}`}
+        className="box"
+        onClick={(e) => {
+          const newList = JSON.parse(localStorage.getItem("listTodo"));
+          const checked = newList.find((i) => i.id == e.target.id.slice(3));
+          checked.done = !checked.done;
+          localStorage.setItem("listTodo", JSON.stringify(newList));
+          setList(JSON.parse(localStorage.getItem("listTodo")));
+        }}
+      />
+      <label id={`label${id}`} htmlFor={`box${id}`}>
+        <p className="textLabel">{text}</p>
       </label>
       <span
         onClick={(e) => {
-          const newArr = arr.filter((i) => i.id != e.target.id);
-          setList(newArr);
+          const newArr = arr.filter((i) => i.id != e.target.id.slice(6));
+          localStorage.setItem("listTodo", JSON.stringify(newArr));
+          setList(JSON.parse(localStorage.getItem("listTodo")));
         }}
-        className="imgConteinner"
+        className="imgConteinner imgDel"
       >
         <img
-          id={saveId}
-          className="imgDel"
+          id={`delBtn${id}`}
           src="https://cdn-icons-png.flaticon.com/512/126/126468.png"
           alt="trash"
         />
@@ -36,9 +46,9 @@ export default function ToDoItem({ id, text, arr, setList }) {
           }, 100);
         }}
         className="imgConteinner imgEdit"
-        id={saveId}
       >
         <img
+          id={`editBtn${id}`}
           src="https://cdn-icons-png.flaticon.com/512/1904/1904300.png"
           alt="edit"
         />
@@ -53,12 +63,20 @@ export default function ToDoItem({ id, text, arr, setList }) {
         >
           <Box id={`editPopup${id}`} className="editPopup">
             <TextField
-            sx={{
-              "& .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root": {color: "#fff"},
-              "& .css-1d3z3hw-MuiOutlinedInput-notchedOutline": {borderColor: "#fff", },
-              "& .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input":{color:"#fff"},
-              "& .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root":{color:"#fff"}
-            }}
+              sx={{
+                "& .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root": {
+                  color: "#fff",
+                },
+                "& .css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
+                  borderColor: "#fff",
+                },
+                "& .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input": {
+                  color: "#fff",
+                },
+                "& .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root": {
+                  color: "#fff",
+                },
+              }}
               fullWidth
               variant="outlined"
               label="Edit To Do  "
@@ -69,9 +87,19 @@ export default function ToDoItem({ id, text, arr, setList }) {
               }}
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
-                  document.querySelector(`#label${saveId}`).textContent =
+                  const newList = JSON.parse(localStorage.getItem("listTodo"));
+
+                  newList.find((i) => i.id == e.target.id.slice(7)).text =
                     editedText;
-                  handleToggle()
+
+                  localStorage.setItem("listTodo", JSON.stringify(newList));
+                  setList(JSON.parse(localStorage.getItem("listTodo")));
+                  document.querySelector(`#label${id}`).textContent =
+                    editedText;
+
+                  setEditedText(null);
+                  document.getElementById(`inpEdit${id}`).value = null;
+                  handleToggle();
                 }
               }}
             />
@@ -88,10 +116,18 @@ export default function ToDoItem({ id, text, arr, setList }) {
             </Button>
             <Button
               variant="outlined"
-              className="btnEdit"
-              onClick={() => {
-                document.querySelector(`#label${saveId}`).textContent =
+              className="confirmEdit"
+              id={`confirmEdit${id}`}
+              onClick={(e) => {
+                const newList = JSON.parse(localStorage.getItem("listTodo"));
+
+                newList.find((i) => i.id == e.target.id.slice(11)).text =
                   editedText;
+
+                localStorage.setItem("listTodo", JSON.stringify(newList));
+                setList(JSON.parse(localStorage.getItem("listTodo")));
+                document.querySelector(`#label${id}`).textContent = editedText;
+
                 setEditedText(null);
                 document.getElementById(`inpEdit${id}`).value = null;
                 handleToggle();

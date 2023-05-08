@@ -8,6 +8,7 @@ function BackIcon() {
       className="backBtn"
       onClick={() => {
         navigate(-1);
+        document.querySelector(".headerTitle").textContent = "Projetos";
       }}
     >
       <ArrowBackIcon sx={{ fontSize: "30px" }} />
