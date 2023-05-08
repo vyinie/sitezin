@@ -8,19 +8,19 @@ const Projects = () => {
       title: "ColoRGB",
       des: "Tente acertar a cor que representa o codigo RGB",
       id: 0,
-      link: "/projects/1",
+      link: "/Projects/1",
     },
     {
       title: "To Do List",
       des: "To Do List, o nome é bem objetivo",
       id: 1,
-      link: "/projects/2",
+      link: "/Projects/2",
     },
     {
       title: "To Do List",
       des: "To Do List, o nome é bem objetivo",
       id: 2,
-      link: "/projects/2",
+      link: "/Projects/2",
     },
   ]);
   return (
