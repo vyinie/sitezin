@@ -15,10 +15,10 @@ const Projects = () => {
       link: "/Projects/2",
     },
     {
-      title: "To Do List",
-      des: "To Do List, o nome é bem objetivo",
-      id: 2,
-      link: "/Projects/2",
+      title: "Kanban",
+      des: "tipo o To Do List, só que mais organizado",
+      id: 3,
+      link: "/Projects/3",
     },
   ];
   return (

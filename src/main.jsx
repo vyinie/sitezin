@@ -10,6 +10,7 @@ import App from "./pages/App";
 import Projects from "./pages/projetos/Projects.jsx";
 import LayoutToDo from "./pages/projetos/Apps/ToDo/jsx";
 import NavBar from "./pages/Home/jsx/NavBar";
+import Kanban from "./pages/projetos/Apps/kanban/jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       { path: "/Projects", element: <Projects /> },
       { path: "/Projects/1", element: <LayoutGame /> },
       { path: "/Projects/2", element: <LayoutToDo /> },
+      { path: "/Projects/3", element: <Kanban /> },
       { path: "/Contato", element: <NavBar /> },
     ],
   },
