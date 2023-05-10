@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     errorElement: <Error />,
     children: [
       { index: true, element: <Home /> },
-      { path: "/Projects", element: <Projects /> },
+      { path: "/Projects", element: <Projects />  },
       { path: "/Projects/1", element: <LayoutGame /> },
       { path: "/Projects/2", element: <LayoutToDo /> },
       { path: "/Projects/3", element: <Kanban /> },

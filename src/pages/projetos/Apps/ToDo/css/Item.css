@@ -9,7 +9,7 @@
     padding: 2px;
     background-color: #ddd;
   }
-  .box {
+  .toDoCheck {
     margin-left: 5px;
   }
   input:checked ~ label {
@@ -19,7 +19,7 @@
   label {
     display: flex;
     align-items: center;
-    
+
     height: 90%;
     width: 70%;
 

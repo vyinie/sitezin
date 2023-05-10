@@ -1,35 +1,45 @@
+import { useEffect, useState } from "react";
 import Item from "./components/Item";
 import "./Projects.css";
-const Projects = () => {
+const Projects = (e) => {
   const projectsList = [
     {
       title: "ColoRGB",
       des: "Tente acertar a cor que representa o codigo RGB",
       id: 0,
-      link: "/Projects/1",
+      link: "/projects/1",
     },
     {
       title: "To Do List",
       des: "To Do List, o nome é bem objetivo",
       id: 1,
-      link: "/Projects/2",
+      link: "/projects/2",
     },
     {
       title: "Kanban",
       des: "tipo o To Do List, só que mais organizado",
-      id: 3,
-      link: "/Projects/3",
+      id: 2,
+      link: "/projects/3",
     },
   ];
+  const funcTeste = () => {
+    projectsList.map((i) => (i.id = projectsList.indexOf(i)));
+  };
+  useEffect(() => {
+    funcTeste();
+  }, []);
   return (
     <div className="ProjectsBody">
-      <section className="itemsContainer">
+      <section
+        className="itemsContainer"
+        onClick={(e) => console.log(e.target.id)}
+      >
         {projectsList.map((i) => (
           <Item
             key={i.id}
             title={i.title}
             des={i.des}
-            id={i.id}
+            id={`project${i.id}`}
             link={i.link}
           />
         ))}

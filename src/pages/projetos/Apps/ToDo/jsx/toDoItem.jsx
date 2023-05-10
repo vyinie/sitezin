@@ -12,7 +12,7 @@ export default function ToDoItem({ id, text, arr, setList }) {
       <input
         type="checkbox"
         id={`box${id}`}
-        className="box"
+        className="toDoCheck"
         onClick={(e) => {
           const newList = JSON.parse(localStorage.getItem("listTodo"));
           const checked = newList.find((i) => i.id == e.target.id.slice(3));

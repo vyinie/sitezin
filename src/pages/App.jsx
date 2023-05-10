@@ -28,7 +28,7 @@ function App() {
       name: "Projetos",
       id: "ProjectsLink",
       class: "pageLink",
-      link: "/Projects",
+      link: "/projects",
     },
     {
       name: "Contato",
