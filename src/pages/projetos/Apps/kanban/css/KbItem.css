@@ -1,15 +1,26 @@
 @media (width < 430px) {
   .kbItem {
     width: 100%;
-    height: 30px;
+    height: 40px;
     font-size: 20px;
 
     box-shadow: #0005 0px 5px 5px;
-    /* background-color: #0006; */
     display: flex;
     align-items: center;
+    background-color: #ddd;
+    border-radius: 5px;
   }
-  .kbCont{
+  .kbText {
     margin-left: 10px;
+    width: 85%;
+    font-size: 22px;
   }
+  .kbItemBtnContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .kbItemBtn {
+    font-size: 30px !important;
+  } 
 }

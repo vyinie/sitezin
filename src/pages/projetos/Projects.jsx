@@ -27,11 +27,11 @@ const Projects = (e) => {
       img: "#",
     },
   ];
-  const funcTeste = () => {
+  const setId = () => {
     projectsList.map((i) => (i.id = projectsList.indexOf(i)));
   };
   useEffect(() => {
-    funcTeste();
+    setId();
   }, []);
   return (
     <div onDrag={() => conosle.log("in drag")} className="ProjectsBody">

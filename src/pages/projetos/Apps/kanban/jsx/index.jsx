@@ -12,9 +12,7 @@ function Kanban() {
   // =============pro mobile=============
   // mostra onde voce ta
   useEffect(() => {
-    kbAreas.map(
-      (i) => i.isIn === true && document.getElementById(i.id).click()
-    );
+    kbAreas.map((i) => i.isIn && document.getElementById(i.id).click());
   }, []);
 
   const [kbAreas, setKbAreas] = useState([
@@ -34,10 +32,8 @@ function Kanban() {
         }),
       // muda o status de sected da sessão
       kbAreas.map((i) => {
-        i.id == e.target.id
-          ? ((i.isIn = true),
-            setAreaSelected(kbAreas.indexOf(i), console.log(areaSelected)))
-          : (i.isIn = false);
+        i.id == e.target.id ? (i.isIn = true) : (i.isIn = false);
+        setIndexAeraSelected(kbAreas.indexOf(kbAreas.filter((i) => i.isIn)[0]));
       }));
   };
 
@@ -50,23 +46,35 @@ function Kanban() {
     }, 100);
   };
 
-  // add item às listas
-  const [ToDo, setToDo] = useState([{ cont: "pra fazer", id: 10 }]);
-  const [Doing, setDoing] = useState([{ cont: "fazendo", id: 10 }]);
-  const [Done, setDone] = useState([{ cont: "fazido", id: 10 }]);
-  const [AllLists, setAllLists] = useState([ToDo, Doing, Done]);
+  // add item às listas;
+  const [AllLists, setAllLists] = useState(
+    JSON.parse(localStorage.getItem("kbItens"))
+  );
 
-  const [areaSelected, setAreaSelected] = useState(0);
+  const [indexAeraSelected, setIndexAeraSelected] = useState(
+    kbAreas.indexOf(kbAreas.filter((i) => i.isIn)[0])
+  );
+
   const [kbItemText, setkbItemText] = useState(null);
-  const [kbItemId, setkbItemId] = useState(0);
+  const [kbItemId, setkbItemId] = useState(localStorage.getItem("kbItensId"));
 
   const addKb = () => {
     kbItemText &&
-      (AllLists[areaSelected].push({ cont: kbItemText, id: kbItemId }),
+      (AllLists[indexAeraSelected].push({ cont: kbItemText, id: kbItemId }),
       setkbItemText(null),
-      setkbItemId(kbItemId + 1),
+      setkbItemId(Number(kbItemId) + 1),
+      localStorage.setItem("kbItens", JSON.stringify(AllLists)),
+      localStorage.setItem("kbItensId", kbItemId),
       handleToggle());
   };
+
+  // esconde o display dos btns
+  const [toggleBtn, setToggleBtn] = useState(true);
+  useEffect(() => {
+    toggleBtn
+      ? (document.querySelector(".kbBtnArea").style.display = "")
+      : (document.querySelector(".kbBtnArea").style.display = "none");
+  }, [toggleBtn]);
 
   return (
     <div className="Kanban">
@@ -85,8 +93,14 @@ function Kanban() {
       </div>
       {/* main */}
       <div className="KbContainer">
-        {AllLists[areaSelected].map((i) => (
-          <KbItem id={i.id} texto={i.cont} key={i.id} />
+        {AllLists[indexAeraSelected].map((i) => (
+          <KbItem
+            id={i.id}
+            texto={i.cont}
+            key={i.id}
+            toggleBtn={toggleBtn}
+            setToggleBtn={setToggleBtn}
+          />
         ))}
       </div>
 
@@ -96,21 +110,11 @@ function Kanban() {
         <span className="kbBtnContainer" id="kbLeftBtnContainer">
           <Button
             onClick={() => {
-              areaSelected > 0
-                ? setAreaSelected(areaSelected - 1)
-                : setAreaSelected(2);
-
-              document.getElementById(
-                kbAreas[areaSelected].id
-              ).style.borderBottom = "solid #d1a509 5px";
-              console.log(areaSelected);
-
-              // desmarca as areas n selecionadas
-              kbAreas
-                .filter((i) => i.id != kbAreas[areaSelected].id)
-                .map((i) => {
-                  document.getElementById(i.id).style.borderBottom = "";
-                });
+              indexAeraSelected === 0
+                ? document.getElementById(kbAreas[2].id).click()
+                : document
+                    .getElementById(kbAreas[indexAeraSelected - 1].id)
+                    .click();
             }}
           >
             <ArrowBackIcon className="kbBtn" id="KbRightBtn" />
@@ -128,24 +132,11 @@ function Kanban() {
         <span className="kbBtnContainer" id="kbRightBtnContainer">
           <Button
             onClick={() => {
-              areaSelected < 2
-                ? setAreaSelected(areaSelected + 1)
-                : setAreaSelected(0);
-
-              // desmarca as areas n selecionadas
-              kbAreas.map((i) => {
-                i.id == kbAreas[areaSelected].id
-                  ? (i.isIn = true)
-                  : (i.isIn = false);
-              });
-              kbAreas.map((i) => {
-                i.isIn
-                  ? (document.getElementById(i.id).style.borderBottom =
-                      "solid #d1a509 5px")
-                  : (document.getElementById(i.id).style.borderBottom = "");
-              });
-
-              console.log(kbAreas);
+              indexAeraSelected === 2
+                ? document.getElementById(kbAreas[0].id).click()
+                : document
+                    .getElementById(kbAreas[indexAeraSelected + 1].id)
+                    .click();
             }}
           >
             <ArrowForwardIcon className="kbBtn" id="kbLeftBtn" />

@@ -62,10 +62,17 @@ function App() {
   useEffect(() => {
     // itens do to do list
     localStorage.getItem("idItemTodo") == null &&
-      localStorage.setItem("idItemTodo", 0);
-
+    localStorage.setItem("idItemTodo", 0);
+    
     localStorage.getItem("listTodo") == null &&
-      localStorage.setItem("listTodo", "[]");
+    localStorage.setItem("listTodo", "[]");
+    
+    // itens do kanban
+    localStorage.getItem("kbItens") === null &&
+      localStorage.setItem("kbItens", "[[], [], []]");
+    
+      localStorage.getItem("kbItensId") === null &&
+      localStorage.setItem("kbItensId", 0);
   }, []);
   return (
     <div className="App">

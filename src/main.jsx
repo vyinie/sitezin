@@ -18,10 +18,15 @@ const router = createBrowserRouter([
     errorElement: <Error />,
     children: [
       { index: true, element: <Home /> },
-      { path: "/Projects/coloRGB", element: <LayoutGame /> },
-      { path: "/Projects/to-do-list", element: <LayoutToDo /> },
-      { path: "/Projects/kanban", element: <Kanban /> },
-      { path: "/Projects", element: <Projects />  },
+      {
+        path: "/Projects",
+        element: <Projects />,
+        children: [
+          { path: "/Projects/coloRGB", element: <LayoutGame /> },
+          { path: "/Projects/to-do-list", element: <LayoutToDo /> },
+          { path: "/Projects/kanban", element: <Kanban /> },
+        ],
+      },
       { path: "/Contato", element: <NavBar /> },
     ],
   },
