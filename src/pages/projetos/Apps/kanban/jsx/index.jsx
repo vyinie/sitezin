@@ -1,8 +1,11 @@
 import "../css/index.css";
 import BackIcon from "../../../components/BackIcon";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Box, Button, Modal, TextField } from "@mui/material";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import AddIcon from "@mui/icons-material/Add";
+
 import KbItem from "./conponents/KbItem";
 
 function Kanban() {
@@ -14,15 +17,15 @@ function Kanban() {
     );
   }, []);
 
-  const kbAreas = [
+  const [kbAreas, setKbAreas] = useState([
     { id: "kbToDo", isIn: true },
     { id: "kbDoing", isIn: false },
     { id: "kbDone", isIn: false },
-  ];
+  ]);
 
   const setKbArea = (e) => {
     e.target.className != "kbNav" &&
-      ((e.target.style.borderBottom = "solid #970 5px"),
+      ((e.target.style.borderBottom = "solid #d1a509 5px"),
       // desmarca as areas n selecionadas
       kbAreas
         .filter((i) => i.id != e.target.id)
@@ -32,7 +35,8 @@ function Kanban() {
       // muda o status de sected da sessão
       kbAreas.map((i) => {
         i.id == e.target.id
-          ? ((i.isIn = true), setAreaSelected(kbAreas.indexOf(i)))
+          ? ((i.isIn = true),
+            setAreaSelected(kbAreas.indexOf(i), console.log(areaSelected)))
           : (i.isIn = false);
       }));
   };
@@ -47,9 +51,9 @@ function Kanban() {
   };
 
   // add item às listas
-  const [ToDo, setToDo] = useState([]);
-  const [Doing, setDoing] = useState([]);
-  const [Done, setDone] = useState([]);
+  const [ToDo, setToDo] = useState([{ cont: "pra fazer", id: 10 }]);
+  const [Doing, setDoing] = useState([{ cont: "fazendo", id: 10 }]);
+  const [Done, setDone] = useState([{ cont: "fazido", id: 10 }]);
   const [AllLists, setAllLists] = useState([ToDo, Doing, Done]);
 
   const [areaSelected, setAreaSelected] = useState(0);
@@ -87,12 +91,69 @@ function Kanban() {
       </div>
 
       {/* add item area */}
-      <div className="addKbArea">
-        <Button id="addKbBtn" onClick={handleToggle}>
-          <AddIcon />
-        </Button>
+      <div className="kbBtnArea">
+        {/* btn q muda pra sessao à esquerda */}
+        <span className="kbBtnContainer" id="kbLeftBtnContainer">
+          <Button
+            onClick={() => {
+              areaSelected > 0
+                ? setAreaSelected(areaSelected - 1)
+                : setAreaSelected(2);
+
+              document.getElementById(
+                kbAreas[areaSelected].id
+              ).style.borderBottom = "solid #d1a509 5px";
+              console.log(areaSelected);
+
+              // desmarca as areas n selecionadas
+              kbAreas
+                .filter((i) => i.id != kbAreas[areaSelected].id)
+                .map((i) => {
+                  document.getElementById(i.id).style.borderBottom = "";
+                });
+            }}
+          >
+            <ArrowBackIcon className="kbBtn" id="KbRightBtn" />
+          </Button>
+        </span>
+
+        {/* btn q abre o pop-up pra add item */}
+        <span className="kbBtnContainer" id="kbAddBtnContainer">
+          <Button onClick={handleToggle}>
+            <AddIcon className="kbBtn" id="kbAddBtn" />
+          </Button>
+        </span>
+
+        {/* btn q muda pra sessao à direita */}
+        <span className="kbBtnContainer" id="kbRightBtnContainer">
+          <Button
+            onClick={() => {
+              areaSelected < 2
+                ? setAreaSelected(areaSelected + 1)
+                : setAreaSelected(0);
+
+              // desmarca as areas n selecionadas
+              kbAreas.map((i) => {
+                i.id == kbAreas[areaSelected].id
+                  ? (i.isIn = true)
+                  : (i.isIn = false);
+              });
+              kbAreas.map((i) => {
+                i.isIn
+                  ? (document.getElementById(i.id).style.borderBottom =
+                      "solid #d1a509 5px")
+                  : (document.getElementById(i.id).style.borderBottom = "");
+              });
+
+              console.log(kbAreas);
+            }}
+          >
+            <ArrowForwardIcon className="kbBtn" id="kbLeftBtn" />
+          </Button>
+        </span>
       </div>
 
+      {/* pop-up que add itens */}
       <Modal
         open={addKbItemModal}
         onClose={handleToggle}
