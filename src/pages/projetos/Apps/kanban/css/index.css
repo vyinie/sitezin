@@ -70,6 +70,8 @@
     box-shadow: #000 4px 4px 10px;
 
     display: flex;
+  }
+  #kbAddItemBox {
     flex-wrap: wrap;
     gap: 10px;
     justify-content: end;

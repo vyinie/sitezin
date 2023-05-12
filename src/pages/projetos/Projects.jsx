@@ -3,6 +3,7 @@ import Item from "./components/Item";
 import "./Projects.css";
 import coloRGB_kase from "./components/imgs/coloRGB_kase.png";
 import ToDo_kase from "./components/imgs/ToDo_kase.png";
+import kanban_kase from "./components/imgs/kanban_kase.png";
 const Projects = (e) => {
   const projectsList = [
     {
@@ -24,7 +25,7 @@ const Projects = (e) => {
       des: "tipo o To Do List, só que mais organizado",
       id: 2,
       link: "/projects/kanban",
-      img: "#",
+      img: kanban_kase,
     },
   ];
   const setId = () => {

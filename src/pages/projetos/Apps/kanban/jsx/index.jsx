@@ -16,9 +16,9 @@ function Kanban() {
   }, []);
 
   const [kbAreas, setKbAreas] = useState([
-    { id: "kbToDo", isIn: true },
-    { id: "kbDoing", isIn: false },
-    { id: "kbDone", isIn: false },
+    { cont: "À Fazer", id: "kbToDo", isIn: true },
+    { cont: "Fazendo", id: "kbDoing", isIn: false },
+    { cont: "Feito", id: "kbDone", isIn: false },
   ]);
 
   const setKbArea = (e) => {
@@ -39,7 +39,7 @@ function Kanban() {
 
   // popup pra add itens
   const [addKbItemModal, setAddKbItemModal] = useState(false);
-  const handleToggle = () => {
+  const handleAddToggle = () => {
     setAddKbItemModal(!addKbItemModal);
     setTimeout(() => {
       !addKbItemModal && document.getElementById("inpAddKb").focus();
@@ -56,7 +56,9 @@ function Kanban() {
   );
 
   const [kbItemText, setkbItemText] = useState(null);
-  const [kbItemId, setkbItemId] = useState(localStorage.getItem("kbItensId"));
+  const [kbItemId, setkbItemId] = useState(
+    parseInt(localStorage.getItem("kbItensId"))
+  );
 
   const addKb = () => {
     kbItemText &&
@@ -65,7 +67,7 @@ function Kanban() {
       setkbItemId(Number(kbItemId) + 1),
       localStorage.setItem("kbItens", JSON.stringify(AllLists)),
       localStorage.setItem("kbItensId", kbItemId),
-      handleToggle());
+      handleAddToggle());
   };
 
   // esconde o display dos btns
@@ -75,6 +77,43 @@ function Kanban() {
       ? (document.querySelector(".kbBtnArea").style.display = "")
       : (document.querySelector(".kbBtnArea").style.display = "none");
   }, [toggleBtn]);
+
+  // ================move area================
+  const [ItemSelectedId, SetItemSelectedId] = useState(null);
+
+  const [MoveModalOpen, MoveSetModalOpen] = useState(false);
+  function hendlerModal() {
+    MoveSetModalOpen(!MoveModalOpen);
+  }
+  function moveItem(p) {
+    const objToMove = AllLists[indexAeraSelected].filter(
+      (i) => i.id === ItemSelectedId
+    )[0];
+    del(ItemSelectedId);
+    AllLists[kbAreas.indexOf(p)].push(objToMove);
+    localStorage.setItem("kbItens", JSON.stringify(AllLists));
+    setAllLists(JSON.parse(localStorage.getItem("kbItens")));
+  }
+
+  // ================more options area================
+  function del(p) {
+    const newList = AllLists[indexAeraSelected].filter((i) => i.id != p);
+    AllLists[indexAeraSelected] = newList;
+    localStorage.setItem("kbItens", JSON.stringify(AllLists));
+    setAllLists(JSON.parse(localStorage.getItem("kbItens")));
+  }
+
+  const [EditToggle, setOpenEditToggle] = useState(false);
+  const [textEdited, setTextEdited] = useState(null);
+  function changeEditToggle() {
+    setOpenEditToggle(!EditToggle);
+  }
+
+  function Edit(p) {
+    AllLists[indexAeraSelected].some((i) => i.id == p && (i.cont = textEdited));
+    localStorage.setItem("kbItens", JSON.stringify(AllLists));
+    changeEditToggle();
+  }
 
   return (
     <div className="Kanban">
@@ -98,8 +137,10 @@ function Kanban() {
             id={i.id}
             texto={i.cont}
             key={i.id}
-            toggleBtn={toggleBtn}
-            setToggleBtn={setToggleBtn}
+            hendlerModal={hendlerModal}
+            SetItemSelectedId={SetItemSelectedId}
+            del={del}
+            changeEditToggle={changeEditToggle}
           />
         ))}
       </div>
@@ -123,7 +164,7 @@ function Kanban() {
 
         {/* btn q abre o pop-up pra add item */}
         <span className="kbBtnContainer" id="kbAddBtnContainer">
-          <Button onClick={handleToggle}>
+          <Button onClick={handleAddToggle}>
             <AddIcon className="kbBtn" id="kbAddBtn" />
           </Button>
         </span>
@@ -147,11 +188,11 @@ function Kanban() {
       {/* pop-up que add itens */}
       <Modal
         open={addKbItemModal}
-        onClose={handleToggle}
+        onClose={handleAddToggle}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box className="kbBox">
+        <Box id="kbAddItemBox" className="kbBox">
           <TextField
             id="inpAddKb"
             fullWidth
@@ -165,7 +206,7 @@ function Kanban() {
             }}
           />
           <Button
-            onClick={handleToggle}
+            onClick={handleAddToggle}
             className="cancelAddKb"
             color="error"
             variant="contained"
@@ -174,6 +215,74 @@ function Kanban() {
           </Button>
           <Button onClick={addKb} className="confirmAddKb" variant="contained">
             Add
+          </Button>
+        </Box>
+      </Modal>
+
+      {/* move area */}
+      <Modal
+        open={MoveModalOpen}
+        onClose={hendlerModal}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box
+          className="kbBox"
+          id="kbMoveBox"
+          onClick={(e) => {
+            e.target.id != "kbMoveBox" && hendlerModal();
+          }}
+        >
+          {kbAreas
+            .filter((i) => i.id != kbAreas[indexAeraSelected].id)
+            .map((i) => (
+              <Button
+                key={`${i.id}Btn`}
+                variant="contained"
+                className="moveBtn"
+                id={`${i.id}Btn`}
+                onClick={() => moveItem(i)}
+              >
+                {i.cont}
+              </Button>
+            ))}
+        </Box>
+      </Modal>
+
+      {/* edit modal */}
+      <Modal
+        open={EditToggle}
+        onClose={changeEditToggle}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box id="kbAddItemBox" className="kbBox">
+          <TextField
+            id="inpAddKb"
+            fullWidth
+            variant="outlined"
+            label="Edit Item"
+            onChange={(e) => {
+              setTextEdited(e.target.value);
+            }}
+            onKeyDown={(e) => {
+              e.key === "Enter" && Edit(ItemSelectedId);
+            }}
+          />
+          <Button
+            onClick={changeEditToggle}
+            className="cancelAddKb"
+            color="error"
+            variant="contained"
+          >
+            Cancel
+          </Button>
+          <Button
+            onClick={() => Edit(ItemSelectedId)}
+            className="confirmAddKb"
+            variant="contained"
+          >
+            Edit
           </Button>
         </Box>
       </Modal>

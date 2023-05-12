@@ -21,12 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/Projects",
         element: <Projects />,
-        children: [
-          { path: "/Projects/coloRGB", element: <LayoutGame /> },
-          { path: "/Projects/to-do-list", element: <LayoutToDo /> },
-          { path: "/Projects/kanban", element: <Kanban /> },
-        ],
       },
+      { path: "/Projects/coloRGB", element: <LayoutGame /> },
+      { path: "/Projects/to-do-list", element: <LayoutToDo /> },
+      { path: "/Projects/kanban", element: <Kanban /> },
       { path: "/Contato", element: <NavBar /> },
     ],
   },

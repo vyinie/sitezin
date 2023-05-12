@@ -1,6 +1,6 @@
 @media (width < 430px) {
   .kbItem {
-    width: 100%;
+    width: 95%;
     height: 40px;
     font-size: 20px;
 
@@ -13,7 +13,10 @@
   .kbText {
     margin-left: 10px;
     width: 85%;
-    font-size: 22px;
+    font-size: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   .kbItemBtnContainer {
     display: flex;
@@ -23,4 +26,21 @@
   .kbItemBtn {
     font-size: 30px !important;
   } 
+
+  #kbMoveBox{
+    flex-wrap: nowrap;
+    justify-content: space-around;
+  }
+  .moveBtn{
+  height: 50px;
+  }
+  .popoverBox{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+  }
+  .kbItemBtn{
+    font-size: 35px !important;
+  }
 }
