@@ -6,15 +6,12 @@ export default function Home() {
       <div className="imgContainer">
         <img className="ftreal"
           src="https://www.rainforest-alliance.org/wp-content/uploads/2021/06/capybara-square-1.jpg.optimal.jpg"
-          alt="foto 101% veridica de meu ser"
+          alt="foto 100% veridica"
         />
       </div>
-      <p id="homeDesc">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit quas
-        id minima explicabo vel obcaecati, dicta, animi temporibus tempore
-        voluptate praesentium itaque facere odit. Iusto quod odit quam voluptas
-        dolore.
-      </p>
+      <h1 id="homeDesc">
+        AINDA EM DESENVOLVIMENTO
+      </h1>
     </div>
   );
 }
