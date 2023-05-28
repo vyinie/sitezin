@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
 @import url("https://fonts.googleapis.com/css2?family=Turret+Road:wght@500&display=swap");
 
->>>>>>> c3e4959 (sitizin ficnado bonito)
 @media (width > 430px) {
   .lOne,
   .lTwo,
@@ -118,16 +115,6 @@
 
 @media (width < 430px) {
   .App {
-<<<<<<< HEAD
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-  }
-  header {
-    width: 100%;
-    height: 9vh;
-    background-color: #199;
-=======
     font-family: "Turret Road", cursive;
 
     width: 100vw;
@@ -141,21 +128,11 @@
   header {
     width: 100%;
     height: 10%;
->>>>>>> c3e4959 (sitizin ficnado bonito)
 
     display: flex;
     justify-content: center;
     align-items: center;
   }
-<<<<<<< HEAD
-  .logo {
-    display: none;
-  }
-  .headerTitle {
-    color: #fff;
-    font-size: 21pt;
-    display: inline;
-=======
   .headerTitle {
     font-weight: 500;
     font-size: 40px;
@@ -165,7 +142,6 @@
     margin-top: 10px;
     color: #ffffff;
     margin-left: -60px;
->>>>>>> c3e4959 (sitizin ficnado bonito)
   }
 
   .backBtn {
@@ -187,13 +163,6 @@
     top: 5px;
     left: 10px;
   }
-<<<<<<< HEAD
-  .oppenNavBar {
-    width: 10vw;
-    height: 10vw;
-    position: absolute;
-    right: 20px;
-=======
 
   .oppenNavBar {
     width: 50px;
@@ -202,7 +171,6 @@
     position: fixed;
     right: 20px;
     top: 6px;
->>>>>>> c3e4959 (sitizin ficnado bonito)
     z-index: 10;
 
     display: flex;
@@ -221,13 +189,8 @@
   }
 
   .lineToggle {
-<<<<<<< HEAD
-    width: 10vw;
-    height: 5px;
-=======
     width: 45px;
     height: 6px;
->>>>>>> c3e4959 (sitizin ficnado bonito)
     border-radius: 10px;
     background-color: #fff;
 
@@ -243,16 +206,6 @@
     opacity: 0;
   }
 
-<<<<<<< HEAD
-  .navArea {
-    width: 100vw;
-    height: 100vh;
-    background-color: #416;
-
-    display: none;
-    flex-direction: column;
-    align-items: center;
-=======
   .navAreaWrapper {
     background-color: #0005;
     width: 100vw;
@@ -277,7 +230,6 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
->>>>>>> c3e4959 (sitizin ficnado bonito)
 
     position: absolute;
     right: 0;
@@ -290,22 +242,6 @@
     animation-duration: 0.1s;
     animation-timing-function: linear;
   }
-<<<<<<< HEAD
-  #HomeLink {
-    margin-top: 70px;
-  }
-  .pageLink {
-    width: 70%;
-    margin-top: 15px;
-    padding-bottom: 4px;
-
-    text-align: center;
-    text-decoration: none;
-    font-size: 20pt;
-
-    background-color: #946;
-    color: #fff;
-=======
 
   .pageLink {
     width: 85%;
@@ -356,16 +292,10 @@
   .imgLink {
     width: 100%;
     height: 100%;
->>>>>>> c3e4959 (sitizin ficnado bonito)
   }
 
   .PagesCotainer {
     width: 100vw;
-<<<<<<< HEAD
-    height: 91vh;
-    background-color: #000;
-=======
     min-height: 90%;
->>>>>>> c3e4959 (sitizin ficnado bonito)
   }
 }

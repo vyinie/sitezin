@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-export default function NavBar(){
-  return (
-    <div> teste e pa</div>
-  );
-};
-=======
 import { useState } from "react";
 
 const NavBar = ({}) => {
@@ -124,4 +117,3 @@ const NavBar = ({}) => {
 };
 
 export default NavBar;
->>>>>>> c3e4959 (sitizin ficnado bonito)

@@ -1,19 +1,4 @@
 import "../css/Home.css";
-<<<<<<< HEAD
-
-export default function Home() {
-  return (
-    <div className="HomeBody">
-      <div className="imgContainer">
-        <img className="ftreal"
-          src="https://www.rainforest-alliance.org/wp-content/uploads/2021/06/capybara-square-1.jpg.optimal.jpg"
-          alt="foto 100% veridica"
-        />
-      </div>
-      <h1 id="homeDesc">
-        AINDA EM DESENVOLVIMENTO
-      </h1>
-=======
 import Projects from "../../projetos/Projects";
 
 export default function Home() {
@@ -77,7 +62,6 @@ export default function Home() {
       </div>
       {/* area dos projetos */}
       <Projects />
->>>>>>> c3e4959 (sitizin ficnado bonito)
     </div>
   );
 }
