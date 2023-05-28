@@ -1,7 +1,7 @@
 import { useState } from "react";
-import insta from "/src/imgs/contactLinks/instagram.png";
-import linkedin from "/src/imgs/contactLinks/linkedin.png";
 import github from "/src/imgs/contactLinks/GitHub.png";
+import linkedin from "/src/imgs/contactLinks/linkedin.png";
+import insta from "/src/imgs/contactLinks/instagram.png";
 
 const NavBar = ({}) => {
   // muda a cor do botão que representa a area q c ta
