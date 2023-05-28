@@ -1,4 +1,7 @@
 import { useState } from "react";
+import insta from "/src/imgs/contactLinks/instagram.png";
+import linkedin from "/src/imgs/contactLinks/linkedin.png";
+import github from "/src/imgs/contactLinks/GitHub.png";
 
 const NavBar = ({}) => {
   // muda a cor do botão que representa a area q c ta
@@ -71,6 +74,8 @@ const NavBar = ({}) => {
             </p>
           ))}
           <hr style={{ width: "80%" }} />
+
+          {/* area de contato */}
           <div className="contactContainer">
             <p className="contactText">Contato</p>
 
@@ -83,7 +88,7 @@ const NavBar = ({}) => {
               >
                 <img
                   className="imgLink"
-                  src="src\pages\Home\imgs\github.png"
+                  src={github}
                   alt="GitHub"
                 />
               </a>
@@ -93,20 +98,12 @@ const NavBar = ({}) => {
                 href="https://www.linkedin.com/in/marcus-vinicius-023008248/"
                 className="contactLink"
               >
-                <img
-                  className="imgLink"
-                  src="src\pages\Home\imgs\linkedin.png"
-                  alt="LinkedIn"
-                />
+                <img className="imgLink" src={linkedin} alt="LinkedIn" />
               </a>
 
               {/* link do insta */}
               <a href="#" className="contactLink">
-                <img
-                  className="imgLink"
-                  src="src\pages\Home\imgs\instagram.png"
-                  alt="Instagram"
-                />
+                <img className="imgLink" src={insta} alt="Instagram" />
               </a>
             </div>
           </div>

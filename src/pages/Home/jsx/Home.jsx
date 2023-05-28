@@ -1,5 +1,6 @@
 import "../css/Home.css";
 import Projects from "../../projetos/Projects";
+import myPic from "/src/imgs/FotinhaDaora.png";
 
 export default function Home() {
   const startDate = new Date("2022-02-27 "); //data de inicio
@@ -35,11 +36,7 @@ export default function Home() {
     <div className="HomeBody">
       {/* fotinha */}
       <div className="imgContainer">
-        <img
-          className="pic"
-          src="src\pages\Home\imgs\fotinha-daora-show-legal-e-bonito.png"
-          alt="fotinha mil gral"
-        />
+        <img className="pic" src={myPic} alt="fotinha mil gral" />
       </div>
       <div className="homeDesc">
         <table className="homeTab">
