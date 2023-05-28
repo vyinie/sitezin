@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import { Link, Outlet } from "react-router-dom";
+<<<<<<< HEAD
 
 function App() {
   const [ToggleNavBar, setToggleNavBar] = useState(true);
@@ -58,6 +59,11 @@ function App() {
     titleRef.current.textContent = headerTitle;
   });
 
+=======
+import NavBar from "./Home/jsx/NavBar";
+
+function App() {
+>>>>>>> c3e4959 (sitizin ficnado bonito)
   // prepara o localStorage pra projetos que o usam
   useEffect(() => {
     // itens do to do list
@@ -74,6 +80,7 @@ function App() {
     localStorage.getItem("kbItensId") === null &&
       localStorage.setItem("kbItensId", Number(0));
   }, []);
+<<<<<<< HEAD
   return (
     <div className="App">
       <header>
@@ -106,6 +113,14 @@ function App() {
             </Link>
           ))}
         </div>
+=======
+
+  return (
+    <div className="App">
+      <header>
+        <h1 className="headerTitle">Vyinie</h1>
+        <NavBar />
+>>>>>>> c3e4959 (sitizin ficnado bonito)
       </header>
 
       <div className="PagesCotainer">

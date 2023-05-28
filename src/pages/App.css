@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+@import url("https://fonts.googleapis.com/css2?family=Turret+Road:wght@500&display=swap");
+
+>>>>>>> c3e4959 (sitizin ficnado bonito)
 @media (width > 430px) {
   .lOne,
   .lTwo,
@@ -113,6 +118,7 @@
 
 @media (width < 430px) {
   .App {
+<<<<<<< HEAD
     width: 100vw;
     height: 100vh;
     position: relative;
@@ -121,11 +127,27 @@
     width: 100%;
     height: 9vh;
     background-color: #199;
+=======
+    font-family: "Turret Road", cursive;
+
+    width: 100vw;
+    position: relative;
+    background: linear-gradient(180deg, #8100a8 24.46%, #46005c 74.98%)
+      no-repeat;
+    background-size: cover;
+    padding-bottom: 100px;
+
+  }
+  header {
+    width: 100%;
+    height: 10%;
+>>>>>>> c3e4959 (sitizin ficnado bonito)
 
     display: flex;
     justify-content: center;
     align-items: center;
   }
+<<<<<<< HEAD
   .logo {
     display: none;
   }
@@ -133,6 +155,17 @@
     color: #fff;
     font-size: 21pt;
     display: inline;
+=======
+  .headerTitle {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: 0.1em;
+
+    margin-top: 10px;
+    color: #ffffff;
+    margin-left: -60px;
+>>>>>>> c3e4959 (sitizin ficnado bonito)
   }
 
   .backBtn {
@@ -154,11 +187,22 @@
     top: 5px;
     left: 10px;
   }
+<<<<<<< HEAD
   .oppenNavBar {
     width: 10vw;
     height: 10vw;
     position: absolute;
     right: 20px;
+=======
+
+  .oppenNavBar {
+    width: 50px;
+    height: 50px;
+
+    position: fixed;
+    right: 20px;
+    top: 6px;
+>>>>>>> c3e4959 (sitizin ficnado bonito)
     z-index: 10;
 
     display: flex;
@@ -177,8 +221,13 @@
   }
 
   .lineToggle {
+<<<<<<< HEAD
     width: 10vw;
     height: 5px;
+=======
+    width: 45px;
+    height: 6px;
+>>>>>>> c3e4959 (sitizin ficnado bonito)
     border-radius: 10px;
     background-color: #fff;
 
@@ -194,6 +243,7 @@
     opacity: 0;
   }
 
+<<<<<<< HEAD
   .navArea {
     width: 100vw;
     height: 100vh;
@@ -202,6 +252,32 @@
     display: none;
     flex-direction: column;
     align-items: center;
+=======
+  .navAreaWrapper {
+    background-color: #0005;
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 4;
+
+    display: none;
+  }
+
+  .navArea {
+    width: 80vw;
+    height: 100vh;
+    padding-top: 80px;
+
+    background: linear-gradient(180deg, #9f00a3 0%, #540171 72.9%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+>>>>>>> c3e4959 (sitizin ficnado bonito)
 
     position: absolute;
     right: 0;
@@ -214,6 +290,7 @@
     animation-duration: 0.1s;
     animation-timing-function: linear;
   }
+<<<<<<< HEAD
   #HomeLink {
     margin-top: 70px;
   }
@@ -228,11 +305,67 @@
 
     background-color: #946;
     color: #fff;
+=======
+
+  .pageLink {
+    width: 85%;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 35px;
+    letter-spacing: 2px;
+
+    background: #a700db;
+    color: #fff;
+    border-radius: 4px;
+  }
+
+  .contactContainer {
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contactText {
+    font-size: 40px;
+    letter-spacing: 3px;
+    text-align: center;
+
+    color: #ffffff;
+    background: #a700db;
+
+    margin-bottom: 20px;
+    padding: 5px;
+    border-radius: 4px;
+    width: 100%;
+  }
+  .contactLinksContainer {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .contactLink {
+    width: 50px;
+    height: 50px;
+  }
+  .imgLink {
+    width: 100%;
+    height: 100%;
+>>>>>>> c3e4959 (sitizin ficnado bonito)
   }
 
   .PagesCotainer {
     width: 100vw;
+<<<<<<< HEAD
     height: 91vh;
     background-color: #000;
+=======
+    min-height: 90%;
+>>>>>>> c3e4959 (sitizin ficnado bonito)
   }
 }

@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import "../Projects.css";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
+=======
+import InfoIcon from "@mui/icons-material/Info";
+>>>>>>> c3e4959 (sitizin ficnado bonito)
 
 export default function Item({ title, des, id, link, img }) {
   const [projectTitle, setProjectTitle] = useState("");
@@ -9,6 +13,7 @@ export default function Item({ title, des, id, link, img }) {
     setProjectTitle(title);
   }, []);
   return (
+<<<<<<< HEAD
     <Link
       to={link}
       id={`itemBox${id}`}
@@ -29,11 +34,25 @@ export default function Item({ title, des, id, link, img }) {
       </div>
 
       <h1 className="title">{title}</h1>
+=======
+    <div className="itemBox">
+      <Link
+        to={link}
+        id={`itemBox${id}`}
+        onClick={() => {
+          titulo.textContent = projectTitle;
+        }}
+        className="boxLink"
+      >
+        <div className="itemImg">h</div>
+      </Link>
+>>>>>>> c3e4959 (sitizin ficnado bonito)
 
       <div id={`des${id}`} className="description">
         <p>{des}</p>
       </div>
       <span
+<<<<<<< HEAD
         onMouseEnter={() => {
           document.getElementById(`des${id}`).style.display = "block";
         }}
@@ -45,5 +64,19 @@ export default function Item({ title, des, id, link, img }) {
         <p>•••</p>
       </span>
     </Link>
+=======
+        onClick={() => {
+          const toggleDes = document.getElementById(`des${id}`);
+          toggleDes.style.display === "flex"
+            ? (toggleDes.style.display = "none")
+            : (toggleDes.style.display = "flex");
+        }}
+        className="descBtn"
+      >
+        i
+      </span>
+      <p className="title">{title}</p>
+    </div>
+>>>>>>> c3e4959 (sitizin ficnado bonito)
   );
 }
