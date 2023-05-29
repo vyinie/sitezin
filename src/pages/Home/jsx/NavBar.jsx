@@ -1,5 +1,5 @@
 import { useState } from "react";
-import github from "/src/imgs/contact/GitHub.png";
+import github from "/src/imgs/contact/github.png";
 import insta from "/src/imgs/contact/instagram.png";
 import linkedin from "/src/imgs/contact/linkedin.png";
 
