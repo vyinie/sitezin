@@ -1,6 +1,7 @@
 import "../css/Home.css";
-import Projects from "../../projetos/Projects";
+import Projects from "../../projects/Projects";
 import myPic from "/src/imgs/FotinhaDaora.png";
+import Skills from "../../skills/jsx/Skills";
 
 export default function Home() {
   const startDate = new Date("2022-02-27 "); //data de inicio
@@ -34,31 +35,47 @@ export default function Home() {
 
   return (
     <div className="HomeBody">
-      {/* fotinha */}
-      <div className="imgContainer">
-        <img className="pic" src={myPic} alt="fotinha mil gral" />
-      </div>
-      <div className="homeDesc">
-        <table className="homeTab">
-          <tr className="tabRow">
-            <td className="tabCell">NOME:</td>
-            <td className="tabCell resp">Marcus</td>
-          </tr>
-          <tr className="tabRow">
-            <td className="tabCell">FUNÇÃO:</td>
-            <td className="tabCell resp">Web Dev</td>
-          </tr>
-          <tr className="tabRow">
-            <td className="tabCell">ATUAÇÃO:</td>
-            <td className="tabCell resp">Front-End</td>
-          </tr>
-        </table>
-        <p className="timeTitle">TEMPO DE ATUAÇÃO</p>
+      {/* home */}
+      <div id="homeArea" className="area">
+        {/* fotinha */}
+        <div className="imgContainer">
+          <img className="pic" src={myPic} alt="fotinha mil gral" />
+        </div>
+        <div className="homeDesc">
+          <table className="homeTab">
+            <tbody>
+              <tr className="tabRow">
+                <td className="tabCell">NOME:</td>
+                <td className="tabCell resp">Marcus</td>
+              </tr>
 
-        <p className="timeTitle">{`${years} ${showYs}, ${month} ${showMs} e ${days} ${showDs}, `}</p>
+              <tr className="tabRow">
+                <td className="tabCell">FUNÇÃO:</td>
+                <td className="tabCell resp">Web Dev</td>
+              </tr>
+              <tr className="tabRow">
+                <td className="tabCell">ATUAÇÃO:</td>
+                <td className="tabCell resp">Front-End</td>
+              </tr>
+            </tbody>
+          </table>
+          <p className="timeTitle">TEMPO DE ATUAÇÃO</p>
+
+          <p className="timeTitle">{`${years} ${showYs}, ${month} ${showMs} e ${days} ${showDs}, `}</p>
+        </div>
       </div>
-      {/* area dos projetos */}
-      <Projects />
+
+      <hr className="divAreas" />
+      <div id="projectsArea" className="area">
+        {/* area dos projetos */}
+        <Projects />
+      </div>
+
+      <hr className="divAreas" />
+      <div id="skillsArea" className="area">
+        {/* area das habilidades */}
+        <Skills />
+      </div>
     </div>
   );
 }

@@ -1,0 +1,33 @@
+@media (width < 430px) {
+  .skillsBody {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .lengArea {
+    width: 90%;
+  }
+
+  .skillsSubTitle {
+    font-size: 40px;
+    margin-top: 20px;
+  }
+
+  .skillsImgContainer {
+    background-color: aqua;
+    width: 100%;
+    height: 400px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .skillsImg {
+    width: 110px;
+    height: 110px;
+  }
+}

@@ -3,13 +3,13 @@ import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./index.css";
 
-import LayoutGame from "./pages/projetos/Apps/coloRGB/jsx/index.jsx";
+import LayoutGame from "./pages/projects/Apps/coloRGB/jsx/index.jsx";
 import Home from "./pages/Home/jsx/Home.jsx";
 import Error from "./pages/Home/jsx/Error.jsx";
 import App from "./pages/App";
-import Projects from "./pages/projetos/Projects.jsx";
-import LayoutToDo from "./pages/projetos/Apps/ToDo/jsx";
-import Kanban from "./pages/projetos/Apps/kanban/jsx";
+import Projects from "./pages/projects/Projects.jsx";
+import LayoutToDo from "./pages/projects/Apps/ToDo/jsx";
+import Kanban from "./pages/projects/Apps/kanban/jsx";
 const router = createBrowserRouter([
   {
     path: "/",

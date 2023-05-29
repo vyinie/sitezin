@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <header>
+      <header className="appHeader">
         <h1 className="headerTitle">Vyinie</h1>
         <NavBar />
       </header>

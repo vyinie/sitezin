@@ -1,36 +1,39 @@
 import { useEffect, useState } from "react";
 import "../Projects.css";
 import { Link } from "react-router-dom";
-import InfoIcon from "@mui/icons-material/Info";
 
 export default function Item({ title, des, id, link, img }) {
-  const [projectTitle, setProjectTitle] = useState("");
-  const titulo = document.querySelector(".headerTitle");
+  const [toggleDescItem, setToggleDescItem] = useState(false);
+
   useEffect(() => {
-    setProjectTitle(title);
-  }, []);
+    const toggleDes = document.getElementById(`des${id}`);
+    toggleDescItem
+      ? (toggleDes.style.display = "flex")
+      : (toggleDes.style.display = "");
+
+  }, [toggleDescItem]);
+
   return (
     <div className="itemBox">
       <Link
         to={link}
         id={`itemBox${id}`}
-        onClick={() => {
-          titulo.textContent = projectTitle;
-        }}
         className="boxLink"
       >
-        <div className="itemImg">h</div>
+        <img className="itemImg" src={img} alt="coisa" />
       </Link>
 
       <div id={`des${id}`} className="description">
         <p>{des}</p>
       </div>
       <span
+        onMouseOut={() => {
+          setTimeout(() => {
+            setToggleDescItem(false);
+          }, 50);
+        }}
         onClick={() => {
-          const toggleDes = document.getElementById(`des${id}`);
-          toggleDes.style.display === "flex"
-            ? (toggleDes.style.display = "none")
-            : (toggleDes.style.display = "flex");
+          setToggleDescItem(!toggleDescItem);
         }}
         className="descBtn"
       >
