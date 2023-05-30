@@ -17,13 +17,15 @@
   }
 
   .skillsImgContainer {
-    background-color: aqua;
+    /* background-color: aqua; */
     width: 100%;
     height: 400px;
 
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+
+    margin-top: 10px;
   }
 
   .skillsImg {

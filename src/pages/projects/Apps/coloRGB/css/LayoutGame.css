@@ -3,12 +3,12 @@
 .LayoutGame {
   position: relative;
   width: 100vw;
-  height: 100%;
+  min-height: 90vh;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #333;
+  background-color: #3e3;
 }
 .backBtn {
   background-color: #aaa;
@@ -155,7 +155,7 @@
 @media (width < 450px) {
   .LayoutGame {
     width: 100%;
-    height: 100%;
+    height: 89vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -203,7 +203,7 @@
     height: auto;
 
     background-color: #ccc;
-    margin-top: 20px;
+    margin-top: 40px;
     padding: 5px;
 
     display: flex;
