@@ -2,37 +2,10 @@ import "../css/Home.css";
 import Projects from "../../projects/Projects";
 import myPic from "/src/imgs/FotinhaDaora.png";
 import Skills from "../../skills/jsx/Skills";
+import { useState } from "react";
+import { useEffect } from "react";
 
 export default function Home() {
-  const startDate = new Date("2022-02-27 "); //data de inicio
-  const currentlyDate = new Date(); //data de hj
-
-  //diferença ente ambas
-  const timeCounter = Math.abs(currentlyDate - startDate);
-
-  // converte as palavras ao plural
-  function sAfter(num, word, suf) {
-    if (num != 1) {
-      return word + suf;
-    } else {
-      return word;
-    }
-  }
-
-  const divider = 1000 * 60 * 60 * 24; //1 dia em ms
-
-  // calcula os anos
-  const years = Math.floor(timeCounter / (divider * 365));
-  const showYs = sAfter(years, "ano", "s");
-
-  // calcula os meses
-  const month = Math.floor(years - 365);
-  const showMs = sAfter(month, "mes", "es");
-
-  // calcula os dias
-  const days = Math.floor(4);
-  const showDs = sAfter(days, "dia", "s");
-
   return (
     <div className="HomeBody">
       {/* home */}
@@ -61,7 +34,7 @@ export default function Home() {
           </table>
           <p className="timeTitle">TEMPO DE ATUAÇÃO</p>
 
-          <p className="timeTitle">{`${years} ${showYs}, ${month} ${showMs} e ${days} ${showDs}, `}</p>
+          <p className="timeTitle">7 meses</p>
         </div>
       </div>
 

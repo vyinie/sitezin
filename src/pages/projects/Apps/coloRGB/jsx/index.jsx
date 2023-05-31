@@ -69,7 +69,7 @@ export default function LayoutGame() {
       {/* ========================= popup to loosers ======================================= */}
       <div className="popupWrapper">
         <div className="popup">
-          <h2>perdeu, troxa</h2>
+          <h2>PERDEU</h2>
           <button className="popupBtn">Recomeçar</button>
         </div>
       </div>

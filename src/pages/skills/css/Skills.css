@@ -19,17 +19,54 @@
   .skillsImgContainer {
     /* background-color: aqua; */
     width: 100%;
-    height: 400px;
 
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-
-    margin-top: 10px;
+    
+    margin-top: 20px;
+    row-gap: 60px;
   }
 
+  .skillItem {
+    max-width: 38vw;
+    height: 38vw;
+    background-color: #525252;
+    border-radius: 2px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 7px;
+    position: relative;
+  }
   .skillsImg {
-    width: 110px;
-    height: 110px;
+    width: 100%;
+    height: 100%;
+  }
+  .skillItemSub {
+    position: absolute;
+    bottom: -40px;
+    font-size: 30px;
+  }
+
+  .skillDetWrapper{
+    width: 100%;
+    min-height: 100%;
+    
+    background-color: #0005;
+
+    position: absolute;
+    bottom: 0;
+  
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  .skillItemsDet {
+    font-size: 23px;
+    text-align: center;
   }
 }

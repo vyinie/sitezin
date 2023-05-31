@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Item from "./components/Item";
+import Item from "./components/ProjectItem";
 import "./Projects.css";
 import colorgb from "/src/imgs/projectsItems/coloRGB_kase.png"
 import kanban from "/src/imgs/projectsItems/kanban_kase.png"
@@ -19,14 +19,14 @@ const Projects = (e) => {
       des: "To Do List, o nome é bem objetivo",
       id: 1,
       link: "/projects/to-do-list",
-      img: kanban,
+      img: todo,
     },
     {
       title: "Kanban",
       des: "tipo o To Do List, só que mais organizado",
       id: 2,
       link: "/projects/kanban",
-      img: todo,
+      img: kanban,
     },
   ];
   const setId = () => {
@@ -44,7 +44,6 @@ const Projects = (e) => {
             key={i.id}
             title={i.title}
             des={i.des}
-            id={`project${i.id}`}
             link={i.link}
             img={i.img}
           />

@@ -213,9 +213,9 @@
     width: 85vw;
     height: 60vw;
 
-    background: linear-gradient(180deg, #bf3de8 0%, #a700db 100%), #46005c;
+    background: #525252;
     box-shadow: 3px 8px 9px 1px rgba(0, 0, 0, 0.58);
-    border-radius: 6px;
+    /* border-radius: 1px; */
     padding: 5px;
 
     color: #fff;

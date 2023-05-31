@@ -36,7 +36,7 @@ export default function LayoutToDo() {
     );
   }, [list]);
   return (
-    <div className="container">
+    <div className="toDoContainer">
       <BackIcon />
       <div className="form">
         <TextField

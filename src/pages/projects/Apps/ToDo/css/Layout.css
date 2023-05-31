@@ -1,4 +1,4 @@
-.container {
+.toDoContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,7 +7,7 @@
   height: 100%;
 }
 @media (width > 430px) {
-  .container {
+  .toDoContainer {
     position: relative;
   }
   .form {
@@ -46,7 +46,12 @@
     bottom: -15px;
   }
 }
-@media screen and (width < 430px) {
+@media (width < 430px) {
+  .toDoContainer{
+    width: 100vw;
+    height: 89vh;
+  }
+
   .form {
     display: flex;
     align-items: center;
