@@ -3,7 +3,7 @@ import html from "/src/imgs/skills/html.png";
 import css from "/src/imgs/skills/css.png";
 import js from "/src/imgs/skills/js.png";
 import python from "/src/imgs/skills/python.png";
-import SkillsItems from "./components/skillsItems";
+import SkillsItems from "./components/SkillsItems";
 
 function Skills() {
   const skills = {
