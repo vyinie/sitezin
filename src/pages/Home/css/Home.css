@@ -1,105 +1,193 @@
 .HomeBody {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
 }
-@media (width > 760px) {
-  #homeArea {
-    width: 100vw;
-    height: calc(100vh - 70px);
+.navBar {
+  height: 70px;
+  max-width: 100%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    column-gap: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    background: radial-gradient(50% 50% at 50% 50%, #ffe, #ffc 70%);
-    background-blend-mode: luminosity;
+  padding: 0 50px;
+  background-color: #ffc;
+}
+.Logo {
+  font-size: 61px;
+}
+.pageLinksContainer {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.pageLink {
+  color: #000;
+  font-size: 31px;
+  text-decoration: none;
+}
+
+@keyframes introTitle {
+  0% {
+    opacity: 0;
+    margin-left: -50px;
   }
-
-  .navBar {
-    height: 70px;
-    width: 100%;
-    z-index: 10;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    background-color: #ffc;
+  80% {
+    margin-left: initial;
   }
-  .Logo {
-    font-size: 60px;
-    margin-left: 50px;
+  100% {
+    opacity: 1;
   }
-  .pageLinksContainer {
-    display: flex;
-    gap: 40px;
-    margin-right: 50px;
-  }
-  .pageLink {
-    color: #000;
-    font-size: 30px;
-    text-decoration: none;
-  }
+}
+#homeArea {
+  width: 100%;
+  height: calc(100vh - 70px);
 
-  @keyframes introTitle {
-    0% {
-      opacity: 0;
-      margin-left: -50px;
-    }
-    80% {
-      margin-left: initial;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 40px;
 
-  .ftinha {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    animation: introTitle 1s ease-out;
-    margin-top: -100px;
+  background: radial-gradient(50% 50% at 50% 50%, #ffe, #ffc 70%);
+  background-blend-mode: luminosity;
+}
+.ftinha {
+  min-width: 300px;
+  min-height: 300px;
+  width: 25vw;
+  height: 25vw;
 
-    box-shadow: #0005 0 5px 10px 3px;
-  }
-  #eu {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-  }
+  border-radius: 50%;
+  animation: introTitle 1s ease-out;
+  margin-top: -100px;
 
+  box-shadow: #0005 0 5px 10px 3px;
+}
+#eu {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.titleHomeBox {
+  width: 530px;
+  margin-top: -100px;
+
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  position: relative;
+}
+.titleHome {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 70px;
+
+  animation: introTitle 1s ease-out;
+}
+#devTitle {
+  letter-spacing: 4px;
+}
+#reactTitle {
+  color: #0094ff;
+}
+.subtitleHome {
+  width: 56%;
+  margin-top: 10px;
+
+  font-size: 28px;
+
+  /* background-color: #0094ff; */
+}
+@keyframes pisca {
+  10% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.subtitleHome::after {
+  content: "|";
+  animation: pisca 0.8s infinite;
+  animation-delay: 2.2s;
+}
+
+.LinksContainer {
+  width: 400px;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  position: absolute;
+  bottom: -70px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.contactLink {
+  width: 50px;
+  height: 50px;
+  /* background-color: #000; */
+}
+.imgLink {
+  width: 100%;
+  height: 100%;
+}
+.linkDown {
+  font-size: 55px !important;
+  /* background-color: #000; */
+  color: #fff;
+}
+
+/* tablet */
+/* ========maior que: ===========menor que:================================= */
+@media (width >= 800px) and (width <= 909px) {
   .titleHomeBox {
-    width: 530px;
+    width: 430px;
     margin-top: -100px;
 
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-around;
 
     position: relative;
 
     /* background-color: #0006; */
   }
+  .ftinha {
+    min-width: 240px;
+    min-height: 240px;
+  }
+
   .titleHome {
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 80px;
+    font-size: 60px;
 
     animation: introTitle 1s ease-out;
+  }
+  #devTitle {
+    letter-spacing: 3px;
   }
   #reactTitle {
     color: #0094ff;
   }
   .subtitleHome {
-    width: 59%;
-    margin-top: 10px;
-    
-    display: inline;
-    font-size: 28px;
-    
+    width: 263px;
+    margin-top: 7px;
+
+    font-size: 25px;
+
     /* background-color: #0094ff; */
   }
   @keyframes pisca {
@@ -150,10 +238,118 @@
     color: #fff;
   }
 }
+
+/* ========maior que: ===========menor que:================================= */
+@media (width >= 430px) and (width < 800px) {
+  .Logo {
+    font-size: 50px;
+    /* margin-left: 50px; */
+  }
+  .pageLinksContainer {
+    display: flex;
+    gap: 20px;
+    /* margin-right: 50px; */
+  }
+  .ftinha {
+    min-width: 235px;
+    min-height: 235px;
+  }
+
+  .titleHomeBox {
+    width: 444px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    position: relative;
+    /* background-color: #0005; */
+  }
+  .titleHome {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 60px;
+
+    animation: introTitle 1s ease-out;
+    letter-spacing: 2px;
+  }
+  .subtitleHome {
+    width: 58%;
+    /* margin-top: 10px; */
+
+    font-size: 24px;
+
+    /* background-color: #0094ff; */
+  }
+  @keyframes pisca {
+    10% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .subtitleHome::after {
+    content: "|";
+    animation: pisca 0.8s infinite;
+    animation-delay: 2.2s;
+  }
+
+  .LinksContainer {
+    width: 400px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    position: absolute;
+    bottom: -70px;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .contactLink {
+    width: 50px;
+    height: 50px;
+    /* background-color: #000; */
+  }
+  .imgLink {
+    width: 100%;
+    height: 100%;
+  }
+  .linkDown {
+    font-size: 55px !important;
+    /* background-color: #000; */
+    color: #fff;
+  }
+}
+
+/* ========maior que: ===========menor que:================================= */
+@media (width >= 430px) and (width < 750px) {
+  #homeArea {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
+@media (width < 710px) {
+  .navBar{
+    display: none;
+  }
+  #homeArea{
+    min-height: 100vh;
+  }
+}
+
 @media (width < 430px) {
   .area {
     min-height: calc(100vh - 10px);
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;

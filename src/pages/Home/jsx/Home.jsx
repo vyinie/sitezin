@@ -40,7 +40,6 @@ export default function Home() {
       }, 50));
   }
 
-
   useEffect(() => {
     setTimeout(() => {
       escreve("Me chamo Marcus e sou um web dev front-end");
@@ -53,7 +52,9 @@ export default function Home() {
       <div className="navBar">
         <h1 className="Logo">Vynie</h1>
 
-        <span className="pageLinksContainer">
+        <span
+          className="pageLinksContainer"
+        >
           <a className="pageLink" href="#projectsArea">
             Projetos
           </a>
@@ -63,6 +64,7 @@ export default function Home() {
           <a className="pageLink" href="#contactArea">
             Contato
           </a>
+          
         </span>
       </div>
 
@@ -72,7 +74,9 @@ export default function Home() {
           <img id="eu" src={myPic} alt="eu" />
         </div>
         <div className="titleHomeBox">
-          <h1 className="titleHome">desenvolvedor</h1>
+          <h1 className="titleHome" id="devTitle">
+            desenvolvedor
+          </h1>
           <h1 className="titleHome" id="reactTitle">
             react
           </h1>

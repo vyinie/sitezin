@@ -5,7 +5,7 @@ import "./index.css";
 
 import LayoutGame from "./pages/projects/Apps/coloRGB/jsx/index.jsx";
 import Home from "./pages/Home/jsx/Home.jsx";
-import Error from "./pages/Home/jsx/Error.jsx";
+import Error from "./pages/Error.jsx";
 import App from "./pages/App";
 import Projects from "./pages/projects/Projects.jsx";
 import LayoutToDo from "./pages/projects/Apps/ToDo/jsx";

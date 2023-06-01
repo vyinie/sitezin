@@ -11,11 +11,11 @@ export default function Item({ title, des, id, link, img }) {
       <p className="projectItemTitle">{title}</p>
       <Link to={link} id={`itemBox${id}`} className="boxLink">
         <img className="itemImg" src={img} alt="coisa" />
-      </Link>
 
       <div ref={projectRef} className="description">
-        <p>{des}</p>
+        <p className="descText">{des}</p>
       </div>
+      </Link>
       <span
         onMouseOut={() => {
           setTimeout(() => {
