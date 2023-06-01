@@ -30,6 +30,21 @@ export default function Home() {
     },
   ];
 
+  const navBar = [
+    {
+      link: "#projectsArea",
+      text: "Projetos",
+    },
+    {
+      link: "#skillsArea",
+      text: "Habilidades",
+    },
+    {
+      link: "#contactArea",
+      text: "Contato",
+    },
+  ];
+
   const [text, setText] = useState("");
 
   function escreve(t, i = 0) {
@@ -46,25 +61,36 @@ export default function Home() {
     });
   }, []);
 
+  const [toggleNavBar, setToggleNavBar] = useState(false);
+  const nav = useRef();
+
+  useEffect(() => {
+    nav.current.style.top = toggleNavBar ? "0" : "-70px";
+  }, [toggleNavBar]);
+  function turnOffBar(){
+    setToggleNavBar(false)
+  }
+
   return (
     <div className="HomeBody">
       {/* navbar */}
-      <div className="navBar">
+      <div
+        ref={nav}
+        onMouseLeave={turnOffBar}
+        className="navBar"
+      >
         <h1 className="Logo">Vynie</h1>
 
-        <span
-          className="pageLinksContainer"
-        >
-          <a className="pageLink" href="#projectsArea">
-            Projetos
-          </a>
-          <a className="pageLink" href="#skillsArea">
-            Habilidades
-          </a>
-          <a className="pageLink" href="#contactArea">
-            Contato
-          </a>
-          
+        <span className="pageLinksContainer">
+          {navBar.map((i) => (
+            <a className="pageLink" onMouseLeave={turnOffBar} href={i.link}>
+              {i.text}
+            </a>
+          ))}
+          <div
+            onClick={() => setToggleNavBar(!toggleNavBar)}
+            className="pageMarker"
+          ></div>
         </span>
       </div>
 

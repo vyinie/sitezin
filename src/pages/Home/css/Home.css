@@ -71,11 +71,11 @@
 }
 
 .titleHomeBox {
-  width: 530px;
+  width: 510px;
   margin-top: -100px;
 
   display: flex;
-  justify-content: space-around;
+  justify-content: start;
   flex-wrap: wrap;
 
   position: relative;
@@ -94,7 +94,10 @@
   color: #0094ff;
 }
 .subtitleHome {
-  width: 56%;
+  position: absolute;
+  bottom: 7px;
+  right: 0;
+  width: 60%;
   margin-top: 10px;
 
   font-size: 28px;
@@ -158,7 +161,7 @@
 
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    /* justify-content: space-around; */
 
     position: relative;
 
@@ -183,9 +186,8 @@
     color: #0094ff;
   }
   .subtitleHome {
-    width: 263px;
-    margin-top: 7px;
-
+    width: 62%;
+    right: 0px;
     font-size: 25px;
 
     /* background-color: #0094ff; */
@@ -258,7 +260,7 @@
   .titleHomeBox {
     width: 444px;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     flex-wrap: wrap;
 
     position: relative;
@@ -273,7 +275,7 @@
     letter-spacing: 2px;
   }
   .subtitleHome {
-    width: 58%;
+    /* width: 58%; */
     /* margin-top: 10px; */
 
     font-size: 24px;
@@ -337,14 +339,71 @@
     justify-content: space-evenly;
   }
 }
+/* ========maior que: ===========menor que:================================= */
 @media (width < 710px) {
-  .navBar{
+  .navBar {
+    position: relative;
+    position: fixed;
+    top: -70px;
+    left: 0;
+    z-index: 3;
+
+    background-color: #eeb;
+    width: 100%;
+
+    padding: 0;
+    transition: 0.3s;
+  }
+  .Logo {
     display: none;
   }
-  #homeArea{
+  .pageLinksContainer {
+    width: 100%;
+    height: 100%;
+    background-color: #0002;
+
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .pageMarker {
+    position: absolute;
+    right: 40px;
+    bottom: -40px;
+
+    height: 40px;
+    width: 30px;
+    
+    background-color: #0094ff;
+
+    cursor: pointer;
+  }
+
+  #homeArea {
     min-height: 100vh;
   }
 }
+
+@media (width <= 465px) {
+
+  .titleHomeBox{
+    width: 88%;
+  }
+  .titleHome{
+    font-size: 55px;
+    letter-spacing: 1px;
+  }
+  #devTitle{
+    font-size: 55px;
+    letter-spacing: 1px;
+  }
+
+  .subtitleHome{
+    width: 60%;
+    font-size: 26px;
+    bottom: -10px;
+  }
+}
+
 
 @media (width < 430px) {
   .area {
