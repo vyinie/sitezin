@@ -1,69 +1,206 @@
 .HomeBody {
   width: 100vw;
-  /* color: #000; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  min-height: 100vh;
 }
+@media (width > 760px) {
+  #homeArea {
+    width: 100vw;
+    height: calc(100vh - 70px);
 
-.area {
-  min-height: calc(100vh - 10px);
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 60px;
+
+    background: radial-gradient(50% 50% at 50% 50%, #ffe, #ffc 70%);
+    background-blend-mode: luminosity;
+  }
+
+  .navBar {
+    height: 70px;
+    width: 100%;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #ffc;
+  }
+  .Logo {
+    font-size: 60px;
+    margin-left: 50px;
+  }
+  .pageLinksContainer {
+    display: flex;
+    gap: 40px;
+    margin-right: 50px;
+  }
+  .pageLink {
+    color: #000;
+    font-size: 30px;
+    text-decoration: none;
+  }
+
+  @keyframes introTitle {
+    0% {
+      opacity: 0;
+      margin-left: -50px;
+    }
+    80% {
+      margin-left: initial;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .ftinha {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    animation: introTitle 1s ease-out;
+    margin-top: -100px;
+
+    box-shadow: #0005 0 5px 10px 3px;
+  }
+  #eu {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .titleHomeBox {
+    width: 530px;
+    margin-top: -100px;
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    position: relative;
+
+    /* background-color: #0006; */
+  }
+  .titleHome {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 80px;
+
+    animation: introTitle 1s ease-out;
+  }
+  #reactTitle {
+    color: #0094ff;
+  }
+  .subtitleHome {
+    width: 59%;
+    margin-top: 10px;
+    
+    display: inline;
+    font-size: 28px;
+    
+    /* background-color: #0094ff; */
+  }
+  @keyframes pisca {
+    10% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .subtitleHome::after {
+    content: "|";
+    animation: pisca 0.8s infinite;
+    animation-delay: 2.2s;
+  }
+
+  .LinksContainer {
+    width: 400px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    position: absolute;
+    bottom: -70px;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .contactLink {
+    width: 50px;
+    height: 50px;
+    /* background-color: #000; */
+  }
+  .imgLink {
+    width: 100%;
+    height: 100%;
+  }
+  .linkDown {
+    font-size: 55px !important;
+    /* background-color: #000; */
+    color: #fff;
+  }
 }
+@media (width < 430px) {
+  .area {
+    min-height: calc(100vh - 10px);
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.imgContainer {
-  border-radius: 50%;
-  width: 60%;
+  .imgContainer {
+    border-radius: 50%;
+    width: 60%;
 
-  box-shadow: 0px 10px 8px 2px rgba(0, 0, 0, 0.25);
-  background: linear-gradient(180deg, #8100a8 24.46%, #46005c 74.98%)
+    box-shadow: 0px 10px 8px 2px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(180deg, #8100a8 24.46%, #46005c 74.98%)
       no-repeat;
-  margin-top: 20px;
-  margin-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
-  display: flex;
-  align-items: center;
-}
-.pic {
-  border-radius: 50%;
-  width: 100%;
-  height: 100%;
-}
+    display: flex;
+    align-items: center;
+  }
+  .pic {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+  }
 
-.homeDesc {
-  width: 85%;
-  height: 232px;
+  .homeTab {
+    width: 100%;
+    height: 50%;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  .tabRow {
+    font-size: 25px;
+    border-bottom: 1px solid #000;
+  }
 
-  background: #525252;
-  border-radius: 9px;
-  
-  padding: 10px;
-}
-.homeTab {
-  width: 100%;
-  height: 50%;
-  border-collapse: collapse;
-  text-align: center;
-}
-.tabRow {
-  font-size: 25px;
-  border-bottom: 1px solid #000;
-}
+  .timeTitle {
+    font-style: normal;
+    font-size: 25px;
+    line-height: 22px;
 
-.timeTitle {
-  font-style: normal;
-  font-size: 25px;
-  line-height: 22px;
-  
-  margin-top: 15px;  
-  text-align: center;
-}
+    margin-top: 15px;
+    text-align: center;
+  }
 
-.divAreas {
-  width: 90%;
-  margin-bottom: 20px;
-  border-color: #fff;
+  .divAreas {
+    width: 90%;
+    margin-bottom: 20px;
+    border-color: #fff;
+  }
 }

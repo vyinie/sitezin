@@ -37,7 +37,10 @@ const Projects = (e) => {
   }, []);
   return (
     <div className="ProjectsBody">
-      <p className="headerTitle">Projetos</p>
+      <div className="projectsHeadercontainer">
+      <h1 className="projectsHeaderTitle">Projetos</h1>
+      <div className="bottom"></div>
+      </div>
       <div className="itemsContainer">
         {projectsList.map((i) => (
           <Item

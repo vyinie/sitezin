@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import { Link, Outlet } from "react-router-dom";
-import NavBar from "./Home/jsx/NavBar";
 
 function App() {
   // prepara o localStorage pra projetos que o usam
@@ -23,10 +22,6 @@ function App() {
 
   return (
     <div className="App">
-      <header className="appHeader">
-        <h1 className="headerTitle">Vyinie</h1>
-        <NavBar />
-      </header>
 
       <div className="PagesCotainer">
         <Outlet />

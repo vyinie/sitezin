@@ -33,9 +33,10 @@ function Skills() {
 
   return (
     <div className="skillsBody">
-      <p className="headerTitle" id="skillsHeaderTitle">
-        Skills
-      </p>
+      <div className="projectsHeadercontainer">
+      <h1 className="projectsHeaderTitle">Habilidades</h1>
+      <div className="bottom"></div>
+      </div>
 
       <div className="lengArea">
         <p className="skillsSubTitle">Tecnoligias</p>

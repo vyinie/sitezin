@@ -8,6 +8,7 @@ export default function Item({ title, des, id, link, img }) {
 
   return (
     <div className="itemBox">
+      <p className="projectItemTitle">{title}</p>
       <Link to={link} id={`itemBox${id}`} className="boxLink">
         <img className="itemImg" src={img} alt="coisa" />
       </Link>
@@ -28,7 +29,6 @@ export default function Item({ title, des, id, link, img }) {
       >
         i
       </span>
-      <p className="title">{title}</p>
     </div>
   );
 }

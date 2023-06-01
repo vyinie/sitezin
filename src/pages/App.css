@@ -1,13 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Turret+Road:wght@500&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Turret+Road:wght@200&family=Ubuntu+Mono&display=swap");
+.App {
+  font-family: "Ubuntu Mono", cursive;
+  background-color: #ffe;
+}
 @media (width < 430px) {
   .App {
     font-family: "Turret Road", cursive;
 
     width: 100vw;
     position: relative;
-    background-color: #222;
-    color: #fff;
   }
 
   .appHeader {
@@ -47,66 +48,6 @@
     left: 10px;
   }
 
-  .oppenNavBar {
-    width: 55px;
-    height: 52px;
-    border-radius: 25%;
-
-    position: fixed;
-    right: 7px;
-    top: 0;
-    margin-top: 10px;
-    z-index: 10;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-
-    background-color: #0005;
-  }
-
-  @keyframes introNav {
-    0% {
-      right: -50%;
-    }
-    100% {
-      right: 0;
-    }
-  }
-
-  .lineToggle {
-    width: 40px;
-    height: 6px;
-    border-radius: 10px;
-    background-color: #fff;
-
-    transition: 0.2s;
-  }
-  #lOne.on {
-    transform: rotate(45deg) translate(8px, 7px);
-  }
-  #lTwo.on {
-    transform: rotate(-45deg) translate(0, 0);
-  }
-  #lThree.on {
-    opacity: 0;
-  }
-
-  .navAreaWrapper {
-    background-color: #0005;
-    width: 100vw;
-    height: 100vh;
-
-    position: fixed;
-    right: 0;
-    top: 0;
-    z-index: 4;
-
-    display: none;
-  }
-
   .navArea {
     width: 80vw;
     height: 100vh;
@@ -123,10 +64,6 @@
     right: 0;
     top: 0;
     z-index: 5;
-
-    animation-name: introNav;
-    animation-duration: 0.1s;
-    animation-timing-function: linear;
   }
 
   .pageLink {
