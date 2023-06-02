@@ -2,5 +2,5 @@
 .App {
   font-family: "Ubuntu Mono", cursive;
   background-color: #ffe;
-  width: 100%;
+  min-width: 100vw;
 }

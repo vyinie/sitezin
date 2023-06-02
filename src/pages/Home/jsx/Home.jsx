@@ -65,25 +65,21 @@ export default function Home() {
   const nav = useRef();
 
   useEffect(() => {
-    nav.current.style.top = toggleNavBar ? "0" : "-70px";
+    nav.current.style.top = toggleNavBar ? "0" : "";
   }, [toggleNavBar]);
-  function turnOffBar(){
-    setToggleNavBar(false)
+  function turnOffBar() {
+    setToggleNavBar(false);
   }
 
   return (
     <div className="HomeBody">
       {/* navbar */}
-      <div
-        ref={nav}
-        onMouseLeave={turnOffBar}
-        className="navBar"
-      >
+      <div ref={nav} onMouseLeave={turnOffBar} className="navBar">
         <h1 className="Logo">Vynie</h1>
 
         <span className="pageLinksContainer">
           {navBar.map((i) => (
-            <a className="pageLink" onMouseLeave={turnOffBar} href={i.link}>
+            <a className="pageLink" onClick={turnOffBar} href={i.link}>
               {i.text}
             </a>
           ))}
@@ -118,19 +114,16 @@ export default function Home() {
         </div>
       </div>
 
-      <div id="projectsArea" className="area">
-        {/* area dos projetos */}
+      {/* <div id="projectsArea" className="area">
         <Projects />
       </div>
 
       <div id="skillsArea" className="area">
-        {/* area das habilidades */}
         <Skills />
       </div>
       <div id="contactArea" className="area">
-        {/* area de contato */}
         <Skills />
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -1,5 +1,5 @@
 .HomeBody {
-  width: 100%;
+  min-width: 100vw;
   min-height: 100vh;
 }
 .navBar {
@@ -75,7 +75,7 @@
   margin-top: -100px;
 
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   flex-wrap: wrap;
 
   position: relative;
@@ -94,11 +94,9 @@
   color: #0094ff;
 }
 .subtitleHome {
-  position: absolute;
-  bottom: 7px;
-  right: 0;
+
   width: 60%;
-  margin-top: 10px;
+  margin-top: 6px;
 
   font-size: 28px;
 
@@ -324,11 +322,6 @@
     width: 100%;
     height: 100%;
   }
-  .linkDown {
-    font-size: 55px !important;
-    /* background-color: #000; */
-    color: #fff;
-  }
 }
 
 /* ========maior que: ===========menor que:================================= */
@@ -382,80 +375,63 @@
     min-height: 100vh;
   }
 }
-
-@media (width <= 465px) {
+/* ========maior que: ====================================================== */
+@media (width <= 460px){
+.navBar{
+  height: auto;
+  top: -165px;
+  
+}
+.pageLinksContainer{
+  gap: 5px;
+  flex-direction: column;
+}
+.pageLink{
+  background-color: #0094ff;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+}
 
   .titleHomeBox{
-    width: 88%;
+    width: 90%;
+    /* background-color: #0005; */
   }
   .titleHome{
-    font-size: 55px;
+    font-size: 11.5vw;
     letter-spacing: 1px;
   }
   #devTitle{
-    font-size: 55px;
+    font-size: 12vw;
+    letter-spacing: 4px;
+  }
+
+  .subtitleHome{
+    width: 65%;
+    font-size: 24px;
+  }
+}
+
+/* mobile */
+/* ========maior que: ====================================================== */
+@media (width < 431px) {
+  #homeArea{
+    min-width: 100vw;
+  }
+
+  .ftinha{
+    min-width: 250px;
+    min-height: 250px;
+    width: 30vw;
+    height: 30vw;
+  }
+
+  #devTitle{
     letter-spacing: 1px;
   }
 
   .subtitleHome{
-    width: 60%;
-    font-size: 26px;
-    bottom: -10px;
-  }
-}
-
-
-@media (width < 430px) {
-  .area {
-    min-height: calc(100vh - 10px);
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .imgContainer {
-    border-radius: 50%;
-    width: 60%;
-
-    box-shadow: 0px 10px 8px 2px rgba(0, 0, 0, 0.25);
-    background: linear-gradient(180deg, #8100a8 24.46%, #46005c 74.98%)
-      no-repeat;
-    margin-top: 20px;
-    margin-bottom: 20px;
-
-    display: flex;
-    align-items: center;
-  }
-  .pic {
-    border-radius: 50%;
-    width: 100%;
-    height: 100%;
-  }
-
-  .homeTab {
-    width: 100%;
-    height: 50%;
-    border-collapse: collapse;
-    text-align: center;
-  }
-  .tabRow {
-    font-size: 25px;
-    border-bottom: 1px solid #000;
-  }
-
-  .timeTitle {
-    font-style: normal;
-    font-size: 25px;
-    line-height: 22px;
-
-    margin-top: 15px;
-    text-align: center;
-  }
-
-  .divAreas {
-    width: 90%;
-    margin-bottom: 20px;
-    border-color: #fff;
+    width: 68%;
+    background-color: #0094ff;
   }
 }
