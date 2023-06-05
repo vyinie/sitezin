@@ -1,30 +1,35 @@
 import { useEffect, useRef, useState } from "react";
 import "../Projects.css";
 import { Link } from "react-router-dom";
-import {SetDisplayToggle} from "/src/functions/SetDisplayToggle.jsx";
+import { SetDisplayToggle } from "/src/functions/SetToggles.jsx";
 
 export default function Item({ title, des, id, link, img }) {
   const projectRef = useRef();
 
+  // ============= mostra a descrição do projeto =============
+  const [descToggle, setDescToggle] = useState(false);
+  useEffect(() => {
+    SetDisplayToggle(projectRef, descToggle);
+  }, [descToggle]);
+
+  // ============= retorno =============
   return (
     <div className="itemBox">
-      <p className="projectItemTitle">{title}</p>
       <Link to={link} id={`itemBox${id}`} className="boxLink">
         <img className="itemImg" src={img} alt="coisa" />
-
+      </Link>
+      <span className="titleContainer">
+        <p className="projectItemTitle">{title}</p>
+        <div className="lineBottom"></div>
+      </span>
       <div ref={projectRef} className="description">
         <p className="descText">{des}</p>
       </div>
-      </Link>
+
       <span
-        onMouseOut={() => {
-          setTimeout(() => {
-            SetDisplayToggle(projectRef, "true");
-          }, 50);
-        }}
-        onClick={() => {
-          SetDisplayToggle(projectRef);
-        }}
+        // mostra ou n a descrição
+        onClick={() => setDescToggle(!descToggle)}
+        onMouseOut={() => setDescToggle(false)}
         className="descBtn"
       >
         i

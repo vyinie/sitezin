@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Turret+Road:wght@200&family=Ubuntu+Mono&display=swap");
 .App {
   font-family: "Ubuntu Mono", cursive;
-  width: 100vw;
+  width: 100%;
 }
 html{
   background-color: #000;

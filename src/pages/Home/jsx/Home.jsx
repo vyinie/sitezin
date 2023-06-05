@@ -79,7 +79,7 @@ export default function Home() {
 
         <span className="pageLinksContainer">
           {navBar.map((i) => (
-            <a className="pageLink" onClick={turnOffBar} href={i.link}>
+            <a  key={i.text} className="pageLink" onClick={turnOffBar} href={i.link}>
               {i.text}
             </a>
           ))}
@@ -114,10 +114,10 @@ export default function Home() {
         </div>
       </div>
 
-      {/* <div id="projectsArea" className="area">
+      <div id="projectsArea" className="area">
         <Projects />
       </div>
-
+      {/* 
       <div id="skillsArea" className="area">
         <Skills />
       </div>

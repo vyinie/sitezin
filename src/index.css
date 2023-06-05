@@ -4,11 +4,11 @@
   box-sizing: 0;
 }
 body::-webkit-scrollbar {
-  width: 5px;
+  width: 10px;
   height: 5px;
-  background-color: #0003;
+  background-color: #009;
 }
 body::-webkit-scrollbar-thumb {
-  background-color: #0005;
+  background-color: #090;
   border-radius: 20px;
 }
