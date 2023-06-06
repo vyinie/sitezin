@@ -191,6 +191,13 @@ img {
 }
 
 /* ========menor que: ====================================================== */
+@media (width < 440px) {
+  .editPopup{
+    min-width: unset;
+    width: 90vw;
+  }
+}
+/* ========menor que: ====================================================== */
 @media (width < 430px) {
   .toDoContainer {
     width: 100%;
@@ -208,14 +215,11 @@ img {
     width: 80px;
   }
 
-  label{
+  label {
     font-size: 20px;
   }
-  img{
+  img {
     height: 30px;
-  }
-  .imgEdit{
-    /* right: 50px; */
   }
 
   .delBtn {
