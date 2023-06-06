@@ -1,104 +1,235 @@
-.toDoContainer {
+.toDoWrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffe;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #444;
+}
+.toDoContainer {
+  /* max-width: 400px; */
+  width: 400px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  position: relative;
+}
+
+.form {
   width: 100%;
+
+  padding: 4px;
+  margin-top: 2vh;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  position: relative;
+
+  /* background-color: #0001; */
+}
+.addBtn {
   height: 100%;
 }
-@media (width > 430px) {
-  .toDoContainer {
-    position: relative;
-  }
-  .form {
-    display: flex;
-    align-items: center;
-    gap: 20px;
 
-    background-color: #ddd;
+.listItem {
+  height: fit-content;
+  max-height: calc(70vh - 60px);
 
-    padding: 4px;
-    margin-top: 2vh;
-    min-width: 350px;
-    width: 50%;
+  max-width: 400px;
+  width: 100%;
 
-    position: relative;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
 
-  .listItem {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 5px;
+  overflow: hidden;
+  overflow-y: auto;
 
-    max-height: 61%;
-    min-width: 30vw;
-    overflow: hidden;
-    overflow-x: auto;
+  padding: 5px 0;
+  margin-top: 10px;
 
-    background-color: #555;
-    padding: 5px;
-    margin-top: 10px;
-  }
-  .delBtn {
-    position: absolute;
-    right: -130px;
-    bottom: -15px;
-  }
+  background-color: #0002;
 }
+.listItem::-webkit-scrollbar {
+  width: 3px;
+}
+.listItem::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+}
+
+.delBtn {
+  position: absolute;
+  right: -115px;
+  top: 10px;
+  z-index: 2;
+}
+
+/* ================================================== */
+.item {
+  height: 40px;
+  width: 386px;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  padding: 2px;
+  background-color: #fff;
+}
+.item:hover {
+  background-color: #fff9;
+}
+
+.box {
+  margin-left: 5px;
+}
+input:checked ~ label {
+  text-decoration: line-through;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  font-size: 22px;
+
+  width: 75%;
+  max-height: 22px;
+
+  padding-bottom: 5px;
+  margin-left: 5px;
+}
+
+.imgConteinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  right: 5px;
+
+  width: 35px;
+  height: 35px;
+
+  cursor: pointer;
+  border-radius: 20px;
+}
+.imgConteinner:hover {
+  background-color: #0002;
+}
+.imgEdit {
+  right: 40px;
+}
+img {
+  height: 25px;
+}
+
+.editPopupWrapper {
+  position: relative;
+}
+.editPopup {
+  min-width: 400px;
+  height: 100px;
+
+  background-color: #fff;
+  color: #000;
+
+  padding: 10px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: 15px 5px;
+
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  box-shadow: #0008 5px 5px 10px;
+}
+.inpEdit {
+  width: 100%;
+  height: 46%;
+  font-size: 16pt;
+  outline: none;
+}
+.btnCancelEdit:hover {
+  background-color: crimson !important;
+  color: #fff;
+}
+.btnEdit:hover {
+  background-color: #199 !important;
+  color: #fff !important;
+}
+.btnEdit {
+  color: #0ecfcf !important;
+  border-color: #0ecfcf !important;
+}
+.btnEdit,
+.btnCancelEdit {
+  border: none;
+  border-radius: 5px;
+
+  background-color: #1b5ca5;
+  color: #fff;
+
+  font-size: 12pt;
+  font-weight: bold;
+
+  width: 30%;
+  height: 40%;
+
+  cursor: pointer;
+}
+
+/* ========menor que: ====================================================== */
 @media (width < 430px) {
-  .toDoContainer{
-    width: 100vw;
-    height: 89vh;
+  .toDoContainer {
+    width: 100%;
+    max-height: 89vh;
   }
 
   .form {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    padding: 10px;
-    margin-top: 10px;
-    background-color: #ddd;
-
-    width: 90%;
+    width: 95%;
     position: relative;
   }
   #addTodo {
     font-size: 20px;
   }
   .addBtn {
-    height: 100%;
-    width: 10%;
+    width: 80px;
   }
-  .listItem {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
 
-    width: 92vw;
-    min-height: 10px;
-    max-height: 67%;
-
-    overflow: hidden;
-    overflow-y: auto;
-
-    background-color: #333;
-    padding: 5px;
-    margin-top: 10px;
+  label{
+    font-size: 20px;
   }
-  /* .listItem::-webkit-scrollbar {
-    width: 5px;
+  img{
+    height: 30px;
   }
-  .listItem::-webkit-scrollbar-thumb {
-    background-color: #aaa;
-    border-radius: 5px;
-  } */
+  .imgEdit{
+    /* right: 50px; */
+  }
 
   .delBtn {
     position: absolute;
     right: -25vw;
     bottom: -10px;
+  }
+}
+@media (width < 415px) {
+  .form,
+  .toDoContainer {
+    width: 95vw;
+  }
+  .item {
+    width: 90vw;
   }
 }

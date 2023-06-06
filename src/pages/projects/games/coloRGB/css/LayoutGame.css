@@ -10,26 +10,7 @@
   align-items: center;
   background-color: #3e3;
 }
-.backBtn {
-  background-color: #aaa;
 
-  position: absolute;
-  left: 2vw;
-  top: 1vw;
-  z-index: 10;
-  display: flex;
-  align-items: start;
-  justify-content: center;
-
-  width: 3vw;
-  height: 3vw;
-  border: none;
-  border-radius: 50%;
-
-  font-size: 2.5vw;
-  color: #fff;
-  cursor: pointer;
-}
 
 .displayText {
   font-size: 100%;
