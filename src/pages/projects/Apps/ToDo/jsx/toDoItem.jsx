@@ -55,8 +55,8 @@ export default function ToDoItem({ id, text, arr, setList }) {
         className="toDoCheck"
         onClick={keepDoneItem}
       />
-      <label ref={itemLabel} htmlFor={`box${id}`}>
-        <p className="textLabel">{text}</p>
+      <label className="textLabel" ref={itemLabel} htmlFor={`box${id}`}>
+        {text}
       </label>
 
       {/* ================ deleta unico item ================*/}
@@ -84,9 +84,9 @@ export default function ToDoItem({ id, text, arr, setList }) {
           onClose={handleToggle}
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
-          className="editPopupWrapper"
+          className="editPopupWrapper modalPopUpWrapper"
         >
-          <Box id={`editPopup${id}`} className="editPopup">
+          <Box id={`editPopup${id}`} className="editPopup modalPopUp">
             <TextField
               fullWidth
               variant="outlined"

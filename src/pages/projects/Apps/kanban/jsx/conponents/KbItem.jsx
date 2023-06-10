@@ -6,72 +6,60 @@ import { Popover } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 
-import { useState } from "react";
+import { memo, useState } from "react";
 
-const KbItem = ({
-  texto,
-  id,
-  hendlerModal,
-  SetItemSelectedId,
-  del,
-  changeEditToggle,
-}) => {
-  const [openOpts, setOpenOpts] = useState(false);
-  function openOptToggle(e) {
-    setOpenOpts(!openOpts);
-    setanchorEl(e.currentTarget);
+const KbItem = ({ text, id, items, cardId, lists, setLists }) => {
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleClick = (e) => {
+    setAnchorEl(e.currentTarget);
+  };
+
+  const open = Boolean(anchorEl);
+
+  // console.log(lists[0].items);
+  function delItem(e) {
+    const thisId = e.target.id.slice(8);
+
+    const arr = lists.filter((i) => i.id == cardId);
+    const index = lists.indexOf(arr[0]);
+
+    const newItems = items.filter((i) => i.id != thisId);
+    lists[index].items = newItems;
+    setLists(lists)
   }
 
-  const [anchorEl, setanchorEl] = useState(null);
-
   return (
-    <div id={`kbItem${id}`} className="kbItem">
-      <p className="kbText">{texto}</p>
-      <span
-        onClick={() => {
-          hendlerModal();
-          SetItemSelectedId(id);
-        }}
-        className="kbItemBtnContainer"
-      >
-        <MultipleStopOutlinedIcon className="kbItemBtn" />
-      </span>
-      <span onClick={openOptToggle} className="kbItemBtnContainer">
-        <MoreVertOutlinedIcon className="kbItemBtn" />
-      </span>
+    <div id={`item${id}`} className="cardItem">
+      <p className="kbItemText">{text}</p>
+      <MoreVertOutlinedIcon onClick={handleClick} className="kbMoreOpt" />
       <Popover
-        id={`opts${id}`}
-        open={openOpts}
+        open={open}
         anchorEl={anchorEl}
-        onClose={openOptToggle}
+        onClose={() => setAnchorEl(null)}
         anchorOrigin={{
           vertical: "top",
-          horizontal: "left",
+          horizontal: "center",
         }}
         transformOrigin={{
           vertical: "bottom",
-          horizontal: "center",
+          horizontal: "right",
         }}
       >
-        <div className="popoverBox">
-          <DeleteIcon
-            onClick={() => {
-              del(id);
-              setOpenOpts(!openOpts);
-            }}
-            className="kbItemBtn"
-            id={`DelItemBtn${id}`}
-          />
+        <div className="kbPopover">
+          <span className="dadCover">
+            <div
+              onClick={delItem}
+              id={"deletbtn" + id}
+              className="btnHover cover"
+            ></div>
+            <DeleteIcon />
+          </span>
           <hr />
-          <EditIcon
-            onClick={() => {
-              SetItemSelectedId(id);
-              changeEditToggle();
-              setOpenOpts(!openOpts);
-            }}
-            className="kbItemBtn"
-            id={`EditItemBtn${id}`}
-          />
+          <span className="dadCover">
+            <div id={"editbtn" + id} className="btnHover cover"></div>
+            <EditIcon className="btnHover" />
+          </span>
         </div>
       </Popover>
     </div>

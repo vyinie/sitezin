@@ -7,7 +7,7 @@ function BackIcon() {
     <div
       className="backBtn"
       onClick={() => {
-        navigate(-1);
+        navigate("/");
       }}
     >
       <ArrowBackIcon sx={{ fontSize: "30px" }} />

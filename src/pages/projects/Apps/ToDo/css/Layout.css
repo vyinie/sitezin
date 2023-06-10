@@ -89,11 +89,11 @@
 .box {
   margin-left: 5px;
 }
-input:checked ~ label {
+.toDoCheck:checked ~ .textLabel {
   text-decoration: line-through;
 }
 
-label {
+.textLabel {
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -131,9 +131,6 @@ img {
   height: 25px;
 }
 
-.editPopupWrapper {
-  position: relative;
-}
 .editPopup {
   min-width: 400px;
   height: 100px;

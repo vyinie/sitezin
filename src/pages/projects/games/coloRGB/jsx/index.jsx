@@ -4,6 +4,7 @@ import LayoutColors from "./components/LayoutColors";
 import Lifes from "./components/lifes.jsx";
 import "../css/LayoutGame.css";
 import BackIcon from "../../../components/BackIcon";
+import ProjectHeader from "../../../components/ProjectHeader";
 
 export default function LayoutGame() {
   const [trueColor, setTrueColor] = useState(colorRandom());
@@ -37,8 +38,10 @@ export default function LayoutGame() {
 
   return (
     <div className="LayoutGame">
-      <BackIcon />
+      <ProjectHeader />
+
       {/* ========================= main layout ======================================= */}
+      <div className="gameArea">
       <Lifes lifes={lifes} />
 
       <div className="displayText">
@@ -73,6 +76,7 @@ export default function LayoutGame() {
           <button className="popupBtn">Recomeçar</button>
         </div>
       </div>
+    </div>
     </div>
   );
 }
