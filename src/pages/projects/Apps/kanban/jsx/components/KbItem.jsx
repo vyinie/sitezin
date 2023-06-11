@@ -1,14 +1,24 @@
 import "../../css/KbItem.css";
 
+/* ================ materialUI ================ */
+import { Popover } from "@mui/material";
 import MultipleStopOutlinedIcon from "@mui/icons-material/MultipleStopOutlined";
 import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
-import { Popover } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 
-import { memo, useState } from "react";
+/* ================ react ================ */
+import { useState } from "react";
 
-const KbItem = ({ text, id, items, cardId, lists, setLists }) => {
+const KbItem = ({
+  text,
+  id,
+  items,
+  cardId,
+  itemId,
+  lists,
+  setLists,
+}) => {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (e) => {
@@ -17,22 +27,25 @@ const KbItem = ({ text, id, items, cardId, lists, setLists }) => {
 
   const open = Boolean(anchorEl);
 
-  // console.log(lists[0].items);
   function delItem(e) {
-    const thisId = e.target.id.slice(8);
+    const newItemArr = items.filter((i) => i.id != id);
 
-    const arr = lists.filter((i) => i.id == cardId);
-    const index = lists.indexOf(arr[0]);
+    items = newItemArr
+    /* gambiarra */
+    localStorage.setItem("lists", JSON.stringify(lists));
+    setLists(JSON.parse(localStorage.getItem("lists")));
 
-    const newItems = items.filter((i) => i.id != thisId);
-    lists[index].items = newItems;
-    setLists(lists)
+    setAnchorEl(null);
+    console.log(items);
   }
 
   return (
     <div id={`item${id}`} className="cardItem">
       <p className="kbItemText">{text}</p>
-      <MoreVertOutlinedIcon onClick={handleClick} className="kbMoreOpt" />
+      <MoreVertOutlinedIcon
+        onClick={handleClick}
+        className="kbMoreOpt"
+      />
       <Popover
         open={open}
         anchorEl={anchorEl}

@@ -13,11 +13,11 @@ function App() {
       localStorage.setItem("listTodo", "[]");
 
     // itens do kanban
-    localStorage.getItem("kbItens") === null &&
+    /* localStorage.getItem("kbItens") === null &&
       localStorage.setItem("kbItens", "[[], [], []]");
 
     localStorage.getItem("kbItensId") === null &&
-      localStorage.setItem("kbItensId", Number(0));
+      localStorage.setItem("kbItensId", Number(0)); */
   }, []);
 
   return (

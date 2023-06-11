@@ -1,13 +1,16 @@
 import "../css/index.css";
 import ProjectHeader from "../../../components/ProjectHeader";
+// import { lists, cardId, /* itemId */ } from "./kbLists.js";
+import KbCard from "./components/KbCard";
+
 import { useEffect, useRef, useState } from "react";
+
+/* ================ materialUI ================ */
 import { Box, Button, Modal, TextField } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
-import KbCard from "./conponents/KbCard";
-
-function Kanban() {
+export default function Kanban() {
   const [lists, setLists] = useState([
     {
       name: "To Do",
@@ -28,11 +31,10 @@ function Kanban() {
       color: "#60FFB3",
     },
   ]);
+
   const [cardId, setCardId] = useState(0);
   const [itemId, setItemId] = useState(0);
-
   // ================ adiciona um card ================
-
   function addCard() {
     const cardObj = {
       name: "teste",
@@ -49,11 +51,11 @@ function Kanban() {
   function delAllCards() {
     const initialList = lists.filter((i) => typeof i.id != "number");
     setLists(initialList);
+    setCardId(0);
   }
 
   // ================ deleta todos os itens de todos os cards ================
   function delAllItems() {
-    // console.log(lists[0].items);
     lists.map((i) => (i.items.length = 0));
     setItemId(0);
   }
@@ -72,12 +74,10 @@ function Kanban() {
               color={i.color}
               name={i.name}
               items={i.items}
-              id={i.id}
-
-              lists={lists}
+              cardId={i.id}
               itemId={itemId}
-
               setItemId={setItemId}
+              lists={lists}
               setLists={setLists}
             />
           ))}
@@ -88,10 +88,18 @@ function Kanban() {
           <span onClick={addCard} className="asideBtn" id="addKbCard">
             Adicionar Card
           </span>
-          <span onClick={delAllItems} className="asideBtn" id="delAllKbItem">
+          <span
+            onClick={delAllItems}
+            className="asideBtn"
+            id="delAllKbItem"
+          >
             Apagar Todos os items
           </span>
-          <span onClick={delAllCards} className="asideBtn" id="delAllKbCard">
+          <span
+            onClick={delAllCards}
+            className="asideBtn"
+            id="delAllKbCard"
+          >
             Apagar Todos os Cards
           </span>
         </div>
@@ -99,5 +107,3 @@ function Kanban() {
     </div>
   );
 }
-
-export default Kanban;

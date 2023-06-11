@@ -1,18 +1,29 @@
-import KbItem from "./KbItem";
-import AddIcon from "@mui/icons-material/Add";
-import { Box, Button, Modal, TextField } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 
-const KbCard = ({ color, name, items, id, lists, setLists, itemId, setItemId }) => {
-  const inpAddItem = useRef();
-  const [modalAddItem, setModalAddItem] = useState(false);
+import KbItem from "./KbItem";
+// import { lists, cardId, /* itemId */ } from "../kbLists.js";
 
+import AddIcon from "@mui/icons-material/Add";
+import { Box, Button, Modal, TextField } from "@mui/material";
+
+const KbCard = ({
+  color,
+  name,
+  items,
+  cardId,
+  itemId,
+  setItemId,
+  lists,
+  setLists
+}) => {
+  const refChecked = useRef();
+  const [modalAddItem, setModalAddItem] = useState(false);
   // ================ abre o modal pra add items ================
   function toggleModal() {
     setModalAddItem(!modalAddItem);
     !modalAddItem &&
       setTimeout(() => {
-        document.getElementById(`inpAddItem${id}`).focus();
+        document.getElementById(`inpAddItem${cardId}`).focus();
       }, 50);
   }
 
@@ -20,7 +31,7 @@ const KbCard = ({ color, name, items, id, lists, setLists, itemId, setItemId }) 
   const [itemName, setItemName] = useState(null);
 
   function addItem(e) {
-    const keepOpen = document.getElementById(`keepOpenCheck${id}`).checked;
+    const keepOpen = refChecked.current.checked;
     if (itemName !== null) {
       const target = e.target.id.slice(10);
       const arr = lists.filter((i) => i.id == target)[0];
@@ -31,14 +42,14 @@ const KbCard = ({ color, name, items, id, lists, setLists, itemId, setItemId }) 
       setItemId(itemId + 1);
       setItemName(null);
 
-      document.getElementById(`inpAddItem${id}`).value = null;
+      document.getElementById(`inpAddItem${cardId}`).value = null;
       !keepOpen && toggleModal();
     }
   }
 
   return (
     <div
-      id={"kbCard" + id}
+      id={"kbCard" + cardId}
       className="kbCard"
       style={{ backgroundColor: color }}
     >
@@ -57,7 +68,7 @@ const KbCard = ({ color, name, items, id, lists, setLists, itemId, setItemId }) 
               variant="filled"
               label="Nome do item"
               className="kbAddItem"
-              id={`inpAddItem${id}`}
+              id={`inpAddItem${cardId}`}
               onChange={(e) => setItemName(e.target.value)}
               onKeyDown={(e) => {
                 e.key === "Enter" && addItem(e);
@@ -65,8 +76,15 @@ const KbCard = ({ color, name, items, id, lists, setLists, itemId, setItemId }) 
             />
 
             <div className="keepOpen">
-              <input type="checkbox" id={"keepOpenCheck" + id} />
-              <label className="keepOpenLabel" htmlFor={"keepOpenCheck" + id}>
+              <input
+                type="checkbox"
+                id={"keepOpenCheck" + cardId}
+                ref={refChecked}
+              />
+              <label
+                className="keepOpenLabel"
+                htmlFor={"keepOpenCheck" + cardId}
+              >
                 manter aberto
               </label>
             </div>
@@ -76,7 +94,8 @@ const KbCard = ({ color, name, items, id, lists, setLists, itemId, setItemId }) 
               color="error"
               className="btnCancelAddItem"
               onClick={() => {
-                document.getElementById(`inpAddItem${id}`).value = null;
+                document.getElementById(`inpAddItem${cardId}`).value =
+                  null;
                 setModalAddItem(false);
               }}
             >
@@ -86,7 +105,7 @@ const KbCard = ({ color, name, items, id, lists, setLists, itemId, setItemId }) 
             <Button
               variant="contained"
               className="btnAddItem"
-              id={`btnAddItem${id}`}
+              id={`btnAddItem${cardId}`}
               onClick={(e) => addItem(e)}
             >
               Adicionar
@@ -101,7 +120,7 @@ const KbCard = ({ color, name, items, id, lists, setLists, itemId, setItemId }) 
         <AddIcon
           onClick={toggleModal}
           className="addKbItem btnHover"
-          id={`kbAddItem${id}`}
+          id={`kbAddItem${cardId}`}
         />
       </div>
 
@@ -113,10 +132,11 @@ const KbCard = ({ color, name, items, id, lists, setLists, itemId, setItemId }) 
             key={"key" + t.id}
             id={t.id}
             text={t.text}
-            lists={lists}
             items={items}
+            cardId={cardId}
+            itemId={itemId}
+            lists={lists}
             setLists={setLists}
-            cardId={id}
           />
         ))}
       </div>
