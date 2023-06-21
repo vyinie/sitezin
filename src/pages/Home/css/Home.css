@@ -284,9 +284,15 @@
     align-items: center;
     justify-content: space-evenly;
   }
+  .ftinha{
+    margin-top: -50px;
+  }
 }
 /* ========maior que: ===========menor que:================================= */
 @media (width < 710px) {
+  .ftinha{
+    margin-top: -70px;
+  }
   .navBar {
     position: relative;
     position: fixed;

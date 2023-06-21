@@ -14,6 +14,7 @@ import LayoutGame from "./pages/projects/games/coloRGB/jsx/index.jsx";
 // Apps
 import LayoutToDo from "./pages/projects/Apps/ToDo/jsx";
 import Kanban from "./pages/projects/Apps/kanban/jsx";
+import Register from "./pages/projects/Apps/register/jsx";
 
 const router = createBrowserRouter([
   {
@@ -22,9 +23,10 @@ const router = createBrowserRouter([
     errorElement: <Error />,
     children: [
       { index: true, element: <Home /> },
-      { path: "/Projects/coloRGB", element: <LayoutGame /> },
-      { path: "/Projects/to-do-list", element: <LayoutToDo /> },
-      { path: "/Projects/kanban", element: <Kanban /> },
+      { path: "/coloRGB", element: <LayoutGame /> },
+      { path: "/to-do-list", element: <LayoutToDo /> },
+      { path: "/kanban", element: <Kanban /> },
+      { path: "/sistema-de-cadastro", element: <Register /> },
     ],
   },
 ]);

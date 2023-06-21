@@ -10,22 +10,21 @@ function App() {
       localStorage.setItem("idItemTodo", 0);
 
     localStorage.getItem("listTodo") == null &&
-      localStorage.setItem("listTodo", "[]");
-
-    // itens do kanban
-    /* localStorage.getItem("kbItens") === null &&
-      localStorage.setItem("kbItens", "[[], [], []]");
-
-    localStorage.getItem("kbItensId") === null &&
-      localStorage.setItem("kbItensId", Number(0)); */
+      localStorage.setItem(
+        "listTodo",
+        JSON.stringify([
+          { name: "não salvo", id: 0, recurrence: 0, items: [] },
+          { name: "compras", id: 1, recurrence: 2, items: [] },
+          { name: "casa", id: 2, recurrence: 0, items: [] },
+          { name: "trabalho", id: 3, recurrence: 1, items: [] },
+          { name: "academia", id: 4, recurrence: 1, items: [] },
+        ])
+      );
   }, []);
 
   return (
     <div className="App">
-
-      <div className="PagesCotainer">
-        <Outlet />
-      </div>
+      <Outlet />
     </div>
   );
 }

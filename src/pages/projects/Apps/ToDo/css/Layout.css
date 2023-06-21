@@ -1,14 +1,24 @@
-.toDoWrapper {
+.toDoList {
   width: 100vw;
   height: 100vh;
   background-color: #ffe;
 
+  display: grid;
+  grid-template-columns: 300px auto;
+  grid-template-rows: 60px auto;
+  grid-template-areas:
+    "title title"
+    "sideBar list";
+}
+.toDoContainerWrapper {
+  grid-area: list;
+  width: 100%;
+  height: 100%;
+
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
 }
 .toDoContainer {
-  /* max-width: 400px; */
   width: 400px;
 
   display: flex;
@@ -17,7 +27,14 @@
 
   position: relative;
 }
-
+.projectHeader {
+  grid-area: title;
+}
+.sideBar {
+  grid-area: sideBar;
+  height: 100%;
+  width: 300px;
+}
 .form {
   width: 100%;
 
@@ -62,17 +79,16 @@
 .listItem::-webkit-scrollbar-thumb {
   background-color: #aaa;
 }
-
-.delBtn {
-  position: absolute;
-  right: -115px;
-  top: 10px;
-  z-index: 2;
+.listBtns {
+  width: 95%;
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* ================================================== */
 .item {
-  height: 40px;
+  min-height: 40px;
   width: 386px;
 
   position: relative;
@@ -101,7 +117,7 @@
   font-size: 22px;
 
   width: 75%;
-  max-height: 22px;
+  /* max-height: 22px; */
 
   padding-bottom: 5px;
   margin-left: 5px;
@@ -131,8 +147,8 @@ img {
   height: 25px;
 }
 
-.editPopup {
-  min-width: 400px;
+.modalPopUp {
+  width: 350px;
   height: 100px;
 
   background-color: #fff;
@@ -148,7 +164,7 @@ img {
   position: absolute;
   top: 25%;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translate(-50%);
 
   box-shadow: #0008 5px 5px 10px;
 }
@@ -162,15 +178,15 @@ img {
   background-color: crimson !important;
   color: #fff;
 }
-.btnEdit:hover {
-  background-color: #199 !important;
+.confirmEdit:hover {
+  background-color: #0ecfcf !important;
   color: #fff !important;
 }
-.btnEdit {
+.confirmEdit {
   color: #0ecfcf !important;
   border-color: #0ecfcf !important;
 }
-.btnEdit,
+.confirmEdit,
 .btnCancelEdit {
   border: none;
   border-radius: 5px;
@@ -187,9 +203,167 @@ img {
   cursor: pointer;
 }
 
+#savePopup {
+  height: auto;
+  width: 100px;
+}
+.popupSaveBtn {
+  font-size: 17px !important;
+}
+
+.sideBar {
+  width: 100%;
+  height: 100%;
+
+  /* overflow: hidden; */
+  overflow-y: auto;
+  border-right: solid 1px #ddd;
+}
+.listsOptionsWrapper {
+  width: 100%;
+  height: 100%;
+}
+.listsOptions {
+  width: 90%;
+}
+.options {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.titleOptions {
+  margin: 20px 0;
+}
+.sideBarBtn {
+  height: 41px;
+
+  margin-top: 10px;
+  cursor: default;
+  font-size: 23px;
+  border-radius: 4px;
+  border: 1px solid #000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+.sideBarBtn:hover {
+  background-color: #aaa;
+}
+
+.delList {
+  position: absolute;
+  right: 10px;
+
+  width: 30px;
+  height: 30px;
+
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.delList:hover {
+  background-color: #fff4;
+}
+#delListBtn0 {
+  display: none;
+}
+
+@media (width < 715px) {
+  .toDoList {
+    grid-template-columns: 35% auto;
+  }
+}
+@media (width < 645px) {
+  .toDoList {
+    display: flex;
+    flex-direction: column;
+  }
+  .sideBar {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  @keyframes introOpt {
+    0% {
+      right: -300px;
+      opacity: 0;
+    }
+    100% {
+      right: 0;
+      opacity: 1;
+    }
+  }
+  .listsOptionsWrapper {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #0007;
+    display: none;
+    z-index: 3;
+  }
+  .options {
+    animation-name: introOpt;
+    animation-timing-function: ease-out;
+    animation-duration: 0.2s;
+
+    background-color: #ddc;
+
+    width: 300px;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    right: 0;
+    overflow-y: auto;
+  }
+  .titleOptions {
+    margin-top: 60px;
+  }
+  .toggleLists {
+    z-index: 4;
+    height: 35px;
+    width: 50px;
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .lineToggle {
+    width: 100%;
+    height: 7px;
+    background-color: #777;
+    border-radius: 10px;
+    transition: 0.4s;
+  }
+
+  #line1.on.on {
+    transform: rotate(47deg);
+    translate: 0 14.5px;
+  }
+  #line2.on {
+    transform: rotate(-45deg);
+    translate: 0 0px;
+  }
+  #line3.on {
+    opacity: 0;
+  }
+}
+
 /* ========menor que: ====================================================== */
 @media (width < 440px) {
-  .editPopup{
+  .editPopup {
     min-width: unset;
     width: 90vw;
   }
@@ -218,12 +392,6 @@ img {
   img {
     height: 30px;
   }
-
-  .delBtn {
-    position: absolute;
-    right: -25vw;
-    bottom: -10px;
-  }
 }
 @media (width < 415px) {
   .form,
@@ -231,6 +399,28 @@ img {
     width: 95vw;
   }
   .item {
+    width: 90vw;
+  }
+}
+@media (width < 360px) {
+  .options {
+    width: 100%;
+  }
+  .toggleLists {
+    /* height: 30px; */
+    align-items: end;
+  }
+  .lineToggle {
+    width: 7px;
+    height: 7px;
+  }
+  #line1.on,
+  #line2.on {
+    width: 45px;
+    height: 5px;
+  }
+  .modalPopUp{
+    min-width: none;
     width: 90vw;
   }
 }

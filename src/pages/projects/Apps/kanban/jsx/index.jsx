@@ -32,7 +32,7 @@ export default function Kanban() {
     },
   ]);
 
-  const [cardId, setCardId] = useState(0);
+  const [cardId, setCardId] = useState(3);
   const [itemId, setItemId] = useState(0);
   // ================ adiciona um card ================
   function addCard() {

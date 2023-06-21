@@ -6,7 +6,7 @@ import kanban from "/src/imgs/projectsItems/kanban_kase.png";
 import todo from "/src/imgs/projectsItems/ToDo_kase.png";
 import emBreve from "/src/imgs/projectsItems/em-breve.png";
 
-const Projects = (e) => {
+const Projects = () => {
   const projectsList = [
     // apps
     [
@@ -14,16 +14,24 @@ const Projects = (e) => {
         title: "To Do List",
         des: "To Do List, o nome é bem objetivo",
         id: 1,
-        link: "/projects/to-do-list",
+        link: "/to-do-list",
         img: todo,
       },
+      // {
+      //   title: "Kanban - em reforma",
+      //   des: "tipo o To Do List, só que mais organizado",
+      //   id: 2,
+      //   link: "/kanban",
+      //   img: kanban,
+      // },
       {
-        title: "Kanban",
-        des: "tipo o To Do List, só que mais organizado",
-        id: 2,
-        link: "/projects/kanban",
-        img: kanban,
+        title: "Sistema de Cadastro",
+        des: "projeto de CRUD",
+        id: 3,
+        link: "/sistema-de-cadastro",
+        img: emBreve,
       },
+
     ],
 
     // landing pages
@@ -64,7 +72,7 @@ const Projects = (e) => {
         title: "ColoRGB",
         des: "Tente acertar a cor que representa o codigo RGB",
         id: 0,
-        link: "/projects/coloRGB",
+        link: "/coloRGB",
         img: colorgb,
       },
     ],
@@ -91,7 +99,8 @@ const Projects = (e) => {
       projectsId.filter(
         (i) =>
           !i.isIn
-            ? (document.getElementById(i.id).style.borderBottomColor = "")
+            ? (document.getElementById(i.id).style.borderBottomColor =
+                "")
             : (document.getElementById(i.id).style.borderBottomColor =
                 "#0094ff"),
         setIndex(saySectionIndex())
@@ -101,7 +110,6 @@ const Projects = (e) => {
   useEffect(() => {
     app.current.click();
   }, []);
-
   return (
     <div className="ProjectsBody">
       <div className="projectsHeadercontainer">

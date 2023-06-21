@@ -1,8 +1,6 @@
-import "../../css/KbItem.css";
-
 /* ================ materialUI ================ */
-import { Popover } from "@mui/material";
 import MultipleStopOutlinedIcon from "@mui/icons-material/MultipleStopOutlined";
+import { Popover } from "@mui/material";
 import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";

@@ -1,23 +1,23 @@
 import { useRef, useState } from "react";
 import { Box, Button, TextField, Modal } from "@mui/material";
 
-export default function ToDoItem({ id, text, arr, setList }) {
+export default function ToDoItem({ id, text, list, listIndex, setList }) {
   const [editedText, setEditedText] = useState(null);
   const [openEditBox, setOpen] = useState(false);
   const handleToggle = () => setOpen(!openEditBox);
 
   function keepDoneItem(e) {
-    const newList = JSON.parse(localStorage.getItem("listTodo"));
-    const checked = newList.find((i) => i.id == e.target.id.slice(3));
+    const checked = list[listIndex].items.find((i) => i.id == e.target.id.slice(3));
     checked.done = !checked.done;
-    localStorage.setItem("listTodo", JSON.stringify(newList));
-    setList(JSON.parse(localStorage.getItem("listTodo")));
+    console.log(checked);
+    localStorage.setItem("listTodo", JSON.stringify(list));
   }
 
   function delItem(e) {
-    const newArr = arr.filter((i) => i.id != e.target.id.slice(6));
-    localStorage.setItem("listTodo", JSON.stringify(newArr));
-    setList(JSON.parse(localStorage.getItem("listTodo")));
+    const newItems = list[listIndex].items.filter((i) => i.id != e.target.id.slice(6));
+    list[listIndex].items = newItems
+    localStorage.setItem("listTodo", JSON.stringify(list));
+    setList(old => (JSON.parse(localStorage.getItem("listTodo"))));
   }
 
   // ================ abre o pop-up pra editar ================
@@ -93,6 +93,7 @@ export default function ToDoItem({ id, text, arr, setList }) {
               label="Edit To Do"
               className="inpEdit"
               id={`txtIdChecker${id}`}
+              defaultValue={text}
               onChange={(e) => setEditedText(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && editItem(e)}
               ref={inpTxtEdit}

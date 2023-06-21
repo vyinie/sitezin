@@ -1,4 +1,8 @@
 import { useEffect, useRef, useState } from "react";
+import { Popover } from "@mui/material";
+import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
 
 import KbItem from "./KbItem";
 // import { lists, cardId, /* itemId */ } from "../kbLists.js";
@@ -14,7 +18,7 @@ const KbCard = ({
   itemId,
   setItemId,
   lists,
-  setLists
+  setLists,
 }) => {
   const refChecked = useRef();
   const [modalAddItem, setModalAddItem] = useState(false);
@@ -47,6 +51,24 @@ const KbCard = ({
     }
   }
 
+  function delItem(e) {
+    const newItemArr = items.filter(
+      (i) => i.id != e.target.id.slice(8)
+    );
+    const oldList = lists;
+    oldList[0].items = newItemArr;
+
+    setLists((i) => (i = []));
+    setLists((i) => (i = oldList));
+
+    setAnchorEl(null);
+  }
+
+  const [anchorEl, setAnchorEl] = useState(null);
+  const handleClick = (e) => {
+    setAnchorEl(e.currentTarget);
+  };
+  const open = Boolean(anchorEl);
   return (
     <div
       id={"kbCard" + cardId}
@@ -77,6 +99,7 @@ const KbCard = ({
 
             <div className="keepOpen">
               <input
+                defaultChecked
                 type="checkbox"
                 id={"keepOpenCheck" + cardId}
                 ref={refChecked}
@@ -128,8 +151,7 @@ const KbCard = ({
       <div className="bodyCard">
         {items.map((t) => (
           // ================ iteM do card ================
-          <KbItem
-            key={"key" + t.id}
+          /*<KbItem
             id={t.id}
             text={t.text}
             items={items}
@@ -137,7 +159,50 @@ const KbCard = ({
             itemId={itemId}
             lists={lists}
             setLists={setLists}
-          />
+          />*/
+          <div
+            id={`item${t.id}`}
+            key={"key" + t.id}
+            className="cardItem"
+          >
+            <p className="kbItemText">{t.text}</p>
+            <MoreVertOutlinedIcon
+              onClick={handleClick}
+              className="kbMoreOpt"
+            />
+            <Popover
+              open={open}
+              anchorEl={anchorEl}
+              onClose={() => setAnchorEl(null)}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "center",
+              }}
+              transformOrigin={{
+                vertical: "bottom",
+                horizontal: "right",
+              }}
+            >
+              <div className="kbPopover">
+                <span className="dadCover">
+                  <div
+                    onClick={delItem}
+                    id={"deletbtn" + t.id}
+                    className="btnHover cover"
+                  ></div>
+                  <DeleteIcon />
+                </span>
+                <hr />
+                <span className="dadCover">
+                  <div
+                    id={"editbtn" + t.id}
+                    className="btnHover cover"
+                  ></div>
+                  <EditIcon className="btnHover" />
+                </span>
+              </div>
+            </Popover>
+          </div>
         ))}
       </div>
     </div>
