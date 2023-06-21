@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       { path: "/to-do-list", element: <LayoutToDo /> },
       { path: "/kanban", element: <Kanban /> },
       { path: "/sistema-de-cadastro", element: <Register /> },
-      { path: "/clean-cache", element: <Clear/> },
+      { path: "/clear-cache", element: <Clear/> },
     ],
   },
 ]);
