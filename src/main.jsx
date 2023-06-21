@@ -7,6 +7,7 @@ import "./index.css";
 import Home from "./pages/Home/jsx/Home.jsx";
 import Error from "./pages/Error.jsx";
 import App from "./pages/App";
+import Clear from "./functions/ClearCache.jsx";
 
 // jogos
 import LayoutGame from "./pages/projects/games/coloRGB/jsx/index.jsx";
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
       { path: "/to-do-list", element: <LayoutToDo /> },
       { path: "/kanban", element: <Kanban /> },
       { path: "/sistema-de-cadastro", element: <Register /> },
+      { path: "/clean-cache", element: <Clear/> },
     ],
   },
 ]);
