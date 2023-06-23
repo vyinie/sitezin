@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import Item from "./components/ProjectItem";
 import "./Projects.css";
-import colorgb from "/src/imgs/projectsItems/coloRGB_kase.png";
-import kanban from "/src/imgs/projectsItems/kanban_kase.png";
-import todo from "/src/imgs/projectsItems/ToDo_kase.png";
+import colorgb from "/src/imgs/projectsItems/games/coloRGB_kase.png";
+import todo from "/src/imgs/projectsItems/apps/ToDo_kase.png";
+import acAlma from "/src/imgs/projectsItems/landingPages/acAlma_kase.png";
 import emBreve from "/src/imgs/projectsItems/em-breve.png";
 
 const Projects = () => {
@@ -31,17 +31,16 @@ const Projects = () => {
         link: "/sistema-de-cadastro",
         img: emBreve,
       },
-
     ],
 
     // landing pages
     [
       {
-        title: "Em Breve",
-        des: "Ainda em desenvolvimento",
+        title: "acALMA",
+        des: "landing page da newsletter de um curso de meditação, apenas HTML e CSS",
         id: 4,
-        link: "/",
-        img: emBreve,
+        link: "/acAlma",
+        img: acAlma,
       },
       {
         title: "Em Breve",

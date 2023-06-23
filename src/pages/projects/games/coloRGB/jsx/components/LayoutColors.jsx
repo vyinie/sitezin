@@ -46,23 +46,22 @@ export default function LayoutColors({
     // sets style to off btns
     const offBtns = difConfig.filter((i) => i.id != e.target.id);
     offBtns.map((i) => {
-      document.getElementById(i.id).style.boxShadow = "";
       document.getElementById(i.id).style.backgroundColor = "";
     });
     // sets style to on btn
     e.target.style.backgroundColor = "#ddd";
-    e.target.style.boxShadow = "#0005 inset -3px 3px 4px";
 
     // for mobile
     setToggleDifOpt(!ToggleDifOpt);
 
     // modfies ColorLayout style
-    const onBtn = difConfig.filter((i) => i.id === e.target.id);
-    setBlocks(onBtn[0].blocks);
-    setLifes(onBtn[0].lifes);
-    document.querySelector(".LayoutColors").style.width = onBtn[0].width;
+    const onBtn = difConfig.filter((i) => i.id === e.target.id)[0];
+    
+    setBlocks(onBtn.blocks);
+    setLifes(onBtn.lifes);
+    document.querySelector(".LayoutColors").style.width = onBtn.width;
 
-    setTrueId(idRandom(onBtn[0].blocks.length));
+    setTrueId(idRandom(onBtn.blocks.length));
     reset();
   }
 
@@ -88,7 +87,7 @@ export default function LayoutColors({
     if (lifes === 0) {
       const wrongBlocks = blocks.filter((i) => i != trueId);
       wrongBlocks.map((i) => {
-        document.getElementById(i).style.backgroundColor = "#333";
+        document.getElementById(i).style.backgroundColor = "transparen";
       });
     }
     document.querySelector(".popupBtn").addEventListener(
@@ -119,6 +118,7 @@ export default function LayoutColors({
   // ===============================HTML===============================
   return (
     <div className="LayoutColors">
+
       {blocks.map((i) =>
         // load the right block
         i == trueId ? (
@@ -146,7 +146,7 @@ export default function LayoutColors({
             className="colorBlock"
             onClick={(e) => {
               setLifes(lifes - 1);
-              e.target.style.backgroundColor = "#333";
+              e.target.style.backgroundColor = "#aaa";
             }}
           >
             <div id={`hover${i}`} className="blockHover"></div>

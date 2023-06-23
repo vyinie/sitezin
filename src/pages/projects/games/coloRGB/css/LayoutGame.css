@@ -1,211 +1,141 @@
 .LayoutGame {
-  position: relative;
   width: 100%;
   height: 100vh;
-
+  background-color: #ffe;
   /* display: flex;
-  flex-direction: column;
-  align-items: center; */
+flex-direction: ; */
 }
 
-.gameArea{
-  height: 100%;
+.gameArea {
   width: 100%;
+  height: calc(100% - 60px);
+
   background-color: #ffe;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 250px auto;
+  grid-template-rows: 80px auto;
+  grid-template-areas: "painel code" "painel colors";
 }
 .displayText {
-  font-size: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  grid-area: code;
+  place-self: center;
 
-  min-width: 240px;
-  max-width: 30%;
-  height: 50px;
+  padding: 10px 20px;
+  background-color: #ddd;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 20px;
+}
+.difControl {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.btnDif {
+  font-size: 23px;
+}
+
+.scoreContainer {
+  background-color: #ddd;
+  grid-area: painel;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.score {
+  width: 80%;
+  height: 70px;
+
+  margin-top: 20px;
 
   background-color: #ccc;
-  border-radius: 5px;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
+.LayoutColors {
+  grid-area: colors;
+  place-self: center;
+}
+
 .popupWrapper {
-  width: 100%;
-  height: 100%;
   position: absolute;
-  z-index: 3;
+  top: 0;
+  z-index: 4;
+
+  width: 100vw;
+  height: 100vh;
+  background-color: #0007;
 
   display: none;
   justify-content: center;
   align-items: center;
-  background-color: #0006;
 }
-  .popup {
-    width: 50vw;
-    height: 25vh;
+.popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    background-color: #bbb;
-    box-shadow: #0008 -5px 5px 5px;
+  width: 300px;
+  height: 140px;
 
-    font-size: 4vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+  background-color: #fff;
+}
+.popupBtn {
+  width: 150px;
+  height: 40px;
+
+  margin-top: 20px;
+  cursor: pointer;
+  background-color: #ddd;
+  border: none;
+}
+
+@media (width <1000px) {
+  .lifesContainer {
+    right: 10px;
   }
-  .popupBtn {
-    border: none;
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 3px;
-    font-size: 2.5vh;
+}
+@media (width <900px) {
+  .lifesContainer {
+    top: 70px;
   }
-  .scoreContainer {
-
-    width: 35vw;
-    /* height: 100%; */
-
-    background-color: #ccc;
-
-    display: flex;
-    justify-content: space-around;
-  }
-  .score {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-
-    margin-top: 12vh;
-    width: 45%;
-
-    height: 80px;
-    background-color: #999;
-  }
-  .oppenDifOpts {
-    display: none;
+  .life {
+    font-size: 34px;
   }
 
-/* For tablets, wtf uses tablets??? */
-@media (width > 451px) and (width < 801px) {
-
-  .popupBtn {
-    border: none;
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 3px;
-    font-size: 2.5vh;
+  .LayoutColors {
+    min-width: 290px;
+    width: 440px;
   }
-  .scoreContainer {
-    position: absolute;
-    left: 0;
-    top: 0;
 
-    width: 35vw;
-    height: 87%;
-
-    background-color: #ccc;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    padding-top: 12%;
-  }
-  .score {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-top: 12px;
-    margin-right: 10px;
-    width: 90%;
-
-    height: 80px;
-    background-color: #999;
-  }
-  .oppenDifOpts {
-    display: none;
+  .colorBlock {
+    width: 140px;
+    height: 140px;
   }
 }
 
-/* For smartphones */
-@media (width < 450px) {
-  .LayoutGame {
-    width: 100%;
-    height: 89vh;
-    display: flex;
+@media (width <900px) {
+  .lifesContainer {
+    top: 60px;
+    left: 250px;
     flex-direction: column;
-    align-items: center;
-    background-color: #333;
+    gap: 3px;
   }
-  .displayText {
-    width: 70%;
-    height: 60px;
-
-    background-color: #555;
-
-    border-radius: 5px;
-    margin-top: 6vw;
-    margin-bottom: 6vw;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .life {
+    font-size: 34px;
   }
+}
 
-  .popupWrapper {
-    width: 100%;
-    height: 89vh;
-    position: absolute;
-
-    display: none;
-    align-items: center;
-    justify-content: center;
-    background-color: #0006;
+@media (width <740px) {
+  .LayoutColors {
+    scale: 0.7;
   }
-  .popup {
-    width: 70vw;
-    height: 100px;
-
-    background-color: #444;
-    box-shadow: #0008 -5px 5px 5px;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    
-    letter-spacing: 3px;
-  }
-  .popupBtn {
-    border: none;
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 3px;
-  }
-  .scoreContainer {
-    width: 80%;
-    height: auto;
-
-    background-color: #222;
-    margin-top: 40px;
-    padding: 5px;
-
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  .score {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-
-    width: 43%;
-    height: 60px;
-    padding: 5px;
-
-    font-size: 4.5vw;
+  .colorBlock {
+    /* scale: 0.95; */
   }
 }

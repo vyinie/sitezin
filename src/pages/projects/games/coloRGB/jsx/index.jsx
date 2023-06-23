@@ -3,7 +3,6 @@ import { colorRandom } from "./Randomizers";
 import LayoutColors from "./components/LayoutColors";
 import Lifes from "./components/lifes.jsx";
 import "../css/LayoutGame.css";
-import BackIcon from "../../../components/BackIcon";
 import ProjectHeader from "../../../components/ProjectHeader";
 
 export default function LayoutGame() {
@@ -38,7 +37,7 @@ export default function LayoutGame() {
 
   return (
     <div className="LayoutGame">
-      <ProjectHeader />
+      <ProjectHeader title="coloRGB"/>
 
       {/* ========================= main layout ======================================= */}
       <div className="gameArea">

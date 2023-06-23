@@ -9,6 +9,9 @@ import Error from "./pages/Error.jsx";
 import App from "./pages/App";
 import Clear from "./functions/ClearCache.jsx";
 
+// landing pages
+import CursoMeditacao from "./pages/projects/landingPages/cursoDeMeditacao";
+
 // jogos
 import LayoutGame from "./pages/projects/games/coloRGB/jsx/index.jsx";
 
@@ -29,6 +32,7 @@ const router = createBrowserRouter([
       { path: "/kanban", element: <Kanban /> },
       { path: "/sistema-de-cadastro", element: <Register /> },
       { path: "/clear-cache", element: <Clear/> },
+      { path: "/acAlma", element: <CursoMeditacao/> },
     ],
   },
 ]);

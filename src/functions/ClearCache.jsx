@@ -27,7 +27,7 @@ export default function Clear() {
       <br />
       <Link to="/">
         <Button onClick={show} variant="outlined">
-          clear cach
+          clear cache
         </Button>
       </Link>
     </div>
