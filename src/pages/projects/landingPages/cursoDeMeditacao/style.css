@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;500&display=swap");
+#body {
+  width: 100%;
+  height: 100vh;
+  background-color: #222;
+
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: 70px auto;
+
+  grid-template-areas: "header header" "form img";
+  font-family: "Inter", sans-serif;
+}
+
+.header {
+  grid-area: header;
+  padding: 20px 70px 0 80px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: #fff;
+  font-size: 33px;
+}
+.backBtn {
+  top: 40px;
+  width: 40px;
+}
+#headerMainWord {
+  color: #a91dd0;
+}
+
+.headerBtns {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  gap: 30px;
+}
+.headerLinks {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+
+  cursor: pointer;
+  transition: 150ms;
+}
+.headerLinks > p:hover {
+  color: #a91dd0;
+}
+#loginBtn {
+  border: 2px solid #a91dd0;
+  padding: 10px 20px;
+  border-radius: 14px;
+}
+#loginBtn:hover {
+  background: linear-gradient(145deg, #a91dd0, #d215c9);
+}
+
+.copySection {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+
+  padding-left: 70px;
+}
+
+.copyTitle {
+  font-size: 50px;
+  margin-top: 60px;
+}
+.copyMainWord {
+  color: #a91dd0;
+}
+
+.copy {
+  margin-top: 20px;
+  width: 500px;
+  /* font-size: 17px; */
+}
+
+.formContainer {
+  width: 330px;
+  margin-top: 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.signupInp {
+  height: 43px;
+  padding-left: 10px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+}
+.signupBtn {
+  width: 150px;
+  height: 43px;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #a91dd0;
+  color: #fff;
+
+  font-size: 17px;
+
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.signupBtn:hover {
+  background-color: #8808ac;
+}
+
+.imgContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.HomeImg {
+  height: 85%;
+  margin-left: -150px;
+}
+
+/* =========================================================== */
+@media (width < 1250px) {
+  .HomeImg {
+    margin-left: 0;
+    height: 75%;
+  }
+}
+/* =========================================================== */
+@media (width < 1080px) {
+  .header {
+    padding-right: 40px;
+  }
+  .copyTitle {
+    font-size: 45px;
+  }
+  .copy {
+    width: 400px;
+  }
+}
+
+/* =========================================================== */
+@media (width < 1040px) {
+  .HomeImg {
+    height: 70%;
+  }
+}
+
+/* =========================================================== */
+@media (width < 970px) {
+  .copyTitle {
+    font-size: 40px;
+  }
+  .copy {
+    width: 350px;
+  }
+  .HomeImg {
+    height: 65%;
+  }
+}
+
+/* =========================================================== */
+@media (width < 900px) {
+  .HomeImg {
+    height: 60%;
+  }
+}
+/* =========================================================== */
+@media (width < 875px) {
+  .headerBtns {
+    gap: 20px;
+  }
+  .headerLinks {
+    gap: 20px;
+  }
+
+  .HomeImg {
+    height: 60%;
+  }
+}
+@media (width < 835px) {
+  .header {
+    padding-right: 20px;
+  }
+}
+@keyframes openLinks {
+  0% {
+    height: 10px;
+  }
+  100% {
+    height: auto;
+  }
+}
+@media (width < 810px) {
+  .headerBtns {
+    position: relative;
+  }
+  .headerLinks:hover{
+    animation-name: openLinks;
+    animation-timing-function: linear;
+    animation-duration: 500ms;
+  }
+  .headerLinks {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    top: 20px;
+    left: -100px;
+    height: 10px;
+
+    overflow: hidden;
+  }
+}
