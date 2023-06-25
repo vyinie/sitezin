@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;500&display=swap");
-#body {
+.body {
   width: 100%;
   height: 100vh;
   background-color: #222;
@@ -23,11 +23,7 @@
   color: #fff;
   font-size: 33px;
 }
-.backBtn {
-  top: 40px;
-  width: 40px;
-}
-#headerMainWord {
+.headerMainWord {
   color: #a91dd0;
 }
 
@@ -48,12 +44,12 @@
 .headerLinks > p:hover {
   color: #a91dd0;
 }
-#loginBtn {
+.loginBtn {
   border: 2px solid #a91dd0;
   padding: 10px 20px;
-  border-radius: 14px;
+  border-radius: 8px;
 }
-#loginBtn:hover {
+.loginBtn:hover {
   background: linear-gradient(145deg, #a91dd0, #d215c9);
 }
 
@@ -110,6 +106,9 @@
   cursor: pointer;
   transition: 200ms;
 }
+.arrow {
+  display: none;
+}
 
 .signupBtn:hover {
   background-color: #8808ac;
@@ -124,18 +123,20 @@
 }
 .HomeImg {
   height: 85%;
-  margin-left: -150px;
+  margin-right: 50px;
 }
-
+.atBody {
+  display: none;
+}
 /* =========================================================== */
 @media (width < 1250px) {
   .HomeImg {
-    margin-left: 0;
-    height: 75%;
+    margin-right: 20px;
+    height: 35vw;
   }
 }
 /* =========================================================== */
-@media (width < 1080px) {
+@media (width < 1100px) {
   .header {
     padding-right: 40px;
   }
@@ -153,7 +154,12 @@
     height: 70%;
   }
 }
-
+/* =========================================================== */
+@media (width < 990px) {
+  .HomeImg {
+    height: 350px;
+  }
+}
 /* =========================================================== */
 @media (width < 970px) {
   .copyTitle {
@@ -161,9 +167,6 @@
   }
   .copy {
     width: 350px;
-  }
-  .HomeImg {
-    height: 65%;
   }
 }
 
@@ -186,9 +189,14 @@
     height: 60%;
   }
 }
-@media (width < 835px) {
+@media (width < 850px) {
   .header {
     padding-right: 20px;
+    padding-left: 50px;
+  }
+  .copySection {
+    padding-left: 50px;
+    width: fit-content;
   }
 }
 @keyframes openLinks {
@@ -199,24 +207,174 @@
     height: auto;
   }
 }
-@media (width < 810px) {
-  .headerBtns {
-    position: relative;
+@media (width < 830px) {
+  .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding-bottom: 10px;
   }
-  .headerLinks:hover{
+  .backBtn {
+    top: 60px;
+  }
+
+  .header {
+    width: 100vw;
+    padding: 20px 0;
+  }
+  .headerTitle {
+    margin-left: 60px;
+  }
+  .headerBtns {
+    margin-right: 40px;
+  }
+  .headerLinks {
     animation-name: openLinks;
     animation-timing-function: linear;
     animation-duration: 500ms;
   }
   .headerLinks {
+    font-size: 20px;
+  }
+
+  .copySection {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 0;
+
+    width: 400px;
+    text-align: center;
+  }
+  .copyTitle {
+    margin-top: 20px;
+    font-size: 45px;
+  }
+  .copy {
+    width: 100%;
+  }
+  .atHeader {
+    display: none;
+  }
+
+  .atBody {
+    display: block;
+    width: fit-content;
+  }
+
+  .imgContainer {
+    padding: 0;
+  }
+  .HomeImg {
+    margin-right: 0;
+    margin-top: 70px;
+  }
+}
+@media (width < 640px) {
+  .backBtn {
+    top: 40px;
+  }
+  .header {
+    justify-content: center;
+  }
+  .headerTitle {
+    width: fit-content;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+  }
+
+  .headerBtns {
+    width: 100%;
+    height: 60px;
+    margin: 0;
+
+    justify-content: center;
 
     position: absolute;
-    top: 20px;
-    left: -100px;
-    height: 10px;
+    right: 0;
+    top: -60px;
+    z-index: 4;
 
-    overflow: hidden;
+    background-color: #333;
+    transition: 200ms;
+  }
+  .headerLinks {
+    gap: 50px;
+    font-size: 23px;
+  }
+  .arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 50px;
+    height: 40px;
+    background-color: #333;
+
+    position: absolute;
+    bottom: -38px;
+    right: 20px;
+
+    color: #fff;
+    border-radius: 0 0 10px 10px;
+  }
+  .v {
+    transition: 200ms;
+  }
+
+  .HomeImg {
+    margin-top: 40px;
+    height: 70vw;
+  }
+}
+@media (width < 520px) {
+  .headerLinks {
+    gap: 30px;
+  }
+}
+
+@media (width < 520px) {
+  .headerLinks {
+    font-size: 20px;
+  }
+}
+@media (width < 490px) {
+  .headerTitle {
+    display: block;
+    text-align: center;
+    font-size: 40px;
+  }
+.copySection{
+  width: 90%;
+}
+  .copyTitle {
+    font-size: 35px;
+  }
+  .copy {
+    font-size: 17px;
+  }
+}
+@media (width < 390px) {
+  .headerBtns{
+    height: 230px;
+    top: -230px;
+  }
+  .headerLinks{
+    flex-direction: column;
+  }
+
+  .formContainer{
+    width: 100%;
+    display: grid;
+    place-items: center;
+  }
+  .signupInp{
+    width: 95%;
+  }
+  .signupBtn{
+    width: 90%;
   }
 }

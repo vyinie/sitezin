@@ -19,6 +19,7 @@ import LayoutGame from "./pages/projects/games/coloRGB/jsx/index.jsx";
 import LayoutToDo from "./pages/projects/Apps/ToDo/jsx";
 import Kanban from "./pages/projects/Apps/kanban/jsx";
 import Register from "./pages/projects/Apps/register/jsx";
+import MHSBarberShop from "./pages/projects/landingPages/MHSBarberShop";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,7 @@ const router = createBrowserRouter([
       { path: "/sistema-de-cadastro", element: <Register /> },
       { path: "/clear-cache", element: <Clear/> },
       { path: "/acAlma", element: <CursoMeditacao/> },
+      { path: "/MHS-barber-shop", element: <MHSBarberShop/> },
     ],
   },
 ]);

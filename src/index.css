@@ -3,10 +3,6 @@
   padding: 0;
   box-sizing: 0;
 }
-html{
-  scroll-behavior: smooth;
-}
-
 body::-webkit-scrollbar {
   width: 5px;
   height: 5px;

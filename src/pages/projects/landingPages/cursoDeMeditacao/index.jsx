@@ -1,13 +1,26 @@
 import BackIcon from "../../components/BackIcon";
-import Img from "./images/HomeImg.png";
+import Img from "/src/imgs/projectsItems/landingPages/acAlma/HomeImg.png";
 import "./style.css";
+import { useState } from "react";
 function CursoMeditacao() {
+  const [headerToggle, setHeaderToggle] = useState(true);
+  function closeHeader() {
+    setHeaderToggle(!headerToggle);
+    const links = document.querySelector(".headerBtns");
+    const arrow = document.querySelector(".v");
+    headerToggle
+      ? ((links.style.top = "0"), (arrow.style.rotate = "180deg"))
+      : ((links.style.top = ""), (arrow.style.rotate = ""));
+  }
   return (
-    <div id="body">
+    <div className="body">
       <header className="header">
-        <BackIcon />
-        <p className="headerTittle">
-          Curso de <div id="headerMainWord">Meditação</div>
+        <BackIcon  styles={{
+            top: "40px",
+            width: "40px",
+          }}/>
+        <p className="headerTitle">
+          Curso de <div className="headerMainWord">Meditação</div>
         </p>
 
         <span className="headerBtns">
@@ -17,7 +30,10 @@ function CursoMeditacao() {
             <p>Contato</p>
             <p>Sobre</p>
           </spam>
-          <p id="loginBtn">ja tem uma conta?</p>
+          <p className="loginBtn atHeader">ja tem uma conta?</p>
+          <span className="arrow" onClick={closeHeader}>
+            <p className="v">V</p>
+          </span>
         </span>
       </header>
 
@@ -28,9 +44,9 @@ function CursoMeditacao() {
         </h1>
         <p className="copy">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Quam aliquid est expedita mollitia, aut veritatis magnam
-          natus blanditiis iste dolor libero harum obcaecati possimus
-          rerum, aperiam ratione. Sequi, illum doloremque!
+          Quam aliquclassName est expedita mollitia, aut veritatis
+          magnam natus blanditiis iste dolor libero harum obcaecati
+          possimus rerum, aperiam ratione. Sequi, illum doloremque!
         </p>
 
         <div className="formContainer">
@@ -45,6 +61,7 @@ function CursoMeditacao() {
             placeholder="E-Mail"
           />
           <button className="signupBtn">Cadastrar</button>
+          <p className="loginBtn atBody">ja tem uma conta?</p>
         </div>
       </section>
       <div className="imgContainer">

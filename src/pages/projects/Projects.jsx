@@ -3,7 +3,7 @@ import Item from "./components/ProjectItem";
 import "./Projects.css";
 import colorgb from "/src/imgs/projectsItems/games/coloRGB_kase.png";
 import todo from "/src/imgs/projectsItems/apps/ToDo_kase.png";
-import acAlma from "/src/imgs/projectsItems/landingPages/acAlma_kase.png";
+import acAlma from "/src/imgs/projectsItems/landingPages/acAlma/acAlma_kase.png";
 import emBreve from "/src/imgs/projectsItems/em-breve.png";
 
 const Projects = () => {
@@ -43,10 +43,10 @@ const Projects = () => {
         img: acAlma,
       },
       {
-        title: "Em Breve",
-        des: "Ainda em desenvolvimento",
+        title: "MHS Barber Shop",
+        des: "site de barbearia",
         id: 5,
-        link: "/",
+        link: "/MHS-barber-shop",
         img: emBreve,
       },
       {
