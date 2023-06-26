@@ -37,10 +37,10 @@ export default function ToDoItem({ id, text, list, listIndex, setList }) {
   function editItem(e) {
     const newList = JSON.parse(localStorage.getItem("listTodo"));
 
-    newList.find((i) => i.id == e.target.id.slice(12)).text = editedText;
+    newList[listIndex].items.find((i) => i.id == e.target.id.slice(12)).text = editedText;
 
     localStorage.setItem("listTodo", JSON.stringify(newList));
-    setList(JSON.parse(localStorage.getItem("listTodo")));
+    setList(old => (JSON.parse(localStorage.getItem("listTodo"))));
     itemLabel.current.textContent = editedText;
 
     setEditedText(null);
