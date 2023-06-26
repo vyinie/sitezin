@@ -1,12 +1,10 @@
 import "../css/Home.css";
 import Projects from "../../projects/Projects";
-import myPic from "/src/imgs/FotinhaDaora.png";
-import github from "/src/imgs/contact/github.png";
-import curriculo from "/src/imgs/contact/curriculo.png";
-import linkedin from "/src/imgs/contact/linkedin.png";
-import Skills from "../../skills/jsx/Skills";
-import { useRef, useState } from "react";
-import { useEffect } from "react";
+import myPic from "/src/_images/FotinhaDaora.png";
+import github from "/src/_images/contact/github.png";
+import curriculo from "/src/_images/contact/curriculo.png";
+import linkedin from "/src/_images/contact/linkedin.png";
+import { useRef, useEffect, useState } from "react";
 
 export default function Home() {
   const links = [
@@ -29,22 +27,6 @@ export default function Home() {
       alt: "curriculo",
     },
   ];
-
-  const navBar = [
-    {
-      link: "#projectsArea",
-      text: "Projetos",
-    },
-    {
-      link: "#skillsArea",
-      text: "Habilidades",
-    },
-    {
-      link: "#contactArea",
-      text: "Contato",
-    },
-  ];
-
   const [text, setText] = useState("");
 
   function escreve(t, i = 0) {
@@ -61,34 +43,8 @@ export default function Home() {
     });
   }, []);
 
-  const [toggleNavBar, setToggleNavBar] = useState(false);
-  const nav = useRef();
-
-  useEffect(() => {
-    nav.current.style.top = toggleNavBar ? "0" : "";
-  }, [toggleNavBar]);
-  function turnOffBar() {
-    setToggleNavBar(false);
-  }
-
   return (
     <div className="HomeBody">
-      {/* navbar */}
-      <div ref={nav} onMouseLeave={turnOffBar} className="navBar">
-        <h1 className="Logo">Vynie</h1>
-
-        <span className="pageLinksContainer">
-          {navBar.map((i) => (
-            <a  key={i.text} className="pageLink" onClick={turnOffBar} href={i.link}>
-              {i.text}
-            </a>
-          ))}
-          <div
-            onClick={() => setToggleNavBar(!toggleNavBar)}
-            className="pageMarker"
-          ></div>
-        </span>
-      </div>
 
       {/* home */}
       <div id="homeArea" className="area">
@@ -117,13 +73,6 @@ export default function Home() {
       <div id="projectsArea" className="area">
         <Projects />
       </div>
-      {/* 
-      <div id="skillsArea" className="area">
-        <Skills />
-      </div>
-      <div id="contactArea" className="area">
-        <Skills />
-      </div> */}
     </div>
   );
 }

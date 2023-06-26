@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 export default function SideBar({ setListIndex, list, setList }) {
-  // const listSelected = list.find((i) => i.id == listSelectedId);
 
   function selectList(e) {
     // muda a cor do btn

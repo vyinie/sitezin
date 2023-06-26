@@ -1,5 +1,5 @@
 import BackIcon from "../../components/BackIcon";
-import Img from "/src/imgs/projectsItems/landingPages/acAlma/HomeImg.png";
+import Img from "/src/_images/projectsItems/landingPages/acAlma/HomeImg.png";
 import "./style.css";
 import { useState } from "react";
 function CursoMeditacao() {

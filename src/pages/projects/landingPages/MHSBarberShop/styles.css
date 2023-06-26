@@ -93,7 +93,7 @@
   position: relative;
   margin-top: 60px;
 
-  background-image: url("src/imgs/projectsItems/landingPages/mhsBS/mesa-cinza2.png");
+  background-image: url("src/_images/projectsItems/landingPages/mhsBS/mesa-cinza2.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -145,7 +145,7 @@
   width: 100%;
   min-height: var(--sectionHeight);
 
-  --img: url("src/imgs/projectsItems/landingPages/mhsBS/garcon-cinza.png");
+  --img: url("src/_images/projectsItems/landingPages/mhsBS/garcon-cinza.png");
   background-image: var(--img);
   background-repeat: no-repeat;
   background-size: cover;

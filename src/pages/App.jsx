@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import "./App.css";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 function App() {
   // prepara o localStorage pra projetos que o usam

@@ -1,11 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Popover } from "@mui/material";
 import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-
-import KbItem from "./KbItem";
-// import { lists, cardId, /* itemId */ } from "../kbLists.js";
 
 import AddIcon from "@mui/icons-material/Add";
 import { Box, Button, Modal, TextField } from "@mui/material";

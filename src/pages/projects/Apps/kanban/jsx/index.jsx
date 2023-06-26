@@ -1,14 +1,10 @@
 import "../css/index.css";
 import ProjectHeader from "../../../components/ProjectHeader";
-// import { lists, cardId, /* itemId */ } from "./kbLists.js";
 import KbCard from "./components/KbCard";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 /* ================ materialUI ================ */
-import { Box, Button, Modal, TextField } from "@mui/material";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 export default function Kanban() {
   const [lists, setLists] = useState([
