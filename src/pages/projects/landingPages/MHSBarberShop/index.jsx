@@ -2,8 +2,6 @@ import "./styles.css";
 import BackIcon from "../../components/BackIcon";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import mapa from "/src/imgs/projectsItems/landingPages/viking barber/mapa-barbearia.png";
 import { useEffect, useState } from "react";
 function MHSBarberShop() {
   const servicos = [

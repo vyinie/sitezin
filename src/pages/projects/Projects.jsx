@@ -4,6 +4,7 @@ import "./Projects.css";
 import colorgb from "/src/imgs/projectsItems/games/coloRGB_kase.png";
 import todo from "/src/imgs/projectsItems/apps/ToDo_kase.png";
 import acAlma from "/src/imgs/projectsItems/landingPages/acAlma/acAlma_kase.png";
+import mhsBS from "/src/imgs/projectsItems/landingPages/mhsBS/mhsBS_kase.png";
 import emBreve from "/src/imgs/projectsItems/em-breve.png";
 
 const Projects = () => {
@@ -47,7 +48,7 @@ const Projects = () => {
         des: "site de barbearia",
         id: 5,
         link: "/MHS-barber-shop",
-        img: emBreve,
+        img: mhsBS,
       },
       {
         title: "Em Breve",
