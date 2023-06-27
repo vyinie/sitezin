@@ -1,7 +1,8 @@
 import BackIcon from "../../components/BackIcon";
-import Img from "/src/_images/projectsItems/landingPages/acAlma/HomeImg.png";
+import Img from "/_images/projectsItems/landingPages/acAlma/HomeImg.png";
 import "./style.css";
 import { useState } from "react";
+
 function CursoMeditacao() {
   const [headerToggle, setHeaderToggle] = useState(true);
   function closeHeader() {
@@ -20,7 +21,7 @@ function CursoMeditacao() {
             width: "40px",
           }}/>
         <p className="headerTitle">
-          Curso de <div className="headerMainWord">Meditação</div>
+          Curso de <p className="headerMainWord">Meditação</p>
         </p>
 
         <span className="headerBtns">

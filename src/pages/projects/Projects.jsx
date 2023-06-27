@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import Item from "./components/ProjectItem";
 import "./Projects.css";
-import colorgb from "/src/_images/projectsItems/games/coloRGB_kase.png";
-import todo from "/src/_images/projectsItems/apps/ToDo_kase.png";
-import acAlma from "/src/_images/projectsItems/landingPages/acAlma/acAlma_kase.png";
-import mhsBS from "/src/_images/projectsItems/landingPages/mhsBS/mhsBS_kase.png";
-import emBreve from "/src/_images/projectsItems/em-breve.png";
+import colorgb from "/_images/projectsItems/games/coloRGB_kase.png";
+import todo from "/_images/projectsItems/apps/ToDo_kase.png";
+import acAlma from "/_images/projectsItems/landingPages/acAlma/acAlma_kase.png";
+import mhsBS from "/_images/projectsItems/landingPages/mhsBS/mhsBS_kase.png";
+import emBreve from "/_images/projectsItems/em-breve.png";
 
 const Projects = () => {
   const projectsList = [

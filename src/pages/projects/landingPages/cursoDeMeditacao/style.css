@@ -149,12 +149,6 @@
 }
 
 /* =========================================================== */
-@media (width < 1040px) {
-  .HomeImg {
-    height: 70%;
-  }
-}
-/* =========================================================== */
 @media (width < 990px) {
   .HomeImg {
     height: 350px;
@@ -165,40 +159,15 @@
   .copyTitle {
     font-size: 40px;
   }
+}
+
+/* =========================================================== */
+@media (width < 945px) {
   .copy {
     width: 350px;
   }
 }
 
-/* =========================================================== */
-@media (width < 900px) {
-  .HomeImg {
-    height: 60%;
-  }
-}
-/* =========================================================== */
-@media (width < 875px) {
-  .headerBtns {
-    gap: 20px;
-  }
-  .headerLinks {
-    gap: 20px;
-  }
-
-  .HomeImg {
-    height: 60%;
-  }
-}
-@media (width < 850px) {
-  .header {
-    padding-right: 20px;
-    padding-left: 50px;
-  }
-  .copySection {
-    padding-left: 50px;
-    width: fit-content;
-  }
-}
 @keyframes openLinks {
   0% {
     height: 10px;
@@ -207,7 +176,7 @@
     height: auto;
   }
 }
-@media (width < 830px) {
+@media (width < 920px) {
   .body {
     display: flex;
     flex-direction: column;
@@ -347,9 +316,9 @@
     text-align: center;
     font-size: 40px;
   }
-.copySection{
-  width: 90%;
-}
+  .copySection {
+    width: 90%;
+  }
   .copyTitle {
     font-size: 35px;
   }
@@ -358,23 +327,23 @@
   }
 }
 @media (width < 390px) {
-  .headerBtns{
+  .headerBtns {
     height: 230px;
     top: -230px;
   }
-  .headerLinks{
+  .headerLinks {
     flex-direction: column;
   }
 
-  .formContainer{
+  .formContainer {
     width: 100%;
     display: grid;
     place-items: center;
   }
-  .signupInp{
+  .signupInp {
     width: 95%;
   }
-  .signupBtn{
-    width: 90%;
+  .signupBtn {
+    width: calc(95% + 10px);
   }
 }

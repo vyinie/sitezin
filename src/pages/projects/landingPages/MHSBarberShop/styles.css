@@ -57,9 +57,9 @@
   color: #fff;
 }
 .BSlogo {
+  width: 60px;
+  height: 60px;
   margin-left: 30px;
-  font-size: 50px;
-  font-family: "Grenze", serif;
 }
 
 .BSlinksContainer {
@@ -93,7 +93,7 @@
   position: relative;
   margin-top: 60px;
 
-  background-image: url("/src/_images/projectsItems/landingPages/mhsBS/mesa_cinza.png");
+  background-image: url("/_images/projectsItems/landingPages/mhsBS/mesa_cinza.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -112,7 +112,7 @@
   font-size: 100px;
   line-height: 0.9;
   letter-spacing: 6.8px;
-  font-weight: normal;
+  font-weight: 600;
   text-transform: uppercase;
 
   margin-right: 20px;
@@ -145,7 +145,7 @@
   width: 100%;
   min-height: var(--sectionHeight);
 
-  --img: url("/src/_images/projectsItems/landingPages/mhsBS/garcon_cinza.png?url");
+  --img: url("/_images/projectsItems/landingPages/mhsBS/garcon_cinza.png?url");
   background-image: var(--img);
   background-repeat: no-repeat;
   background-size: cover;
@@ -261,31 +261,32 @@
 
 .address {
   width: 100%;
-  height: var(--sectionHeight);
+  min-height: var(--sectionHeight);
   background-color: #fff;
 
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  align-items: center;
-  row-gap: 70px;
+  display: grid;
+  grid-template-columns: 350px auto;
+  grid-template-rows: 35px auto auto;
+  grid-template-areas:
+    "title title"
+    "address map"
+    "contact map";
+
   padding-top: 20px;
+  place-items: center;
 }
 
 .mapTitle {
+  grid-area: title;
   font-size: 30px;
   font-weight: 600;
   text-transform: uppercase;
-  display: block;
+  text-align: center;
 }
 
-.infoAddress {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 90%;
-}
 .addressCard {
+  grid-area: address;
+  margin-left: 5vw;
   width: 310px;
   padding: 10px;
 
@@ -295,8 +296,9 @@
 }
 
 .BSmap {
-  width: 60%;
-  height: 60vh;
+  grid-area: map;
+  width: 80%;
+  height: 80%;
   border: none;
   border-radius: 20px;
 }
@@ -304,8 +306,12 @@
 /* ================================= contact ================================= */
 
 .contact {
-  padding: 20px 0;
-  min-height: 100px;
+  grid-area: contact;
+  align-self: self-start;
+  margin-left: 5vw;
+
+  padding: 20px;
+  /* min-height: 100px; */
   border-radius: 10px;
   background: #eee;
   display: flex;
@@ -324,9 +330,9 @@
 
 .BScontactLinks {
   display: flex;
-  gap: 50px;
-  flex-wrap: wrap;
-  justify-content: center;
+  gap: 10px;
+
+  flex-direction: column;
 }
 
 .BScontactLink {
@@ -350,35 +356,10 @@
   color: #fff;
 
   display: flex;
-  flex-wrap: wrap ;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
-@media (width < 980px) {
-  .BScontactLinks {
-    gap: 20px;
-  }
-  .address {
-    gap: 10px;
-  }
-  .infoAddress {
-    flex-direction: column;
-    align-items: baseline;
-    gap: 10px;
-  }
-
-  .addressCard {
-    width: auto;
-    font-size: 18px;
-  }
-  .addressCard > br {
-    display: none;
-  }
-
-  .BSmap {
-    width: 100%;
-  }
-}
 @media (width < 870px) {
   .toTop {
     right: 20px;
@@ -395,11 +376,36 @@
 }
 
 @media (width < 860px) {
+  .addressCard,
+  .contact {
+    margin: 0;
+  }
   .homeTitle {
     margin: 0;
   }
-  .infoAddress {
-    align-items: center;
+
+  .address {
+    place-content: center;
+    align-content: start;
+    justify-items: center;
+    grid-template-columns: repeat(2, 47%);
+    grid-template-rows: 35px 200px auto;
+    grid-template-areas: "title title" "address contact" "map map";
+  }
+  .BSmap {
+    width: 93%;
+    height: 300px;
+  }
+  .addressCard {
+    justify-self: end;
+  }
+  .contact {
+    width: 300px;
+    height: 170px;
+    padding: 0;
+    justify-content: center;
+
+    place-self: center;
   }
 }
 
@@ -434,6 +440,33 @@
   }
   #BShourDetail1 {
     left: -94px;
+  }
+
+  .address {
+    grid-template-columns: 90%;
+    grid-template-rows: 35px 190px auto 190px;
+    grid-template-areas:
+      "title"
+      "address"
+      "map"
+      "contact";
+  }
+
+  .BSmap {
+    width: 100%;
+    height: 300px;
+  }
+  .addressCard {
+    width: 310px;
+    justify-self: center;
+  }
+  .contact {
+    width: 100%;
+  }
+  .BScontactLinks {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 @media (width < 640px) {
@@ -668,5 +701,9 @@
   }
   .BSbtnArrowLeft {
     left: 20px;
+  }
+  .addressCard {
+    font-size: 18px;
+    width: 280px;
   }
 }

@@ -1,10 +1,10 @@
 import "../css/Home.css";
 import Projects from "../../projects/Projects";
-import myPic from "/src/_images/FotinhaDaora.png";
-import github from "/src/_images/contact/github.png";
-import curriculo from "/src/_images/contact/curriculo.png";
-import linkedin from "/src/_images/contact/linkedin.png";
-import { useRef, useEffect, useState } from "react";
+import myPic from "/_images/home/FotinhaDaora.png";
+import github from "/_images/contact/github.png";
+import curriculo from "/_images/contact/curriculo.png";
+import linkedin from "/_images/contact/linkedin.png";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const links = [
@@ -37,10 +37,17 @@ export default function Home() {
       }, 50));
   }
 
+  function getFavicon() {
+    return document.getElementById("favicon");
+  }
   useEffect(() => {
     setTimeout(() => {
       escreve("Me chamo Marcus e sou um web dev front-end");
     });
+
+    const icon = getFavicon();
+    icon.href =
+      "/_images/home/homeFavIcon.ico";
   }, []);
 
   return (

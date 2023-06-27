@@ -204,6 +204,7 @@
     align-items: center;
     row-gap: 30px;
     padding: 10px;
+    flex-wrap: nowrap;
   }
   .itemBox {
     display: grid;
@@ -302,6 +303,10 @@
 }
 /* ========maior que: ====================================================== */
 @media (width < 515px) {
+.projectsHeadercontainer{
+  margin-left: 25px;
+}
+
   .selectProjectArea {
     text-align: center;
   }

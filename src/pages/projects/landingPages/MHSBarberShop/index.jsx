@@ -2,6 +2,7 @@ import "./styles.css";
 import BackIcon from "../../components/BackIcon";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import logo from "/_images/projectsItems/landingPages/mhsBS/MHSlogo.png";
 import { useEffect, useState } from "react";
 function MHSBarberShop() {
   const servicos = [
@@ -69,6 +70,14 @@ function MHSBarberShop() {
     el.scrollBy(direction === "left" ? -toScroll : toScroll, 0);
     setScroll((old) => (direction === "left" ? old - 1 : old + 1));
   }
+  function getFavicon() {
+    return document.getElementById("favicon");
+  }
+  useEffect(() => {
+    const icon = getFavicon();
+    icon.href =
+      "/_images/projectsItems/landingPages/mhsBS/mhsBS_favicon.ico";
+  }, []);
 
   return (
     <div className="BSbody">
@@ -83,7 +92,7 @@ function MHSBarberShop() {
             width: "50px",
           }}
         />
-        <div className="BSlogo">MHS</div>
+          <img className="BSlogo" src={logo} />
 
         <div className="BSlinksContainer">
           <div onClick={handlerMoreOpt} className="BSlinks">
@@ -169,42 +178,40 @@ function MHSBarberShop() {
       {/* ================== localização ================== */}
 
       <div id="BSaddress" className="address">
-        <p className="mapTitle"> localização</p>
-        <div className="infoAddress">
-          <div className="addressCard">
-            <h4>MHS barber shop</h4>
-            <br />
-            <p>R. Martinópolis,</p>
-            <p>844 - Muribeca dos Guararapes,</p>
-            <p>Jaboatão dos Guararapes - PE, 54320-042</p>
-          </div>
-          <iframe
-            className="BSmap"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d463.1840754716972!2d-34.933242527819694!3d-8.160951006872551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aae15481497225%3A0x54f2f4c73b3f7379!2sMHS%20barber%20shop!5e0!3m2!1spt-BR!2sbr!4v1687784096271!5m2!1spt-BR!2sbr"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+        <p className="mapTitle"> endereço</p>
+        <div className="addressCard">
+          <h4>MHS barber shop</h4>
+          <br />
+          <p>R. Martinópolis,</p>
+          <p>844 - Muribeca dos Guararapes,</p>
+          <p>Jaboatão dos Guararapes - PE, 54320-042</p>
         </div>
-      </div>
+        <iframe
+          className="BSmap"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d463.1840754716972!2d-34.933242527819694!3d-8.160951006872551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aae15481497225%3A0x54f2f4c73b3f7379!2sMHS%20barber%20shop!5e0!3m2!1spt-BR!2sbr!4v1687784096271!5m2!1spt-BR!2sbr"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
 
-      {/* ================== contato ================== */}
-      <div id="BScontact" className="contact">
-        <p className="contactTitle">contato</p>
+        {/* ================== contato ================== */}
+        <div id="BScontact" className="contact">
+          <p className="contactTitle">contato</p>
 
-        <div className="BScontactLinks">
-          <div className="BScontactLink">
-            <WhatsAppIcon sx={{ fontSize: "40px" }} />
-            <p>(81) 99999-9999</p>
-          </div>
+          <div className="BScontactLinks">
+            <div className="BScontactLink">
+              <WhatsAppIcon sx={{ fontSize: "40px" }} />
+              <p>(81) 99999-9999</p>
+            </div>
 
-          <div className="BScontactLink">
-            <InstagramIcon sx={{ fontSize: "40px" }} />
-            <a
-              href="https://www.instagram.com/mhs_barbershop/"
-              target="_blank"
-            >
-              @mhs_barbershop
-            </a>
+            <div className="BScontactLink">
+              <InstagramIcon sx={{ fontSize: "40px" }} />
+              <a
+                href="https://www.instagram.com/mhs_barbershop/"
+                target="_blank"
+              >
+                @mhs_barbershop
+              </a>
+            </div>
           </div>
         </div>
       </div>
