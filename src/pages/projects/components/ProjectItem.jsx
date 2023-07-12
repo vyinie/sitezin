@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import "../Projects.css";
 import { Link } from "react-router-dom";
 import { SetDisplayToggle } from "/src/functions/SetToggles.jsx";
 

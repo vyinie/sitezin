@@ -7,15 +7,7 @@ import EditIcon from "@mui/icons-material/Edit";
 /* ================ react ================ */
 import { useState } from "react";
 
-const KbItem = ({
-  text,
-  id,
-  items,
-  cardId,
-  itemId,
-  lists,
-  setLists,
-}) => {
+const KbItem = ({ text, id, items, cardId, itemId, lists, setLists }) => {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (e) => {
@@ -27,7 +19,7 @@ const KbItem = ({
   function delItem(e) {
     const newItemArr = items.filter((i) => i.id != id);
 
-    items = newItemArr
+    items = newItemArr;
     /* gambiarra */
     localStorage.setItem("lists", JSON.stringify(lists));
     setLists(JSON.parse(localStorage.getItem("lists")));
@@ -39,11 +31,9 @@ const KbItem = ({
   return (
     <div id={`item${id}`} className="cardItem">
       <p className="kbItemText">{text}</p>
-      <MoreVertOutlinedIcon
-        onClick={handleClick}
-        className="kbMoreOpt"
-      />
+      <MoreVertOutlinedIcon onClick={handleClick} className="kbMoreOpt" />
       <Popover
+        sx={{ boxShadow: "none" }}
         open={open}
         anchorEl={anchorEl}
         onClose={() => setAnchorEl(null)}

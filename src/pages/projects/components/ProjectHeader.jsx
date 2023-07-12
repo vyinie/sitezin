@@ -1,10 +1,10 @@
-import React from "react";
 import BackIcon from "./BackIcon";
+
 
 const ProjectHeader = ({title}) => {
   return (
     <div className="projectHeader">
-      <BackIcon/>
+      <BackIcon styles={{heigth:"50px"}}/>
       <h1 className="projectHeaderTitle">{title}</h1>
     </div>
   );

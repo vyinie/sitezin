@@ -6,6 +6,7 @@ import todo from "/_images/projectsItems/apps/ToDo_kase.png";
 import acAlma from "/_images/projectsItems/landingPages/acAlma/acAlma_kase.png";
 import mhsBS from "/_images/projectsItems/landingPages/mhsBS/mhsBS_kase.png";
 import emBreve from "/_images/projectsItems/em-breve.png";
+import kanban from "/_images/projectsItems/apps/kanban_kase.png";
 
 const Projects = () => {
   const projectsList = [
@@ -18,13 +19,13 @@ const Projects = () => {
         link: "/to-do-list",
         img: todo,
       },
-      // {
-      //   title: "Kanban - em reforma",
-      //   des: "tipo o To Do List, só que mais organizado",
-      //   id: 2,
-      //   link: "/kanban",
-      //   img: kanban,
-      // },
+      {
+        title: "Kanban",
+        des: "tipo o To Do List, só que mais organizado",
+        id: 2,
+        link: "/kanban",
+        img: kanban,
+      },
       {
         title: "Sistema de Cadastro",
         des: "projeto de CRUD",

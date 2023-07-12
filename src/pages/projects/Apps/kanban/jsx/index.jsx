@@ -1,8 +1,11 @@
 import "../css/index.css";
+// import "../../../components/componentStyle.css";
+
 import ProjectHeader from "../../../components/ProjectHeader";
 import KbCard from "./components/KbCard";
 
 import { useState } from "react";
+import SideBar from "./components/sideBar";
 
 /* ================ materialUI ================ */
 
@@ -80,25 +83,11 @@ export default function Kanban() {
         </div>
 
         {/* ====================== barra lateral ====================== */}
-        <div className="aside">
-          <span onClick={addCard} className="asideBtn" id="addKbCard">
-            Adicionar Card
-          </span>
-          <span
-            onClick={delAllItems}
-            className="asideBtn"
-            id="delAllKbItem"
-          >
-            Apagar Todos os items
-          </span>
-          <span
-            onClick={delAllCards}
-            className="asideBtn"
-            id="delAllKbCard"
-          >
-            Apagar Todos os Cards
-          </span>
-        </div>
+        <SideBar
+          addCard={addCard}
+          delAllCards={delAllCards}
+          delAllItems={delAllItems}
+        />
       </div>
     </div>
   );

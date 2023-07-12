@@ -39,6 +39,7 @@ const KbCard = ({
       const index = lists.indexOf(arr);
 
       lists[index].items.push({ text: itemName, id: itemId });
+      localStorage.setItem
 
       setItemId(itemId + 1);
       setItemName(null);

@@ -1,30 +1,32 @@
 .kanban {
   background-color: #ffe;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   position: relative;
+  overflow: hidden;
 }
 
 .kbBody {
   width: 100%;
-  max-height: 100%;
+  height: 90%;
   display: flex;
 }
 
 /* ====================== cards ====================== */
 .kbCardsArea {
   width: 100%;
-  max-height: calc(100vh - 70px);
+  max-height: 90%;
   padding: 10px 15px;
-  /* background-color: aqua; */
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  grid-template-rows: min-content;
+
+  grid-gap: 8px;
   justify-content: center;
 
   overflow: hidden;
@@ -67,16 +69,10 @@
   cursor: pointer;
 }
 .btnHover {
-  transition: .1s;
+  transition: 0.1s;
 }
 .btnHover:hover {
   background-color: #2222;
-}
-
-.bodyCard {
-  width: 97%;
-  overflow: hidden;
-  overflow-y: auto;
 }
 
 .modalPopUpWrapper {
@@ -104,7 +100,7 @@
   box-shadow: #0008 5px 5px 10px;
 }
 
-/* .modalPopUp {
+.modalPopUp {
   min-width: 400px;
   height: 100px;
 
@@ -125,7 +121,7 @@
 
   box-shadow: #0008 5px 5px 10px;
   border-radius: 5px;
-} */
+}
 
 .keepOpen {
   display: flex;
@@ -137,16 +133,22 @@
   font-size: 19px;
   margin-bottom: 3px;
 }
-.dadCover{
+.dadCover {
   position: relative;
 }
-.cover{
+.cover {
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
 /* ====================== items ====================== */
+.bodyCard {
+  width: 96%;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
 .cardItem {
   display: flex;
   align-items: center;
@@ -155,11 +157,15 @@
   background-color: #fff;
 
   max-width: 100%;
-  height: 30px;
+  min-height: 30px;
 
   font-size: 23px;
   padding: 0 5px;
+  margin-top: 1px;
   border-radius: 3px;
+}
+.cardItem:hover {
+  background-color: #eee;
 }
 .kbItemText {
   width: 80%;
@@ -172,19 +178,23 @@
   display: flex;
 }
 
-/* ====================== aside ====================== */
-.aside {
+/* ====================== KBsideBar ====================== */
+.KBsideBar {
   display: flex;
   flex-direction: column;
   align-items: center;
 
   min-width: 200px;
   width: 30%;
+  padding: 10px;
+  border-left: 1px solid #0003;
 }
-.aside > :nth-child(1) {
-  margin-top: 10px;
+.KBsideBar > :nth-child(1) {
+  margin: 0;
 }
-.asideBtn {
+
+.KBsideBarBtn {
+  text-transform: capitalize;
   width: 90%;
   background-color: #2221;
 
@@ -198,11 +208,85 @@
   cursor: pointer;
   transition: 0.2s;
 }
+
 #addKbCard:hover {
-  background-color: rgb(49, 211, 192);
+  background-color: #31d3c0;
 }
 #delAllKbCard:hover,
 #delAllKbItem:hover {
-  background-color: rgb(223, 23, 56);
+  background-color: #df1738;
   color: #fff;
+}
+
+/*  ======== menor que: ============================================== */
+@media (width < 1000px) {
+  .kbCardsArea {
+    padding: 10px 0;
+    grid-template-columns: repeat(2, 48%);
+  }
+  .KBsideBar {
+    width: 40%;
+  }
+}
+@media (width < 700px) {
+  .kbCardsArea {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+}
+@media (width < 550px) {
+  .KBsideBarWrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+
+    width: 100vw;
+    height: 100vh;
+    background-color: #0005;
+
+    transition: .2s;
+
+  }
+  .KBsideBar {
+    padding: 0 15px;
+    width: 50%;
+    height: 100%;
+    background-color: #eee;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .3s ease-out;
+  }
+  .KBsideBarBtn {
+    font-size: 20px;
+  }
+  #delAllKbItem,
+  #delAllKbCard,
+  #addKbCard {
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+  }
+
+  #addKbCard {
+    background-color: #31d3c0;
+  }
+
+  #delAllKbItem,
+  #delAllKbCard {
+    background-color: #df1738;
+  }
+
+  .KBsideBar > :nth-child(1) {
+    margin-top: 60px;
+  }
+}
+@media (width < 450px) {
+.KBsideBar {
+  width: 70%;}
 }

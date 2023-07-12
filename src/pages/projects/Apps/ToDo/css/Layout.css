@@ -1,6 +1,6 @@
 .toDoList {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: #ffe;
 
   display: grid;
@@ -236,7 +236,7 @@ img {
   margin: 20px 0;
 }
 .sideBarBtn {
-  height: 41px;
+  height: 40px;
 
   margin-top: 10px;
   cursor: default;
@@ -345,19 +345,19 @@ img {
     height: 7px;
     background-color: #777;
     border-radius: 10px;
-    transition: 0.4s;
+    transition: .5s;
   }
 
-  #line1.on.on {
-    transform: rotate(47deg);
-    translate: 0 14.5px;
+  #line1.on {
+    transform: rotate(-45deg);
+    translate: 0 15px;
   }
   #line2.on {
-    transform: rotate(-45deg);
-    translate: 0 0px;
+    opacity: 0;
   }
   #line3.on {
-    opacity: 0;
+    transform: rotate(45deg);
+    translate: 0 -13px;
   }
 }
 
@@ -414,12 +414,23 @@ img {
     width: 7px;
     height: 7px;
   }
-  #line1.on,
-  #line2.on {
-    width: 45px;
-    height: 5px;
+  #line3 {
+    translate: 0 0;
+    transform: rotate(45deg);
   }
-  .modalPopUp{
+  #line1 {
+    transform: rotate(-45deg);
+  }
+  #line1.on{
+    width: 100%;
+    translate: 0 13px;
+    
+  }
+  #line3.on {
+    translate: 0 -15px;
+    width: 100%;
+  }
+  .modalPopUp {
     min-width: none;
     width: 90vw;
   }

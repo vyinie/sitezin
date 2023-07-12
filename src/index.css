@@ -3,12 +3,17 @@
   padding: 0;
   box-sizing: 0;
 }
-body::-webkit-scrollbar {
+html,
+body,
+:root {
+  height: 100%;
+}
+*::-webkit-scrollbar {
   width: 5px;
   height: 5px;
   background-color: #ddd;
 }
-body::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   background-color: #0005;
   border-radius: 20px;
 }
