@@ -39,7 +39,7 @@ const KbCard = ({
       const index = lists.indexOf(arr);
 
       lists[index].items.push({ text: itemName, id: itemId });
-      localStorage.setItem
+      localStorage.setItem;
 
       setItemId(itemId + 1);
       setItemName(null);
@@ -50,14 +50,14 @@ const KbCard = ({
   }
 
   function delItem(e) {
-    const newItemArr = items.filter(
-      (i) => i.id != e.target.id.slice(8)
-    );
-    const oldList = lists;
-    oldList[0].items = newItemArr;
+    const newItemArr = items.filter((i) => i.id != e.target.id.slice(8));
+   
+    const arr = lists.find((i) => i.id == cardId)
+    const index = lists.indexOf(arr);
+    lists[index].items = newItemArr;
 
-    setLists((i) => (i = []));
-    setLists((i) => (i = oldList));
+    localStorage.setItem("lists", JSON.stringify(lists));
+    setLists(() => JSON.parse(localStorage.getItem("lists")));
 
     setAnchorEl(null);
   }
@@ -115,8 +115,7 @@ const KbCard = ({
               color="error"
               className="btnCancelAddItem"
               onClick={() => {
-                document.getElementById(`inpAddItem${cardId}`).value =
-                  null;
+                document.getElementById(`inpAddItem${cardId}`).value = null;
                 setModalAddItem(false);
               }}
             >
@@ -158,16 +157,9 @@ const KbCard = ({
             lists={lists}
             setLists={setLists}
           />*/
-          <div
-            id={`item${t.id}`}
-            key={"key" + t.id}
-            className="cardItem"
-          >
+          <div id={`item${t.id}`} key={"key" + t.id} className="cardItem">
             <p className="kbItemText">{t.text}</p>
-            <MoreVertOutlinedIcon
-              onClick={handleClick}
-              className="kbMoreOpt"
-            />
+            <MoreVertOutlinedIcon onClick={handleClick} className="kbMoreOpt" />
             <Popover
               open={open}
               anchorEl={anchorEl}
@@ -192,10 +184,7 @@ const KbCard = ({
                 </span>
                 <hr />
                 <span className="dadCover">
-                  <div
-                    id={"editbtn" + t.id}
-                    className="btnHover cover"
-                  ></div>
+                  <div id={"editbtn" + t.id} className="btnHover cover"></div>
                   <EditIcon className="btnHover" />
                 </span>
               </div>

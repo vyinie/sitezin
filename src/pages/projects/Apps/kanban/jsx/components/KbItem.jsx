@@ -22,7 +22,7 @@ const KbItem = ({ text, id, items, cardId, itemId, lists, setLists }) => {
     items = newItemArr;
     /* gambiarra */
     localStorage.setItem("lists", JSON.stringify(lists));
-    setLists(JSON.parse(localStorage.getItem("lists")));
+    setLists(()=>JSON.parse(localStorage.getItem("lists")));
 
     setAnchorEl(null);
     console.log(items);

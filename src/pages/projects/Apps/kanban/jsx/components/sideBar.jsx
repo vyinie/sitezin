@@ -11,8 +11,8 @@ function SideBar({ delAllItems, addCard, delAllCards }) {
     }
 
     const wrapper = document.querySelector(".KBsideBarWrapper");
-    wrapper.style.opacity = sideBarToggle ? "1" : "0";
-    wrapper.style.zIndex = sideBarToggle ? "3" : "-1";
+    wrapper.style.opacity = sideBarToggle ? "1" : "";
+    wrapper.style.zIndex = sideBarToggle ? "3" : "";
 
     const aside = document.querySelector(".KBsideBar");
     aside.style.right = sideBarToggle ? "0" : "-70vw";
